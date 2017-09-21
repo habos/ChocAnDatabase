@@ -7,6 +7,7 @@ Member: those who pay a monthly fee to ChocAn to receive health care in return.
 Provider: a health care professional who provides services to ChocAn members.
 Terminal: a computer similar to a credit card device in a shop.
 Comments: if necessary, a provider can write comments in their records to describe a service they provided.
-Provider Directory: providers use this directory to look up the appropriate six-digit service code corresponding to the service they provided. Providers can request this directory as an email attachment via the provider terminal. 
+Provider Directory: providers use this directory to look up the appropriate six-digit service code corresponding to the service they provided. Providers can request this file via the provider terminal. 
 Summary Report: contains information needed to update financial records.
 Chocoholics Anonymous (ChocAn): an organization dedicated to helping people addicted to chocolate in all its glorious forms.
+Acme Accounting Services: a third-party organization responsible for financial procedures. The Acme computer acts on our data center each evening.
