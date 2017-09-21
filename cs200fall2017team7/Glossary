@@ -1,12 +1,12 @@
 Key Terms: (Not Final)
 
-Electronic Funds Transfer (EFT):
-Service Code: 
-Monthly fee:
-Member:
-Provider:
-Terminal:
-Comments
-Provider Directory
-Summary Report:
-Chocoholics Anonymous (ChocAn):
+Electronic Funds Transfer (EFT) data: data that is contained in the weekly report that providers receive when they've billed ChocAn.
+Service Code: a code that corresponds to a specific service provided by ChocAn.
+Monthly fee: a monthly subscription fee paid by members to ChocAn. 
+Member: those who pay a monthly fee to ChocAn to receive health care in return.
+Provider: a health care professional who provides services to ChocAn members.
+Terminal: a computer similar to a credit card device in a shop.
+Comments: if necessary, a provider can write comments in their records to describe a service they provided.
+Provider Directory: providers use this directory to look up the appropriate six-digit service code corresponding to the service they provided. Providers can request this directory as an email attachment via the provider terminal. 
+Summary Report: contains information needed to update financial records.
+Chocoholics Anonymous (ChocAn): an organization dedicated to helping people addicted to chocolate in all its glorious forms.
