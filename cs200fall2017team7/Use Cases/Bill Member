@@ -19,4 +19,4 @@ Main Success Scenario
 Extensions:
 
 	2a. If the provider has entered a nonexistent code, an error message is printed.
-		2a.1. The software returns to step 3.
+		2a.1. The software returns to step 2.
