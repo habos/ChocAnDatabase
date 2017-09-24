@@ -1,4 +1,4 @@
-Use Case: Run Report
+Use Case: Run Member Reports
 Context: A report is sent to all members of ChocAn either automatically on Friday at midnight or manually by the ChocAn Manager.
 Actors: ChocAn Manager
 Main Success Scenario:
@@ -7,4 +7,5 @@ Main Success Scenario:
 	3.System sends the reports to members involved via email attachment.
 Extensions:
 	1a. Manager chooses a member to send a report to.
-	1b. System generates
+	1b. System generates a report for that member.
+	1c. Use case resumes at step 3.
