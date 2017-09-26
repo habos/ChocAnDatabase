@@ -1,6 +1,6 @@
 Use Case: Update Members
 Context: Either the Operator or ACME wish to add, delete, or update member information.
-Actors: Operator, ACME
+Actors: Operator, ACME, Time
 Main Success Scenario
 	1. The system is in interactive mode
 	2. Either the operator or ACME choose to add, delete, or update member information.
