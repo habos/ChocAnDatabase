@@ -1,0 +1,9 @@
+Name: Request Individual Report
+Context: The manager request for either a member report or a provider report.
+Actors: ChocAn Manager
+
+Main Success Scenario
+
+1.ChocAn Manager selects which report they would like to generate.
+2.ChocAn Manager chooses which member the report should be generated for.
+3.Information entered by ChocAn Manager is passed along to Generate Member Report or Generate Provider Report. 
