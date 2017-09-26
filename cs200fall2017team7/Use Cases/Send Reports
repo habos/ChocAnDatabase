@@ -1,0 +1,13 @@
+Name: Send Reports
+Context: The system sends reports to the correct recipients' email.
+Actors: Time
+
+Main Success Scenario:
+
+1. The recipient of each report is identified.
+2. The report is sent to the correct recipient's email.
+
+Extensions:
+
+1b. Recipient can not be identified by the system.
+	1b.1 System displays "Recipient _______ could not be identified by the system".

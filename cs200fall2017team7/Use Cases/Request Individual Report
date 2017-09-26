@@ -2,8 +2,15 @@ Name: Request Individual Report
 Context: The manager request for either a member report or a provider report.
 Actors: ChocAn Manager
 
-Main Success Scenario
+Main Success Scenario:
 
 1.ChocAn Manager selects which report they would like to generate.
 2.ChocAn Manager chooses which member the report should be generated for.
-3.Information entered by ChocAn Manager is passed along to Generate Member Report or Generate Provider Report. 
+3.Information entered by ChocAn Manager is passed along to Generate Member Report or Generate Provider Report.
+
+Extensions: 
+
+1a. Manager selects a member that does not exist.
+	1a.1 System displays "Member does not exist".
+1b. Manager selects a member that has not received services.
+	1b.1 System displays "Member has not received services in the past week".
