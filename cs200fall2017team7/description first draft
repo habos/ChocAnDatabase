@@ -1,0 +1,11 @@
+Chocoholics Anonymous (ChocAn) is an organization 
+dedicated to helping people addicted to chocolate. 
+Our organization has been awarded the contract to 
+write the ChocAn data processing software. This software 
+will need to be able to validate that a person with a 
+ChocAn card is indeed a current member in good standing of 
+ChocAn by having a provider swipe the member card on a 
+provider terminal. Additionally, the system provides support 
+for billing, updates members, and automatically sends 
+customized reports to members, providers, and managers on 
+ChocAn information relevant to them.
