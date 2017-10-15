@@ -1,4 +1,4 @@
-Use Case: Bill Member
+Provider Use Case: Bill Member
 Context: The provider bills a member for services rendered
 Actors: Provider
 
