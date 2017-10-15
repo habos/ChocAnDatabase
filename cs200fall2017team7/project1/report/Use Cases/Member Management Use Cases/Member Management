@@ -1,0 +1,7 @@
+Use Case: Member Management
+Context: Member records are managed.
+Actors: Operator
+
+Main Success Scenario:
+
+	1. The operator chooses either to add, delete, or update member records

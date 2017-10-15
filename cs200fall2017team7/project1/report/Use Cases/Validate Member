@@ -1,5 +1,5 @@
 Use Case: Validate Member
-Context: the provider intends to check if the member is a valid member
+Context: The provider checks if the member is a valid member
 Actors: Provider
 Main Success Scenario:
 	1. The provider's terminal is switched on, and the provider is asked to enter his or her provider's number
