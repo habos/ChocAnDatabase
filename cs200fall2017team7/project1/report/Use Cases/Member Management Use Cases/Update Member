@@ -1,0 +1,16 @@
+Use Case: Update Member
+Context: Acme Accounting Services or the operator updates member information
+Actors: Operator, Acme Accounting Services
+
+Main Success Scenario:
+
+	1. The operator or Acme Accounting Services are prompted to enter the member number.
+	2. An editing screen is displayed, allowing the actor to change 
+	   provider information.
+	3. The actor makes desired changes, then saves changes.
+	4. The system updates member records accordingly
+
+Extensions:
+	1a. The actor entered a member number that isn't in the system.
+		1a.1. The system displays an error message.
+		1a.2. The use case returns to step 1.
