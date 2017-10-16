@@ -1,0 +1,12 @@
+Use Case: Request Directory
+Context: At any time, a provider can request the software product for a Provider Directory.
+Actors: Provider
+
+Main Success Scenario:
+	1. A provider uses their ChocAn computer terminal to request the ChocAn Data Center to send them a Provider Directory.
+	2. The ChocAn Data Center receives the request and sends the Provider Directory to the provider as an e-mail attachment.
+
+Extensions:
+	1a. An invalid provider number was entered.
+		1a.1. The ChocAn computer terminal informs the provider. 
+		1a.2. The use case continues at step 1.

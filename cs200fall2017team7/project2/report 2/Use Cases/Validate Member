@@ -1,0 +1,14 @@
+Use Case: Validate Member
+Context: The provider checks if the member is a valid member
+Actors: Provider
+Main Success Scenario:
+	1. The provider's terminal is switched on, and the provider is asked to enter his or her provider's number
+		1.2 The system validates the provider number
+	2. The terminal prompts the provider to swipe the member's card or enter the member's member number
+		2.1 The terminal dials the data center to check if the member is valid
+	3. The word Validated appears on the one-line display.
+Extension:
+	3.a The number is invalid
+		3a.1 The system displays 'Invalid number'
+	3b.1 The member is suspended
+		3b.2 The terminal displays 'Suspended' and the number of fees owed
