@@ -6,7 +6,8 @@ Main Success Scenario:
 
 1. Selects providers to generate reports for either by time or by the ChocAn Manager's request.
 	1a. On Friday at midnight all providers that provided services are selected.
-2. Generates reports for selected providers. 
+2. Generates reports for selected providers.
+3. Information about claims are passed to 'write EFT' 
 3. Generated reports are passed to the Send Reports use case.
 
 Extensions:
