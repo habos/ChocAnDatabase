@@ -1,0 +1,178 @@
+<style>
+body{
+  background-color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+
+.title{
+ background-color:#ccc;
+ background-image:url("saban.jpg");
+ height: 950px;
+ padding: 0px;
+ border: 5px;
+ border-style: solid;
+ margin: 0px;
+ background-image
+}
+
+h1{
+  -webkit-text-stroke: 1.0px #000000;
+  -webkit-text-fill-color: #FFFFFF;
+	font-family: 'Times', serif;
+	font-size: 78px;
+	text-align: center;
+	font-style: bold;
+  height: 200px;
+}
+
+ul{
+  text-align:center;
+  list-style-position: inside;
+}
+
+li{
+  list-style-type: hiragana;
+}
+
+.names{
+	-webkit-text-stroke: 1.0px #000000;
+    -webkit-text-fill-color: #FFFFFF;
+	font-family: 'Courier New', serif;
+	font-size: 56px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+h2{
+	color: #000000;
+	font-family: 'Times New Roman', serif;
+	font-size: 56px;
+	text-align: center;
+}
+
+.description{
+	font-size: 16px;
+ 	text-align: center;
+ 	border: 3px;
+ 	border-style: solid;
+ 	width: 50%;
+ 	margin: auto;
+    vertical-align: center;
+}
+
+ img{
+ 	display: block;
+ 	margin: auto;
+ 	border: 1px;
+ 	border-style: solid;
+ }
+
+h3{
+	color: #8B0000;
+	font-family: 'Times New Roman', serif;
+	font-size: 26px;
+	text-align: center;
+}
+ 
+  .descriptions{
+ 	font-size: 16px;
+ 	text-align: center;
+ 	border: 3px;
+ 	border-style: solid;
+ 	width: 50%;
+ 	margin: auto;
+    vertical-align: center;
+ }
+ 
+ .tasks{
+ 	text-align: center;
+ 	border: 3px;
+ 	border-style: solid;
+ 	font-size: 18px;
+ 	font-style: 'Courier New', serif;
+ 	width: 50%;
+ 	margin: auto;
+    vertical-align: center;
+ }
+
+</style>
+<html lang="en">
+<head>
+
+  <title>CS200 Team 7</title>
+  <meta name="description" content="CS200">
+  <meta name="author" content="Team 7">
+  
+</head>
+
+<body>
+  <div class="title">
+  	<h1>CS200 Term Project</h1>
+  	<ul class="names">
+  		<li>Caleb Werth - cwerth@crimson.ua.edu - 11663777</li>
+  		<li>Chris Wilkins - cawilkins@crimson.ua.edu -11706477</li>
+  		<li>Colin Macwilliam - comacwilliam@crimson.ua.edu - 11663573</li>
+  		<li>Harry Bos - habos@crimson.ua.edu - 11720649</li>
+  		<li>Logan Mimms - Lgmimms@crimson.ua.edu - 11601685</li>
+  	</ul>
+  </div>
+  <h2>System Description</h2>
+  <div class="description">
+  <p>Chocoholics Anonymous (ChocAn) is an organization 
+dedicated to helping people addicted to chocolate. 
+Our organization has been awarded the contract to 
+write the ChocAn data processing software. This software 
+will need to be able to validate that a person with a 
+ChocAn card is indeed a current member in good standing of 
+ChocAn by having a provider swipe the member card on a 
+provider terminal. Additionally, the system provides support 
+for billing, updates members, and automatically sends 
+customized reports to members, providers, and managers on 
+ChocAn information relevant to them.</p>
+	</div>
+   <div class="glossary">
+  	<h2>Glossary</h2>
+  	<ul>
+      <li><b>Electronic Funds Transfer (EFT) data:</b> data that is contained in the weekly report that providers receive when they've billed ChocAn.</li>
+      <li><b>Service Code:</b> a code that corresponds to a specific service provided by ChocAn.</li>
+      <li><b>Monthly fee:</b>  a monthly subscription fee paid by members to ChocAn. </li>
+      <li><b>Member:</b> those who pay a monthly fee to ChocAn to receive health care in return.</li>
+      <li><b>Provider:</b> a health care professional who provides services to ChocAn members.</li>
+      <li><b>Terminal:</b> a computer similar to a credit card device in a shop.</li>
+      <li><b>Comments:</b> if necessary, a provider can write comments in their records to describe a service they provided.</li>
+      <li><b>Provider Directory:</b> providers use this directory to look up the appropriate six-digit service code corresponding to the service they provided. Providers can request this directory as an email attachment via the provider terminal.</li>
+      <li><b>Summary Report:</b> contains information needed to update financial records.</li>
+      <li><b>Chocoholics Anonymous (ChocAn):</b> an organization dedicated to helping people addicted to chocolate in all its glorious forms.</li>
+      <li><b>Acme Accounting Services:</b> a third-party organization responsible for financial procedures. The Acme computer acts on our data center each evening.</li>
+    </ul>
+  </div>
+  	<h2>Use Case Diagram</h2>
+  <div class="diagram">
+  	<img src="use case diagram.PNG" alt="Use Case Diagram" style="width:500px;height:600px;">
+  </div>
+  	<h2>Use Case Description</h2>
+  <div class="descriptions">
+  	  <ul>
+  		<a href="Use Cases/Bill Member"><li>Bill Member</li></a>
+  		<a href="Use Cases/Request Directory"><li>Request Directory</li></a>
+  		<a href="Use Cases/Update Members"><li>Update Members</li></a>
+  		<a href="Use Cases/Validate Member"><li>Validate Member</li></a>
+  		<a href="Use Cases/Request Individual Report"><li>Request Individual Report</li></a>
+  		<a href="Use Cases/Generate Member Report"><li>Generate Member Report</li></a>
+  		<a href="Use Cases/Generate Provider Reports"><li>Generate Provider Reports</li></a>
+  		<a href="Use Cases/Generate Summary Report"><li>Generate Summary Report</li></a>
+  		<a href="Use Cases/Send Reports"><li>Send Reports</li></a>
+  	</ul>
+  </div>
+  <h2>Task Distibution</h2>
+  <div class="tasks">
+  	<p><b>Harry Bos:</b> Wrote the HTML file and helped write some Use Cases. (20%) (8 hours)</p>
+  	<p><b>Caleb Werth:</b> Wrote the first draft of the glossary. Helped with the Use Case Diagram and wrote some Use Cases. (20%) (7 hours)</p>
+  	<p><b>Chris Wilkins:</b> Worked on Use Case Diagrams and Use Case Descriptions. (20%) (7 hours)</p>
+  	<p><b>Logan Mimms:</b> Created the update member case, worked on initial use case diagram and highlighted the ChocAn project document. (20%) (7 hours)</p>
+  	<p><b>Colin Macwilliam:</b> Helped with the Use Case Diagram, wrote the Request directory Use Case, completed the glossary. (20%) (7 hours)</p>
+  </div>
+  	<a href="https://bitbucket.org/syue2/cs200fall2017team7/commits/all"><h3>BitBucket Commits</h3></a>
+</body>
+</html>
