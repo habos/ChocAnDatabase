@@ -1,0 +1,16 @@
+Use Case: Update Provider
+Context: The operator updates provider information
+Actors: Operator
+
+Main Success Scenario:
+
+	1. The operator is prompted to enter the provider number
+	2. An editing screen is displayed, allowing the operator to change 
+	   provider information
+	3. The operator makes desired changes, then saves changes.
+	4. The system updates provider records accordingly
+
+Extensions:
+	1a. The operator entered a provider number that isn't in the system.
+		1a.1. The system displays an error message.
+		1a.2. The use case returns to step 1.

@@ -1,0 +1,13 @@
+Name: Generate Summary Report
+Context: The system generates the summary report.
+Actors: Time
+
+Main Success Scenario:
+
+1. Generates the summary report at midnight on Friday.
+2. Summary report is passed to the Send Reports use case.
+
+Extensions:
+
+1a. Not all information for the summary report is available.
+	1a.1 For each piece of missing information system prints "Information missing" on report.
