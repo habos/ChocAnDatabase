@@ -1,4 +1,4 @@
-Name: Send Reports
+	Name: Send Reports
 Context: The system sends reports to the correct recipients' email.
 Actors: Time
 
