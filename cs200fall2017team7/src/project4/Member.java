@@ -19,6 +19,21 @@ public class Member {
 	private String ZIP;
 	
 	/**
+	 *  Default Constructor
+	 */
+	
+	public Member() {
+		suspended = false;
+		numberID = 0;
+		balance = 0;
+		name = null;
+		address = null;
+		city = null;
+		state = null;
+		ZIP = null;
+	}
+	
+	/**
 	 * Constructor
 	 */
 	
