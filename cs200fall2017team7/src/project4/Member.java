@@ -1,6 +1,11 @@
-//Start to member, not complete
-
 package project4;
+
+/**
+ * The member class. This is a boundary stereotype class.
+ * Contains all member data and methods to edit/check the member data.
+ * @author Caleb
+ * 
+ */
 
 public class Member {
 	
@@ -12,6 +17,10 @@ public class Member {
 	private String city;
 	private String state;
 	private String ZIP;
+	
+	/**
+	 * Constructor
+	 */
 	
 	public Member(int ID, int initialBalance, String memberName, String memberAddress, 
 	String memberCity, String memberState, String memberZIP)
@@ -25,33 +34,54 @@ public class Member {
 		state = memberState;
 		ZIP = memberZIP;
 	}
-	
+	/**
+	 * Checks if member is suspended
+	 */
 	public boolean isSuspended()
 	{
 		if(suspended == true)
 			return true;
 		return false;
 	}
+	/**
+	 * Suspends member
+	 */
 	public void suspendMember()
 	{
 		suspended = true;
 	}
+	/**
+	 * Reinstates suspended member
+	 */
 	public void reinstateMember()
 	{
 		suspended = false;
 	}
+	/**
+	 * Either charges the members account an amount or deposits an amount
+	 * @param amount Positive amount means a charge (subtracts), negative amount means a deposit (adds)
+	 */
 	public void changeBalance(int amount)
 	{
 		balance -= amount;
 	}
+	/**
+	 * Returns the member's current balance
+	 */
 	public int getBalance()
 	{
 		return balance;
 	}
+	/**
+	 * Returns the member's ID
+	 */
 	public int getID()
 	{
 		return numberID;
 	}
+	/**
+	 * Returns a string containing all information about the member
+	 */
 	public String toString()
 	{
 		String FullMemberString = "";
@@ -63,6 +93,5 @@ public class Member {
 		FullMemberString += "Member ZIP code: " + ZIP + "\n";
 		
 		return FullMemberString;
-		
 	}
 }
