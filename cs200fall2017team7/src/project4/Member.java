@@ -7,12 +7,14 @@ package project4;
  * 
  */
 
-public class Member {
+public class Member extends Record {
+	
+	//These are in Record.java
+	/*private String name;
+	private int numberID;*/ 
 	
 	private boolean suspended;
-	private int numberID;
 	private int balance;
-	private String name;
 	private String address;
 	private String city;
 	private String state;
@@ -21,7 +23,6 @@ public class Member {
 	/**
 	 *  Default Constructor
 	 */
-	
 	public Member() {
 		suspended = false;
 		numberID = 0;
@@ -36,7 +37,6 @@ public class Member {
 	/**
 	 * Constructor
 	 */
-	
 	public Member(int ID, int initialBalance, String memberName, String memberAddress, 
 	String memberCity, String memberState, String memberZIP)
 	{
@@ -49,6 +49,7 @@ public class Member {
 		state = memberState;
 		ZIP = memberZIP;
 	}
+	
 	/**
 	 * Checks if member is suspended
 	 */
@@ -58,6 +59,7 @@ public class Member {
 			return true;
 		return false;
 	}
+	
 	/**
 	 * Suspends member
 	 */
@@ -65,6 +67,7 @@ public class Member {
 	{
 		suspended = true;
 	}
+	
 	/**
 	 * Reinstates suspended member
 	 */
@@ -72,6 +75,7 @@ public class Member {
 	{
 		suspended = false;
 	}
+	
 	/**
 	 * Either charges the members account an amount or deposits an amount
 	 * @param amount Positive amount means a charge (subtracts), negative amount means a deposit (adds)
@@ -80,6 +84,7 @@ public class Member {
 	{
 		balance -= amount;
 	}
+	
 	/**
 	 * Returns the member's current balance
 	 */
@@ -87,6 +92,7 @@ public class Member {
 	{
 		return balance;
 	}
+	
 	/**
 	 * Returns the member's ID
 	 */
@@ -94,6 +100,7 @@ public class Member {
 	{
 		return numberID;
 	}
+	
 	/**
 	 * Returns a string containing all information about the member
 	 */
