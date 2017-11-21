@@ -51,9 +51,7 @@ public class Member extends Record {
 	 */
 	public boolean isSuspended()
 	{
-		if(suspended == true)
-			return true;
-		return false;
+		return suspended;
 	}
 	
 	/**
@@ -87,14 +85,6 @@ public class Member extends Record {
 	public int getBalance()
 	{
 		return balance;
-	}
-	
-	/**
-	 * Returns the member's ID
-	 */
-	public int getID()
-	{
-		return numberID;
 	}
 	
 	/**

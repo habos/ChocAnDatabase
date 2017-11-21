@@ -16,6 +16,13 @@ public class Provider extends Record {
 		this.ZIP = ZIP;
 	}
 	
-	
-	
+	public String toString(){
+		String providerString = "";
+		providerString += "Provider name: " + name + "\n";
+		providerString += "Provider number: " + numberID + "\n";
+		providerString += "Provider street address: " + address + "\n";
+		providerString += "Provider city: " + city + "\n";
+		providerString += "Provider ZIP: " + ZIP + "\n";
+		return providerString;
+	}
 }

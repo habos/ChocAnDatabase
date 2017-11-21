@@ -16,7 +16,10 @@ public class ProviderReport extends Report {
 	 * toString function that will pass the report as a string
 	 */
 	public String toString(){
-		return"";
+		String providerReportString = "";
+		providerReportString = provider.toString();
+		//Add info about services provided here
+		return providerReportString;
 	}
 	
 }
