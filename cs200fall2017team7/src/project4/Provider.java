@@ -7,11 +7,15 @@ package project4;
 
 public class Provider extends Record {
 	
-	protected int numberID;
-	protected String name;
-	protected String address;
-	protected String city;
-	protected String state;
-	protected String ZIP;
+	public Provider(int numberID, String name, String address, String city, String state, String ZIP){
+		this.numberID = numberID;
+		this.name = name;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.ZIP = ZIP;
+	}
+	
+	
 	
 }

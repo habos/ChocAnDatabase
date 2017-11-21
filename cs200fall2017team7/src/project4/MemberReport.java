@@ -1,6 +1,6 @@
 package project4;
 
-public class MemberReport {
+public class MemberReport extends Report {
 	
 	private Member member;
 	

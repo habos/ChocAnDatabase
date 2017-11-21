@@ -11,14 +11,10 @@ public class Member extends Record {
 	
 	//These are in Record.java
 	/*private String name;
-	private int numberID;*/ 
+	private integer numberID;*/ 
 	
 	private boolean suspended;
 	private int balance;
-	private String address;
-	private String city;
-	private String state;
-	private String ZIP;
 	
 	/**
 	 *  Default Constructor
