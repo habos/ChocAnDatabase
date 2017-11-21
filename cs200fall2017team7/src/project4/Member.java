@@ -78,7 +78,7 @@ public class Member extends Record {
 	
 	/**
 	 * Either charges the members account an amount or deposits an amount
-	 * @param amount Positive amount means a charge (subtracts), negative amount means a deposit (adds)
+	 * @param amount The number to change the balance
 	 */
 	public void changeBalance(int amount)
 	{
