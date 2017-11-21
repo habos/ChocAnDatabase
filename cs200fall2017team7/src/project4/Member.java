@@ -106,14 +106,14 @@ public class Member extends Record {
 	 */
 	public String toString()
 	{
-		String FullMemberString = "";
-		FullMemberString += "Member name: " + name + "\n";
-		FullMemberString += "Member number: " + numberID + "\n";
-		FullMemberString += "Member street address: " + address + "\n";
-		FullMemberString += "Member city: " + city + "\n";
-		FullMemberString += "Member state: " + state + "\n";
-		FullMemberString += "Member ZIP code: " + ZIP + "\n";
+		String fullMemberString = "";
+		fullMemberString += "Member name: " + name + "\n";
+		fullMemberString += "Member number: " + numberID + "\n";
+		fullMemberString += "Member street address: " + address + "\n";
+		fullMemberString += "Member city: " + city + "\n";
+		fullMemberString += "Member state: " + state + "\n";
+		fullMemberString += "Member ZIP code: " + ZIP + "\n";
 		
-		return FullMemberString;
+		return fullMemberString;
 	}
 }
