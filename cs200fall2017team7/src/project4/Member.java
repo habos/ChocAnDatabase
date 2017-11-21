@@ -7,12 +7,14 @@ package project4;
  * 
  */
 
-public class Member {
+public class Member extends Record {
+	
+	//These are in Record.java
+	/*private String name;
+	private int numberID;*/ 
 	
 	private boolean suspended;
-	private int numberID;
 	private int balance;
-	private String name;
 	private String address;
 	private String city;
 	private String state;
