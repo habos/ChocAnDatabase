@@ -82,7 +82,7 @@ public class Member extends Record {
 	 */
 	public void changeBalance(int amount)
 	{
-		balance -= amount;
+		balance += amount;
 	}
 	
 	/**
