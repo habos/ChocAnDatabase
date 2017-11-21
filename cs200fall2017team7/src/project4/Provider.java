@@ -1,7 +1,7 @@
 package project4;
 
 /**
- * The provider class. This is a entity stereotype class.
+ * The provider class. This is an entity stereotype class.
  * @author Colin 
  */
 
