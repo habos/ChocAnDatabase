@@ -23,6 +23,10 @@ public class Claim extends Record {
 		return providerID;
 	}
 	
+	public void setID(int ID){
+		this.providerID = ID;
+	}
+	
 	public String toString() {
 		return String.format("%s\r%n" + 
 				"%s\r%n" + 
