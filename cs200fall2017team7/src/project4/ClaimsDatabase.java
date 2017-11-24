@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import java.util.ArrayList;
 
 public class ClaimsDatabase {
 	
@@ -11,7 +11,7 @@ public class ClaimsDatabase {
 	DateFormat dateFormat = new SimpleDateFormat("MM–DD–YYYY hh:mm:ss");// set up the date and time format
 	
 	
-	Claim[] claims;
+	ArrayList<Claim> claims = new ArrayList<Claim>();
 	
 	public void add() {
 		Date date = new Date();
@@ -25,9 +25,8 @@ public class ClaimsDatabase {
 		System.out.println("%nEnter date service was provided (MM–DD–YYYY).");
 		String manualDate = user_input.next();
 		
-		
-		
 		Claim newClaim = new Claim(provID, dateFormat.format(date), servCode, comments, manualDate);
+		claims.add(newClaim);
 	}
 
 
