@@ -141,16 +141,6 @@ public abstract class Record {
 			return true;
 		return false;
 	}
-	public String getClaims() {	
-		Iterator<Claim> claims = this.claims.iterator();
-		String matchingClaims = "";
-		
-		while(claims.hasNext())
-		{
-			Claim claim = claims.next();
-				matchingClaims += claim.toString();		
-		}
-			return matchingClaims;	
-	}
+	public abstract String getClaims();
 }
 

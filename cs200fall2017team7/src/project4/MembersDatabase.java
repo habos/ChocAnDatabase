@@ -1,5 +1,6 @@
 package project4;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class MembersDatabase extends Database{
@@ -24,12 +25,7 @@ public class MembersDatabase extends Database{
 		scan.close();
 	}
 
-	@Override
-	public void add(Record record) {
-		records.add(record);
-		
-	}
-
+	
 	@Override
 	public boolean edit(int idToChange) {
 		// TODO Auto-generated method stub

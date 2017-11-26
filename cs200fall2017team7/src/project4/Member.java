@@ -61,7 +61,8 @@ public class Member extends Record {
 				+"Member street address: " + address + "\n"
 				+"Member city: " + city + "\n"
 				+"Member state: " + state + "\n"
-				+"Member ZIP code: " + ZIP;
+				+"Member ZIP code: " + ZIP
+				+getClaims();
 	}
 	
 	//FIXME: put in needed report format
@@ -73,7 +74,7 @@ public class Member extends Record {
 			while(claims.hasNext())
 			{
 				Claim claim = claims.next();
-					matchingClaims += claim.toString();		
+					matchingClaims += claim.toStringMember();		
 			}
 				return matchingClaims;	
 		}

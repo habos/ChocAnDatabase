@@ -26,12 +26,6 @@ public class ProvidersDatabase extends Database {
 	}
 
 	@Override
-	public void add(Record recordToAdd) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public boolean edit(int idToChange) {
 		// TODO Auto-generated method stub
 		return false;

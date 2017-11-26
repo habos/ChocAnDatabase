@@ -1,5 +1,7 @@
 package project4;
 
+import java.util.Iterator;
+
 /**
  * The provider class. This is an entity stereotype class.
  * @author Colin 
@@ -18,12 +20,20 @@ public class Provider extends Record {
 		 + "Provider number: " + id + "\n"
 		 + "Provider street address: " + address + "\n"
 		 + "Provider city: " + city + "\n"
-		 + "Provider ZIP: " + ZIP;
+		 + "Provider ZIP: " + ZIP
+		 +getClaims();
 	}
 //FIXME: put in needed report format
 	@Override
-	public String getClaims() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getClaims() {	
+		Iterator<Claim> claims = this.claims.iterator();
+		String matchingClaims = "";
+		
+		while(claims.hasNext())
+		{
+			Claim claim = claims.next();
+				matchingClaims += claim.toStringProvider();		
+		}
+			return matchingClaims;	
 	}
 }

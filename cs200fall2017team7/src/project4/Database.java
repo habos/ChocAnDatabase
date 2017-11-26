@@ -11,7 +11,9 @@ public abstract class Database {
 	}
 	public abstract void add();//adds record, with prompts
 	
-	public abstract void add(Record recordToAdd);//add record, without prompts (for to add from file)
+	public void add(Record record) {
+		records.add(record);
+	}
 	public boolean delete(int id) {
 		Iterator <Record> records = this.records.iterator();
 		Record record = null;
