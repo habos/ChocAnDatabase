@@ -1,15 +1,55 @@
 package project4;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Iterator;
 
 public abstract class Database {
-	ArrayList<Record> records = new ArrayList<Record>();
-	Scanner scan = new Scanner(System.in);
+	
+	protected ArrayList<Record> records;
+	
 	public abstract void add();//adds record, with prompts
 	public abstract void add(Record recordToAdd);//add record, without prompts (for to add from file)
-	public abstract boolean delete(int idToDelete);//returns if deletion is successful
-	public abstract boolean contains(int idToFind);//checks if id is there
+	//public boolean delete(int idToDelete);//returns if deletion is successful
+	public boolean delete(int idToDelete) {
+		Iterator <Record> records = this.records.iterator();
+		Record record = null;
+		while(records.hasNext()) {
+			record = records.next();
+			if(record.matches(idToDelete)) {
+				System.out.println("Deleting "+ record.getName()+ " of ID "+record.getNumberID());
+				records.remove();
+				return true;
+			}
+		}
+		System.out.println("Failed to find record with ID of "+ idToDelete);
+		return false;
+	}
+	public boolean contains(int id) {
+		Iterator <Record> records = this.records.iterator();
+		Record record = null;
+		while(records.hasNext()) {
+			record = records.next();
+			if(record.matches(id)) {
+				return true;
+			}
+		}
+		System.out.println("Failed to find record with ID of "+ id);
+		return false;
+	}
+	public String getRecords(int id) {
+		Iterator<Record> records = this.records.iterator();
+		String matchingRecord = null;
+		
+		while(records.hasNext())
+		{
+			Record record = records.next();
+			if(record.matches(id)) {
+				return record.toString();
+			}		
+		}
+			return null;	
+	}
+	//public boolean contains(int idToFind);//checks if id is there
 	public abstract boolean edit(int idToChange);//edit records
 	
 	

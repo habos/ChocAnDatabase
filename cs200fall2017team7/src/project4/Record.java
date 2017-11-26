@@ -85,4 +85,14 @@ public abstract class Record {
 	public void setZIP(String zIP) {
 		ZIP = zIP;
 	}
+	/**
+	 * 
+	 * @param id to be compared
+	 * @return if matching id's
+	 */
+	public boolean matches(int id) {
+		if(id==numberID)
+			return true;
+		return false;
+	}
 }
