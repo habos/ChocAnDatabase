@@ -10,8 +10,13 @@ import java.util.Scanner;
 public abstract class Database {
 	
 	protected ArrayList<Record> records;
+	
+	public abstract void writeOut(Database b);
+	
+	public abstract void readIn();
+	
 	public Database() {
-		records = new ArrayList<Record>();
+		readIn();
 	}
 	public abstract void add();//adds record, with prompts
 	
@@ -114,6 +119,6 @@ public abstract class Database {
 	user_input.close();
 	}
 	
-	
+
 	
 }
