@@ -16,16 +16,16 @@ public class Claim {
 	public Claim(int providerId, String providerName, int memberId, String memberName, String currentDate,
 			int serviceCode, String serviceName, int fee, String comments, String dateProvided) {
 
-		providerId = this.providerId;
-		providerName = this.providerName;
-		memberId = this.memberId;
-		memberName = this.memberName;
-		currentDate = this.currentDate;
-		serviceCode = this.serviceCode;
-		serviceName = this.serviceName;
-		fee = this.fee;
-		comments = this.comments;
-		dateProvided = this.dateProvided;
+		this.providerId = providerId;
+		this.providerName = providerName;
+		this.memberId = memberId;
+		this.memberName = memberName;
+		this.currentDate = currentDate;
+		this.serviceCode = serviceCode;
+		this.serviceName = serviceName;
+		this.fee = fee;
+		this.comments = comments;
+		this.dateProvided = dateProvided;
 
 	}
 
