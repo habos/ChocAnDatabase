@@ -1,5 +1,8 @@
 package project4;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -31,6 +34,23 @@ public class ProvidersDatabase extends Database {
 		return false;
 	}
 	
-	public void writeOut(ProviderDatabase)
+	public void writeOut(){
+		try
+		{
+			BufferedWriter email = new BufferedWriter( new FileWriter("ProvidersPersistence.txt"));
+		    for(Record p : records){
+		    	
+		    }
+		    email.close();
+		}
+		catch ( IOException e)
+		{
+			System.out.println("Exception in Emailing"); 	
+		}
+	}
+
+	public void readIn(){
+		
+	}
 
 }

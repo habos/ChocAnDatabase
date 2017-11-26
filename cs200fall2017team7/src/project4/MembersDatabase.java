@@ -31,4 +31,18 @@ public class MembersDatabase extends Database{
 		return false;
 	}
 
+
+	@Override
+	public void writeOut() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void readIn() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
