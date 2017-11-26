@@ -1,6 +1,9 @@
 package project4;
 
 public abstract class Report {
-
-	public abstract String toString();
+	
+	protected String report;	
+	public String toString() {
+		return report;
+	}
 }

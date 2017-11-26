@@ -19,6 +19,8 @@ public class ClaimsDatabase {
 		
 		System.out.println("Enter Provider ID: ");
 		int provID = user_input.nextInt();
+		System.out.println("Enter Provider ID: ");
+		int memberId = user_input.nextInt();
 		System.out.println("Enter Service Code: ");
 		int servCode = user_input.nextInt();
 		user_input.nextLine();
@@ -26,9 +28,7 @@ public class ClaimsDatabase {
 		String comments = user_input.nextLine();
 		System.out.println("Enter date service was provided (MM–DD–YYYY).");
 		String manualDate = user_input.nextLine();
-		
-		Claim newClaim = new Claim(provID, dateFormat.format(date), servCode, comments, manualDate);
-		claims.add(newClaim);
+		claims.add(new Claim(provID, memberId, dateFormat.format(date), servCode, comments, manualDate));
 	}
 	
 		
@@ -37,6 +37,7 @@ public class ClaimsDatabase {
 	 * @param idOfProvider - id for the provider you want the claims of
 	 * @return list of the providers claims as a string  (empty string if no matches)
 	 */
+	//FIXME needs two for prov and member
 	public String getClaims(int idOfProvider){
 	
 		Iterator<Claim> claims = this.claims.iterator();
@@ -45,7 +46,7 @@ public class ClaimsDatabase {
 		while(claims.hasNext())
 		{
 			Claim claim = claims.next();
-			if(claim.match(idOfProvider)) {
+			if(claim.matchProvider(idOfProvider)) {
 				matchingClaims += claim.toString();
 			}		
 		}

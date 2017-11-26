@@ -2,16 +2,17 @@ package project4;
 
 public class Claim {
 	
-		private int providerID;
+		private int providerId;
 		String currentDate;
 		int serviceCode;
 		String comments;
 		String dateProvided;
+		int memberId;
 		
-		
-	public Claim(int iD, String currDate, int servCode, String note, String providedDate) {
+	public Claim(int providerId,int memberId, String currDate, int servCode, String note, String providedDate) {
 			
-		providerID = iD;
+		providerId = this.providerId;
+		memberId = this.memberId;
 		currentDate = currDate;
 		serviceCode = servCode;
 		comments = note;
@@ -20,24 +21,28 @@ public class Claim {
 	}
 	
 	public int getID() {
-		return providerID;
+		return providerId;
 	}
-	
-	public void setID(int ID){
-		this.providerID = ID;
-	}
-	//FIXME- make into correct form of output
+
+	//FIXME- make into correct form of output (needs two for prov and member report)
 	public String toString() {
-		return "Provider ID: "+providerID+"\nDate Entered: "+ currentDate +"\nService Code: "+ serviceCode+
-				"\nComments: "+comments+"\nDate Provided: "+ dateProvided+"\n";
+		return "\nDate of Service: "+ dateProvided+"\n"
+				+"\nDate and time data were recived by the computer: "+ currentDate 
+				+"\nService Code: "+ serviceCode
+				+"\nComments: "+comments;
 	}
 	/**
 	 * 
 	 * @param id
 	 * @return if id matches
 	 */
-	public boolean match(int id) {
-		if(id == providerID)
+	public boolean matchProvider(int id) {
+		if(id == providerId)
+			return true;
+		return false;
+	}
+	public boolean matchMember(int id) {
+		if(id==memberId)
 			return true;
 		return false;
 	}
