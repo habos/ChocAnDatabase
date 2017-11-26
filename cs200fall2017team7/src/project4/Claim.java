@@ -26,7 +26,7 @@ public class Claim extends Record {
 	public void setID(int ID){
 		this.providerID = ID;
 	}
-	
+	//FIXME- make into correct form of output
 	public String toString() {
 		return "Provider ID: "+providerID+"\nDate Entered: "+ currentDate +"\nService Code: "+ serviceCode+
 				"\nComments: "+comments+"\nDate Provided: "+ dateProvided+"\n";

@@ -31,7 +31,7 @@ public class ClaimsDatabase {
 		claims.add(newClaim);
 	}
 	
-	
+		
 	/**
 	 * 
 	 * @param idOfProvider - id for the provider you want the claims of
