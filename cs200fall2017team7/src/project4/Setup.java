@@ -14,13 +14,12 @@ public class Setup {
 		System.out.println(members.getRecords(1));
 		members.delete(1);
 		System.out.println(members.getRecords(1));
-		/*
-		ProvidersDatabase providers = new ProvidersDatabase();
-		providers.add();
-		//System.out.println(providers.getRecords(1));
 		
-		ClaimsDatabase claims = new ClaimsDatabase();
-		*/
+		ProvidersDatabase providers = new ProvidersDatabase();
+		providers.add(new Provider(100, "Dr Smith Cholocate", "321 Other main Street", "Asoolacsut", "lA", "14503"));
+		System.out.println(providers.getRecords(100));
+		
+		
 		
 	}
 
