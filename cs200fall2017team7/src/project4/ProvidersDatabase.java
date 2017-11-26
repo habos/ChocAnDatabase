@@ -31,6 +31,6 @@ public class ProvidersDatabase extends Database {
 		return false;
 	}
 	
-	
+	public void writeOut(ProviderDatabase)
 
 }

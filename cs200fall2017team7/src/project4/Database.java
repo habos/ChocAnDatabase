@@ -16,6 +16,7 @@ public abstract class Database {
 	public abstract void readIn();
 	
 	public Database() {
+		records = new ArrayList<Record>();
 		readIn();
 	}
 	public abstract void add();//adds record, with prompts
