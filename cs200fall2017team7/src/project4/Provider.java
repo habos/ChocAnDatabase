@@ -7,19 +7,17 @@ package project4;
 
 public class Provider extends Record {
 	
-	
+
+
 	public Provider(int id, String name, String address, String city, String state, String ZIP) {
 		super(id, name, address, city, state, ZIP);
-		// TODO Auto-generated constructor stub
 	}
 
 	public String toString(){
-		String providerString = "";
-		providerString += "Provider name: " + name + "\n";
-		providerString += "Provider number: " + id + "\n";
-		providerString += "Provider street address: " + address + "\n";
-		providerString += "Provider city: " + city + "\n";
-		providerString += "Provider ZIP: " + ZIP;
-		return providerString;
+	return "Provider name: " + name + "\n"
+		 + "Provider number: " + id + "\n"
+		 + "Provider street address: " + address + "\n"
+		 + "Provider city: " + city + "\n"
+		 + "Provider ZIP: " + ZIP;
 	}
 }

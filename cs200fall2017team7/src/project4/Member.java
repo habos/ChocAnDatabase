@@ -9,19 +9,12 @@ package project4;
 
 public class Member extends Record {
 	
-	//These are in Record.java
-	/*private String name;
-	private integer numberID;*/ 
-	
 	public Member(int id, String name, String address, String city, String state, String ZIP) {
 		super(id, name, address, city, state, ZIP);
 	}
 
 	private boolean suspended=false;
 	private int balance=0;
-	
-	
-
 	
 	/**
 	 * Checks if member is suspended
@@ -32,19 +25,11 @@ public class Member extends Record {
 	}
 	
 	/**
-	 * Suspends member
+	 * edit Suspends member
+	 *  
 	 */
-	public void suspendMember()
-	{
-		suspended = true;
-	}
-	
-	/**
-	 * Reinstates suspended member
-	 */
-	public void reinstateMember()
-	{
-		suspended = false;
+	public void setSuspended(boolean suspend) {
+		suspended=suspend;
 	}
 	
 	/**
@@ -69,14 +54,11 @@ public class Member extends Record {
 	 */
 	public String toString()
 	{
-		String fullMemberString = "";
-		fullMemberString += "Member name: " + name + "\n";
-		fullMemberString += "Member number: " + id + "\n";
-		fullMemberString += "Member street address: " + address + "\n";
-		fullMemberString += "Member city: " + city + "\n";
-		fullMemberString += "Member state: " + state + "\n";
-		fullMemberString += "Member ZIP code: " + ZIP;
-		
-		return fullMemberString;
+		 return "Member name: " + name + "\n"
+				+"Member number: " + id + "\n"
+				+"Member street address: " + address + "\n"
+				+"Member city: " + city + "\n"
+				+"Member state: " + state + "\n"
+				+"Member ZIP code: " + ZIP;
 	}
 }
