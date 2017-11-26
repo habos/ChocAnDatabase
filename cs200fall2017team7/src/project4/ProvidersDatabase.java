@@ -37,11 +37,11 @@ public class ProvidersDatabase extends Database {
 	public void writeOut(){
 		try
 		{
-			BufferedWriter email = new BufferedWriter( new FileWriter("ProvidersPersistence.txt"));
+			BufferedWriter save = new BufferedWriter( new FileWriter("ProvidersPersistence.txt"));
 		    for(Record p : records){
-		    	
+		    	save.write(p.write());
 		    }
-		    email.close();
+		    save.close();
 		}
 		catch ( IOException e)
 		{

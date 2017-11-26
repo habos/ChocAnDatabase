@@ -115,5 +115,16 @@ public abstract class Record {
 	public void addClaim(Claim claim) {
 		claims.add(claim);
 	}
-}
 
+	public String write(){
+		String claimsString = "";
+		for()
+		return  name + "\n"
+				+ id + "\n"
+				+ address + "\n"
+				+ city + "\n"
+				+ state + "\n"
+				+ ZIP+"\n"
+				++"\n@";
+	}
+}

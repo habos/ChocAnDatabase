@@ -1,5 +1,10 @@
 package project4;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MembersDatabase extends Database{
@@ -33,15 +38,36 @@ public class MembersDatabase extends Database{
 
 
 	@Override
-	public void writeOut() {
-		// TODO Auto-generated method stub
-		
+	public void writeOut(){
+		try
+		{
+			BufferedWriter save = new BufferedWriter( new FileWriter("MembersPersistence.txt"));
+		    for(Record m : records){
+		    	save.write(m.write());
+		    }
+		    save.close();
+		}
+		catch ( IOException e)
+		{
+			System.out.println("Exception in Emailing"); 	
+		}
 	}
+
 
 
 	@Override
 	public void readIn() {
-		// TODO Auto-generated method stub
+		try (BufferedReader br = new BufferedReader(new FileReader("MembersPersistence.txt"))) {
+
+			String sCurrentLine;
+			while ((sCurrentLine = br.readLine()) != null) {
+				System.out.println(sCurrentLine);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		
 	}
 
