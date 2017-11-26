@@ -61,11 +61,11 @@ public class Member extends Record {
 				+"Member street address: " + address + "\n"
 				+"Member city: " + city + "\n"
 				+"Member state: " + state + "\n"
-				+"Member ZIP code: " + ZIP
+				+"Member ZIP code: " + ZIP+"\n"
 				+getClaims();
 	}
 	
-	//FIXME: put in needed report format
+
 	@Override
 	public String getClaims() {	
 			Iterator<Claim> claims = this.claims.iterator();

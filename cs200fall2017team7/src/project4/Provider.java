@@ -20,10 +20,10 @@ public class Provider extends Record {
 		 + "Provider number: " + id + "\n"
 		 + "Provider street address: " + address + "\n"
 		 + "Provider city: " + city + "\n"
-		 + "Provider ZIP: " + ZIP
+		 + "Provider ZIP: " + ZIP+"\n"
 		 +getClaims();
 	}
-//FIXME: put in needed report format
+
 	@Override
 	public String getClaims() {	
 		Iterator<Claim> claims = this.claims.iterator();
