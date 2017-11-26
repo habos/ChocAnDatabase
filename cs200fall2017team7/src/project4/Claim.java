@@ -48,7 +48,7 @@ public class Claim {
 	}
 
 	public String toStringMember() {
-		return "Date of service" + dateProvided + "\nProvider name: " + providerName + "\nService name: " + serviceName;
+		return "Date of service: " + dateProvided + "\nProvider name: " + providerName + "\nService name: " + serviceName;
 
 	}
 
