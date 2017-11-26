@@ -11,7 +11,4 @@ public class ProviderReport extends Report {
 	public ProviderReport(int id, ProvidersDatabase providerData){
 		report = providerData.getRecords(id);
 	}
-	
-
-
 }
