@@ -10,6 +10,7 @@ public class Provider extends Record {
 	
 	public Provider(int id, String name, String address, String city, String state, String ZIP) {
 		super(id, name, address, city, state, ZIP);
+		// TODO Auto-generated constructor stub
 	}
 
 	public String toString(){
@@ -18,7 +19,7 @@ public class Provider extends Record {
 		providerString += "Provider number: " + id + "\n";
 		providerString += "Provider street address: " + address + "\n";
 		providerString += "Provider city: " + city + "\n";
-		providerString += "Provider ZIP: " + ZIP + "\n";
+		providerString += "Provider ZIP: " + ZIP;
 		return providerString;
 	}
 }

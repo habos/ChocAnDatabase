@@ -6,7 +6,9 @@ import java.util.Iterator;
 public abstract class Database {
 	
 	protected ArrayList<Record> records;
-	
+	public Database() {
+		records = new ArrayList<Record>();
+	}
 	public abstract void add();//adds record, with prompts
 	
 	public abstract void add(Record recordToAdd);//add record, without prompts (for to add from file)
@@ -38,7 +40,6 @@ public abstract class Database {
 	}
 	public String getRecords(int id) {
 		Iterator<Record> records = this.records.iterator();
-		
 		while(records.hasNext())
 		{
 			Record record = records.next();
@@ -46,7 +47,7 @@ public abstract class Database {
 				return record.toString();
 			}		
 		}
-			return null;	
+			return "Failed to find record with ID of "+ id ;	
 	}
 	//public boolean contains(int idToFind);//checks if id is there
 	public abstract boolean edit(int idToChange);//edit records

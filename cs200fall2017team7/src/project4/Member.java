@@ -75,7 +75,7 @@ public class Member extends Record {
 		fullMemberString += "Member street address: " + address + "\n";
 		fullMemberString += "Member city: " + city + "\n";
 		fullMemberString += "Member state: " + state + "\n";
-		fullMemberString += "Member ZIP code: " + ZIP + "\n";
+		fullMemberString += "Member ZIP code: " + ZIP;
 		
 		return fullMemberString;
 	}

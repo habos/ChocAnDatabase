@@ -1,17 +1,13 @@
 package project4;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class ProvidersDatabase extends Database {
 
-	public ProvidersDatabase() {
-		records = new ArrayList<Record>();
-	}
 	
 	public void add() {
-		Scanner scan = new Scanner(System.in);
+		Scanner scan= new Scanner(System.in);
 		System.out.println("Please enter provider's ID: ");
 		int id = scan.nextInt();
 		scan.nextLine();

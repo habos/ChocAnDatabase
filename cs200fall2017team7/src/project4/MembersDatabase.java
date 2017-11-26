@@ -7,26 +7,26 @@ public class MembersDatabase extends Database{
 	@Override
 	public void add() {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Please enter provider's ID: ");
+		System.out.println("Please enter member's ID: ");
 		int id = scan.nextInt();
 		scan.nextLine();
-		System.out.println("Please enter provider's name: ");
+		System.out.println("Please enter member's name: ");
 		String name = scan.nextLine();
-		System.out.println("Please enter provider's address: ");
+		System.out.println("Please enter member's address: ");
 		String address = scan.nextLine();
-		System.out.println("Please enter provider's city: ");
+		System.out.println("Please enter member's city: ");
 		String city = scan.nextLine();
-		System.out.println("Please enter provider's state: ");
+		System.out.println("Please enter member's state: ");
 		String state = scan.nextLine();
-		System.out.println("Please enter provider's ZIP: ");
+		System.out.println("Please enter member's ZIP: ");
 		String ZIP = scan.nextLine();
 		records.add(new Member(id, name, address, city, state, ZIP));
 		scan.close();
 	}
 
 	@Override
-	public void add(Record recordToAdd) {
-		// TODO Auto-generated method stub
+	public void add(Record record) {
+		records.add(record);
 		
 	}
 
