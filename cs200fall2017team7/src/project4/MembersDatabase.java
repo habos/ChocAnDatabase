@@ -1,6 +1,5 @@
 package project4;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class MembersDatabase extends Database{
