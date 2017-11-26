@@ -11,7 +11,7 @@ public abstract class Database {
 	
 	protected ArrayList<Record> records;
 	
-	public abstract void writeOut(Database b);
+	public abstract void writeOut();
 	
 	public abstract void readIn();
 	
