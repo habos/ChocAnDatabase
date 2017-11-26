@@ -1,5 +1,7 @@
 package project4;
 
+import java.util.Iterator;
+
 /**
  * The member class. This is a boundary stereotype class.
  * Contains all member data and methods to edit/check the member data.
@@ -61,4 +63,19 @@ public class Member extends Record {
 				+"Member state: " + state + "\n"
 				+"Member ZIP code: " + ZIP;
 	}
-}
+	
+	//FIXME: put in needed report format
+	@Override
+	public String getClaims() {	
+			Iterator<Claim> claims = this.claims.iterator();
+			String matchingClaims = "";
+			
+			while(claims.hasNext())
+			{
+				Claim claim = claims.next();
+					matchingClaims += claim.toString();		
+			}
+				return matchingClaims;	
+		}
+	}
+

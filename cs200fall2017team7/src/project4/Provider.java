@@ -20,4 +20,10 @@ public class Provider extends Record {
 		 + "Provider city: " + city + "\n"
 		 + "Provider ZIP: " + ZIP;
 	}
+//FIXME: put in needed report format
+	@Override
+	public String getClaims() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

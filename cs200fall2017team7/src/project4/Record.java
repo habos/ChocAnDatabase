@@ -1,5 +1,12 @@
 package project4;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.Scanner;
+
 /**
  * The abstract superclass for member and provider
  * @author Caleb
@@ -13,7 +20,7 @@ public abstract class Record {
 	protected String city;
 	protected String state;
 	protected String ZIP;
-	
+	protected ArrayList<Claim> claims;
 	
 	
 	public Record(int id, String name, String address, String city, String state, String ZIP)
@@ -24,8 +31,34 @@ public abstract class Record {
 				this.city = city;
 				this.state = state;
 				this.ZIP = ZIP;
+				claims= new ArrayList<Claim>();
 			}
-	
+	public void addClaim(ProvidersDatabase providers, MembersDatabase members) {
+		Date date = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("MM–DD–YYYY hh:mm:ss");// set up the date and time format
+		Scanner user_input = new Scanner(System.in);
+		System.out.println("Enter Provider ID: ");
+		int provID = user_input.nextInt();
+		String providerName = providers.getName(provID);
+		System.out.println("Enter Member ID: ");
+		int memberId = user_input.nextInt();
+		String memberName = members.getName(memberId);
+		System.out.println("Enter Service Code: ");
+		int servCode = user_input.nextInt();
+		user_input.nextLine();
+		
+		//FIXME: add provider directory
+		int fee=1;
+		String serviceName = "**Placeholder Service Name**";
+		//
+		
+		System.out.println("Enter any comments: ");
+		String comments = user_input.nextLine();
+		System.out.println("Enter date service was provided (MM–DD–YYYY).");
+		String manualDate = user_input.nextLine();
+		claims.add(new Claim(provID, providerName, memberId, memberName, dateFormat.format(date), servCode, serviceName,  fee, comments, manualDate));
+		user_input.close();
+	}
 	/**
 	 * @return the numberID
 	 */
@@ -108,4 +141,16 @@ public abstract class Record {
 			return true;
 		return false;
 	}
+	public String getClaims() {	
+		Iterator<Claim> claims = this.claims.iterator();
+		String matchingClaims = "";
+		
+		while(claims.hasNext())
+		{
+			Claim claim = claims.next();
+				matchingClaims += claim.toString();		
+		}
+			return matchingClaims;	
+	}
 }
+
