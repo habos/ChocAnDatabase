@@ -16,7 +16,7 @@ public abstract class Database {
 		while(records.hasNext()) {
 			record = records.next();
 			if(record.matches(idToDelete)) {
-				System.out.println("Deleting "+ record.getName()+ " of ID "+record.getNumberID());
+				System.out.println("Deleting "+ record.getName()+ " of ID "+record.getId());
 				records.remove();
 				return true;
 			}
@@ -38,7 +38,6 @@ public abstract class Database {
 	}
 	public String getRecords(int id) {
 		Iterator<Record> records = this.records.iterator();
-		String matchingRecord = null;
 		
 		while(records.hasNext())
 		{

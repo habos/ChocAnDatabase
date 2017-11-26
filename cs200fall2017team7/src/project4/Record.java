@@ -7,23 +7,36 @@ package project4;
 
 public abstract class Record {
 	
-	protected int numberID;
+	protected int id;
 	protected String name;
 	protected String address;
 	protected String city;
 	protected String state;
 	protected String ZIP;
+	
+	
+	
+	public Record(int id, String name, String address, String city, String state, String ZIP)
+			{
+				this.id = id;
+				this.name = name;
+				this.address = address;
+				this.city = city;
+				this.state = state;
+				this.ZIP = ZIP;
+			}
+	
 	/**
 	 * @return the numberID
 	 */
-	public int getNumberID() {
-		return numberID;
+	public int getId() {
+		return id;
 	}
 	/**
 	 * @param numberID the numberID to set
 	 */
-	public void setNumberID(int numberID) {
-		this.numberID = numberID;
+	public void setNumberID(int id) {
+		this.id = id;
 	}
 	/**
 	 * @return the name
@@ -91,7 +104,7 @@ public abstract class Record {
 	 * @return if matching id's
 	 */
 	public boolean matches(int id) {
-		if(id==numberID)
+		if(id==this.id)
 			return true;
 		return false;
 	}

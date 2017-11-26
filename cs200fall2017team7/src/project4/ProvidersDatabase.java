@@ -2,7 +2,7 @@ package project4;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Iterator;
+
 
 public class ProvidersDatabase extends Database {
 
@@ -25,8 +25,7 @@ public class ProvidersDatabase extends Database {
 		String state = scan.nextLine();
 		System.out.println("Please enter provider's ZIP: ");
 		String ZIP = scan.nextLine();
-		Provider newProvider = new Provider(id, name, address, city, state, ZIP);
-		records.add(newProvider);
+		records.add(new Provider(id, name, address, city, state, ZIP));
 		scan.close();
 	}
 

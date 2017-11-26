@@ -13,38 +13,15 @@ public class Member extends Record {
 	/*private String name;
 	private integer numberID;*/ 
 	
-	private boolean suspended;
-	private int balance;
-	
-	/**
-	 *  Default Constructor
-	 */
-	public Member() {
-		suspended = false;
-		numberID = 0;
-		balance = 0;
-		name = null;
-		address = null;
-		city = null;
-		state = null;
-		ZIP = null;
+	public Member(int id, String name, String address, String city, String state, String ZIP) {
+		super(id, name, address, city, state, ZIP);
 	}
+
+	private boolean suspended=false;
+	private int balance=0;
 	
-	/**
-	 * Constructor
-	 */
-	public Member(int ID, int initialBalance, String memberName, String memberAddress, 
-	String memberCity, String memberState, String memberZIP)
-	{
-		suspended = false;
-		numberID = ID;
-		balance = initialBalance;
-		name = memberName;
-		address = memberAddress;
-		city = memberCity;
-		state = memberState;
-		ZIP = memberZIP;
-	}
+	
+
 	
 	/**
 	 * Checks if member is suspended
@@ -94,7 +71,7 @@ public class Member extends Record {
 	{
 		String fullMemberString = "";
 		fullMemberString += "Member name: " + name + "\n";
-		fullMemberString += "Member number: " + numberID + "\n";
+		fullMemberString += "Member number: " + id + "\n";
 		fullMemberString += "Member street address: " + address + "\n";
 		fullMemberString += "Member city: " + city + "\n";
 		fullMemberString += "Member state: " + state + "\n";

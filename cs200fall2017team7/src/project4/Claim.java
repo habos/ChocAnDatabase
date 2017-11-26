@@ -1,6 +1,6 @@
 package project4;
 
-public class Claim extends Record {
+public class Claim {
 	
 		private int providerID;
 		String currentDate;
