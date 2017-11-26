@@ -28,12 +28,18 @@ public class Claim extends Record {
 	}
 	
 	public String toString() {
-		return String.format("%s\r%n" + 
-				"%s\r%n" + 
-				"%d\r%n" + 
-				"%d\r%n" + 
-				"%s\r%n" 
-				, currentDate, dateProvided, providerID, serviceCode, comments);
+		return "Provider ID: "+providerID+"\nDate Entered: "+ currentDate +"\nService Code: "+ serviceCode+
+				"\nComments: "+comments+"\nDate Provided: "+ dateProvided+"\n";
+	}
+	/**
+	 * 
+	 * @param id
+	 * @return if id matches
+	 */
+	public boolean match(int id) {
+		if(id == providerID)
+			return true;
+		return false;
 	}
 	
 }
