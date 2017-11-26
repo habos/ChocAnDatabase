@@ -17,20 +17,24 @@ public class Email {
 	 * For Requesting 'emails'
 	 * @return email as a string
 	 */
-	public String requestEmail() {
+	public void requestEmail(MembersDatabase members, ProvidersDatabase providers){
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Please enter the number for the typle of report you want:\n");
+		System.out.println("Please enter the number for the type of report you want:\n");
 		System.out.println("1: Member Report\n2: Provider Report");
 		int option = scan.nextInt();
 		scan.close();
 		if (option == 1) {
-			return "**PlaceHolder for Member Report**";
+			System.out.println("Please enter the ID of the Member you would like to generate the report for: ");
+			int memberID = scan.nextInt();
+			MemberReport report = new MemberReport(memberID, members);
+			Emailer(members.getName(memberID), report.toString());
 		} else if (option == 2) {
-
-			return "**PlaceHolder for Provider Report**";
+			System.out.println("Please enter the ID of the Provider you would like to generate the report for: ");
+			int providerID = scan.nextInt();
+			ProviderReport report = new ProviderReport(providerID, providers);
+			Emailer(providers.getName(providerID), report.toString());
 		} else {
 			System.out.println("ERROR: Incorrect option");
-			return null;
 		}
 
 	}
