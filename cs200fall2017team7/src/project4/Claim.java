@@ -28,7 +28,7 @@ public class Claim {
 		this.dateProvided = dateProvided;
 
 	}
-	public Claim( String currentDate, String dateProvided, int providerId, int memberId, int serviceCode, String Comments) {
+	public Claim( String currentDate, String dateProvided, int providerId, int memberId, int serviceCode, String comments) {
 		this.providerId = providerId;
 		this.memberId=memberId;
 		this.currentDate = currentDate;
