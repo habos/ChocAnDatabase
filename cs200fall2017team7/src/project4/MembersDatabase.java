@@ -58,10 +58,8 @@ public class MembersDatabase extends Database{
 	@Override
 	public void readIn() {
 		try (BufferedReader br = new BufferedReader(new FileReader("MembersPersistence.txt"))) {
-
-			String sCurrentLine;
-			while ((sCurrentLine = br.readLine()) != null) {
-				System.out.println(sCurrentLine);
+			while(br.readLine() != null){
+				while()
 			}
 
 		} catch (IOException e) {
