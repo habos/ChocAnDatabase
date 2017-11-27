@@ -1,11 +1,19 @@
 package project4;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Scanner;
+
+import com.thoughtworks.xstream.XStream;
 
 public abstract class Database {
 	
@@ -115,6 +123,25 @@ public abstract class Database {
 	user_input.close();
 	}
 	
-
+	public void toXML(){
+		XStream xstream = new XStream();
+		String xml = xstream.toXML(this);
+		try
+		{
+			BufferedWriter email = new BufferedWriter( new FileWriter("database.txt"));
+		    email.write(xml);
+		    email.close();
+		}
+		catch ( IOException e)
+		{
+			System.out.println("Exception in Emailing"); 	
+		}
+	}
+	
+	public Database fromXML() throws IOException{
+		String text = new String(Files.readAllBytes(Paths.get("file")), StandardCharsets.UTF_8);
+		XStream xstream = new XStream();
+		return (Database)xstream.fromXML(text);
+	}
 	
 }
