@@ -51,6 +51,10 @@ public class Claim {
 		return "Date of service: " + dateProvided + "\nProvider name: " + providerName + "\nService name: " + serviceName;
 
 	}
+	
+	public String persistenceToString(){
+		return currentDate + "\n" + dateProvided + "\n" + providerId + "\n" + memberId + "\n" + serviceCode + "\n" + comments;
+	}
 
 	/**
 	 * 
