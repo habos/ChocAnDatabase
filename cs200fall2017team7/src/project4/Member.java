@@ -3,7 +3,7 @@ package project4;
 import java.util.Iterator;
 
 /**
- * The member class. This is a boundary stereotype class.
+ * The member class. This is an entity stereotype class.
  * Contains all member data and methods to edit/check the member data.
  * @author Caleb
  * 
