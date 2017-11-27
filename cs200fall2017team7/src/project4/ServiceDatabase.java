@@ -44,6 +44,11 @@ public class ServiceDatabase {
 		}
 		bufferedReader.close();
 	}
+	/**
+	 * This searches the arraylist for a specific service code then returns the corresponding name
+	 * @param code The Service Code the method uses to search the array
+	 * @return The name of the service
+	 */
 	public String getName(int code) {
 		String name = "Service Not Found";
 		for(int i = 0; i < services.size(); i++)
@@ -56,6 +61,11 @@ public class ServiceDatabase {
 		} 
 		return name;
 	}
+	/**
+	 * This searches the arraylist for a specific service code then returns the corresponding price
+	 * @param code The Service Code the method uses to search the array
+	 * @return The price of the service
+	 */
 	public int getPrice(int code) {
 		int price = 0;
 		for(int i = 0; i < services.size(); i++)
