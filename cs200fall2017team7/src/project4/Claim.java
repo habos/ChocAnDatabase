@@ -28,6 +28,19 @@ public class Claim {
 		this.dateProvided = dateProvided;
 
 	}
+	public Claim(ProvidersDatabase providers, MembersDatabase members, ServiceDatabase services, String currentDate, String dateProvided, int providerId, int memberId, int serviceCode, String Comments) {
+		this.providerId = providerId;
+		this.providerName= providers.getName(providerId);
+		this.memberId=memberId;
+		this.memberName = members.getName(memberId);
+		this.currentDate = currentDate;
+		this.serviceCode = serviceCode;
+		this.serviceName = services.getName(serviceCode);
+		this.fee = services.getPrice(serviceCode);
+		this.comments = comments;
+		this.dateProvided = dateProvided;
+		
+	}
 
 	public int getID() {
 		return providerId;
