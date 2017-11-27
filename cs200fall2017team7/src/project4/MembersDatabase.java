@@ -59,6 +59,7 @@ public class MembersDatabase extends Database{
 	public void readIn() {
 		try (BufferedReader br = new BufferedReader(new FileReader("MembersPersistence.txt"))) {
 			while(br.readLine() != null){
+				//Reads in all the lines for the member
 				int balance = Integer.parseInt(br.readLine());
 				boolean suspended = Boolean.getBoolean(br.readLine());
 				String name = br.readLine();
@@ -67,8 +68,9 @@ public class MembersDatabase extends Database{
 				String city = br.readLine();
 				String state = br.readLine();
 				String ZIP = br.readLine();
+				//Creates and adds the member
 				Member m = new Member(id, name, address, city, state, ZIP, balance, suspended);
-				
+				records.add(m);
 				while(br.readLine() != "@"){
 					String currentDate = br.readLine();
 					String dateProvided = br.readLine();
@@ -76,9 +78,11 @@ public class MembersDatabase extends Database{
 					int memberID = Integer.parseInt(br.readLine());
 					int serviceCode = Integer.parseInt(br.readLine());
 					String comments = br.readLine();
+					Claim c = new Claim(currentDate, dateProvided, providerID, memberID, serviceCode, comments);
+					m.addClaim(c);
+					continue;
 				}
 			}
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
