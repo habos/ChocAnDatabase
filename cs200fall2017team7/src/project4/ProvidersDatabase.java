@@ -49,6 +49,43 @@ public class ProvidersDatabase extends Database {
 		}
 	}
 
+	public int getTotalFee() {
+		int feeTotal = 0;
+		
+		for(int i = 0; i<records.size(); i++)
+		{
+				feeTotal+=records.get(i).getClaimFee();	
+		}
+		
+		return feeTotal;
+	}
+	
+	public int getIndivFee(int recordLocation) {
+		
+		return records.get(recordLocation).getClaimFee();
+		
+	}
+	
+	public int getTotalConsultant() {
+		int numConsultants = 0;
+		
+		for(int i = 0; i<records.size(); i++)
+		{
+				numConsultants+=records.get(i).getConsultants();	
+		}
+		return numConsultants;
+	}
+	
+	public int getConsultant(int recordLocation) {
+		
+		return records.get(recordLocation).getConsultants();
+		
+	}
+	
+	public int getSize() {
+		return records.size();
+	}
+	
 	public void readIn(){
 		
 	}

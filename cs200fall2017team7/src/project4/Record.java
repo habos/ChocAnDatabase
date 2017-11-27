@@ -115,7 +115,25 @@ public abstract class Record {
 	public void addClaim(Claim claim) {
 		claims.add(claim);
 	}
+	
+	public int getClaimFee() {
+		int feeTotal = 0;
+		
+		
+		for (int i = 0; i < claims.size(); i++)
+		{
+			feeTotal+=claims.get(i).getFee();
+		}
+		
+		return feeTotal;
+	}
 
+	public int getConsultants() {
+		return claims.size();
+		
+	}
+	
+	
 	public String write(){
 		String claimsString = "";
 		for(Claim c : claims){
