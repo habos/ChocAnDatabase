@@ -132,19 +132,4 @@ public abstract class Record {
 		return claims.size();
 		
 	}
-	
-	
-	public String write(){
-		String claimsString = "";
-		for(Claim c : claims){
-			claimsString += c.persistenceToString() + "/n";
-		}
-		return  name + "\n"
-				+ id + "\n"
-				+ address + "\n"
-				+ city + "\n"
-				+ state + "\n"
-				+ ZIP+"\n"
-				+claimsString+"@";
-	}
 }

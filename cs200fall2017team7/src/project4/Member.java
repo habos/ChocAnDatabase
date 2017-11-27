@@ -86,9 +86,5 @@ public class Member extends Record {
 			}
 				return matchingClaims;	
 		}
-	//Adds balance and suspended for members within the write() function in Record
-	public String write(){
-		return balance + "/n" + suspended + "/n" + super.write();
-	}
 }
 
