@@ -11,12 +11,20 @@ import java.util.Iterator;
 
 public class Member extends Record {
 	
+	private boolean suspended=false;
+	private int balance=0;
+	
 	public Member(int id, String name, String address, String city, String state, String ZIP) {
 		super(id, name, address, city, state, ZIP);
 	}
 
-	private boolean suspended=false;
-	private int balance=0;
+	public Member(int id, String name, String address, String city, String state, String ZIP, int balance, boolean suspended){
+		super(id, name, address, city, state, ZIP);
+		this.balance = balance;
+		this.suspended = suspended;
+	}
+	
+
 	
 	/**
 	 * Checks if member is suspended
