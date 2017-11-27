@@ -4,9 +4,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
+/**
+ * When constructed, this reads services from a Provider Directory and puts them in an ArrayList.
+ * @author Caleb
+ */
 public class ServiceDatabase {
 	protected ArrayList<Service> services;
 	
+	/**
+	 * Constructor, this reads from ProviderDirectory.txt and creates an array of Service objects.
+	 * @throws IOException
+	 */
 	public ServiceDatabase() throws IOException {
 		BufferedReader bufferedReader = null;
 		Service readInService;
@@ -35,5 +43,29 @@ public class ServiceDatabase {
 			e.printStackTrace();
 		}
 		bufferedReader.close();
+	}
+	public String getName(int code) {
+		String name = "Service Not Found";
+		for(int i = 0; i < services.size(); i++)
+		{
+			if(services.get(i).getServiceCode() == code)
+			{
+				name = services.get(i).getServiceName();
+				break;
+			}
+		} 
+		return name;
+	}
+	public int getPrice(int code) {
+		int price = 0;
+		for(int i = 0; i < services.size(); i++)
+		{
+			if(services.get(i).getServiceCode() == code)
+			{
+				price = services.get(i).getPrice();
+				break;
+			}
+		} 
+		return price;
 	}
 }
