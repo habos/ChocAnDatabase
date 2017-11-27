@@ -11,12 +11,13 @@ import java.util.Iterator;
 
 public class Member extends Record {
 	
-	public Member(int id, String name, String address, String city, String state, String ZIP) {
-		super(id, name, address, city, state, ZIP);
-	}
 
 	private boolean suspended=false;
 	private int balance=0;
+	
+	public Member(int id, String name, String address, String city, String state, String ZIP) {
+		super(id, name, address, city, state, ZIP);
+	}
 	
 	/**
 	 * Checks if member is suspended
@@ -80,7 +81,7 @@ public class Member extends Record {
 		}
 	//Adds balance and suspended for members within the write() function in Record
 	public String write(){
-		return super.write() + balance + "/n" + suspended + "/n";
+		return balance + "/n" + suspended + "/n" + super.write();
 	}
 }
 

@@ -59,7 +59,24 @@ public class MembersDatabase extends Database{
 	public void readIn() {
 		try (BufferedReader br = new BufferedReader(new FileReader("MembersPersistence.txt"))) {
 			while(br.readLine() != null){
-				while()
+				int balance = Integer.parseInt(br.readLine());
+				boolean suspended = Boolean.getBoolean(br.readLine());
+				String name = br.readLine();
+				int id = Integer.parseInt(br.readLine());
+				String address = br.readLine();
+				String city = br.readLine();
+				String state = br.readLine();
+				String ZIP = br.readLine();
+				Member m = new Member(id, name, address, city, state, ZIP, balance, suspended);
+				
+				while(br.readLine() != "@"){
+					String currentDate = br.readLine();
+					String dateProvided = br.readLine();
+					int providerID = Integer.parseInt(br.readLine());
+					int memberID = Integer.parseInt(br.readLine());
+					int serviceCode = Integer.parseInt(br.readLine());
+					String comments = br.readLine();
+				}
 			}
 
 		} catch (IOException e) {
