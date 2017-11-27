@@ -72,5 +72,9 @@ public class Claim {
 			return true;
 		return false;
 	}
+	
+	public int getFee() {
+		return fee;
+	}
 
 }
