@@ -66,7 +66,7 @@ public class Claim {
 	}
 	
 	public String persistenceToString(){
-		return currentDate + "\n" + dateProvided + "\n" + providerId + "\n" + memberId + "\n" + serviceCode + "\n" + comments;
+		return currentDate + "\n" + dateProvided + "\n" + providerId + "\n" + memberId + "\n" + serviceCode + "\n" + comments + "\n#";
 	}
 
 	/**
@@ -84,6 +84,10 @@ public class Claim {
 		if (id == memberId)
 			return true;
 		return false;
+	}
+	
+	public int getFee() {
+		return fee;
 	}
 
 }
