@@ -1,6 +1,7 @@
 package project4;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -37,9 +38,10 @@ public class Setup {
 	public static void toXML(String fileName, Database database){
 		XStream xstream = new XStream();
 		String xml = xstream.toXML(database);
+		//File file = new File(fileName + ".txt");
 		try
 		{
-			BufferedWriter email = new BufferedWriter( new FileWriter("database.txt"));
+			BufferedWriter email = new BufferedWriter( new FileWriter(fileName + ".txt"));
 		    email.write(xml);
 		    email.close();
 		}
