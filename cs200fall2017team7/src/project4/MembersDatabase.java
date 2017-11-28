@@ -30,11 +30,12 @@ public class MembersDatabase extends Database{
 	}
 
 
-	@Override
+	
 	/**
 	 * This allows the operator to edit information about a member.
 	 * @param idToChange This indicates which member to edit
 	 */
+	@Override
 	public boolean edit(int idToChange) {
 		// Implementation attempt by Caleb
 		for(int i = 0; i < records.size(); i++)
