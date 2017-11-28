@@ -28,6 +28,15 @@ public class Claim {
 		this.dateProvided = dateProvided;
 
 	}
+	public Claim( String currentDate, String dateProvided, int providerId, int memberId, int serviceCode, String comments) {
+		this.providerId = providerId;
+		this.memberId=memberId;
+		this.currentDate = currentDate;
+		this.serviceCode = serviceCode;
+		this.comments = comments;
+		this.dateProvided = dateProvided;
+		
+	}
 
 	public int getID() {
 		return providerId;

@@ -1,5 +1,11 @@
 package project4;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -7,17 +13,14 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Scanner;
 
+
+
 public abstract class Database {
 	
 	protected ArrayList<Record> records;
 	
-	public abstract void writeOut();
-	
-	public abstract void readIn();
-	
 	public Database() {
 		records = new ArrayList<Record>();
-		readIn();
 	}
 	public abstract void add();//adds record, with prompts
 	
@@ -119,7 +122,4 @@ public abstract class Database {
 	members.search(memberId).addClaim(newClaim);
 	user_input.close();
 	}
-	
-
-	
 }

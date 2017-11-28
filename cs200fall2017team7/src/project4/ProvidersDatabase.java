@@ -33,21 +33,6 @@ public class ProvidersDatabase extends Database {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
-	public void writeOut(){
-		try
-		{
-			BufferedWriter save = new BufferedWriter( new FileWriter("ProvidersPersistence.txt"));
-		    for(Record p : records){
-		    	save.write(p.write());
-		    }
-		    save.close();
-		}
-		catch ( IOException e)
-		{
-			System.out.println("Exception in Emailing"); 	
-		}
-	}
 
 	public int getTotalFee() {
 		int feeTotal = 0;
@@ -86,8 +71,8 @@ public class ProvidersDatabase extends Database {
 		return records.size();
 	}
 	
-	public void readIn(){
-		
+	public String getName(int index) {
+		return records.get(index).getName();
 	}
 
 }

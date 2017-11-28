@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="cs200fall2017team7/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="cs200fall2017team7/xpp3_min-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="cs200fall2017team7/xstream-1.4.10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
