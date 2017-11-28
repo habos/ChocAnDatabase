@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import com.thoughtworks.xstream.XStream;
+import org.xmlpull.v1.*;
 
 /**
  * Start of the program (currently for testing)
@@ -17,10 +18,11 @@ import com.thoughtworks.xstream.XStream;
  */
 public class Setup {
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 	
 		
 		MembersDatabase members = new MembersDatabase();
+		members = (MembersDatabase) fromXML("swagmoney");
 		members.add(new Member(1, "Joe", "123 Main St", "Tuscaloosa", "AL", "30541"));
 		members.add(new Member(2, "Harry", "1131 Jackson Ave", "Tuscaloosa", "AL", "30541"));
 		System.out.println(members.getRecords(1));
@@ -38,7 +40,6 @@ public class Setup {
 	public static void toXML(String fileName, Database database){
 		XStream xstream = new XStream();
 		String xml = xstream.toXML(database);
-		//File file = new File(fileName + ".txt");
 		try
 		{
 			BufferedWriter email = new BufferedWriter( new FileWriter(fileName + ".txt"));
@@ -52,8 +53,8 @@ public class Setup {
 		System.out.println(xml);
 	}
 	
-	public static Database fromXML() throws IOException{
-		String text = new String(Files.readAllBytes(Paths.get("database.txt")), StandardCharsets.UTF_8);
+	public static Database fromXML(String fileName) throws IOException{
+		String text = new String(Files.readAllBytes(Paths.get(fileName + ".txt")), StandardCharsets.UTF_8);
 		XStream xstream = new XStream();
 		return (Database)xstream.fromXML(text);
 	}
