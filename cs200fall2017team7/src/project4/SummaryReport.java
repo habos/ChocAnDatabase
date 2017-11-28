@@ -30,17 +30,18 @@ public class SummaryReport extends Report{
 			if(providers.getIndivFee(i) != 0)
 			{
 				
-				numProvidersServices += providers.getConsultant(i);
+				numProvidersServices++;
 				
 				providerTotalFee = providers.getIndivFee(i);
 				providerConsultations = providers.getConsultant(i);
 				providerName = providers.getName(i);
 				
+				report+= providerName+"\n"+"Provider Fee Total: "+providerTotalFee+"\nProvider Total Consultations: "+providerConsultations;
 				
 			}
 		}
 		
-		
+		report+= "\nTotal Providers who provided service: "+numProvidersServices+"\nTotal Consultations: "+totalConsultations+"\nTotal Fees: "+totalFees;
 		
 	}
 	
