@@ -32,7 +32,58 @@ public class MembersDatabase extends Database{
 	
 	@Override
 	public boolean edit(int idToChange) {
-		// TODO Auto-generated method stub
+		// Implementation attempt by Caleb
+		for(int i = 0; i < records.size(); i++)
+		{
+			if(records.get(i).id == idToChange)
+			{
+				
+				System.out.println("What would you like to change? I/N/A/C/S/Z: ");
+				Scanner scan = new Scanner(System.in);
+				char c = scan.next().trim().charAt(0);
+				if(c == 'I')
+				{	
+					System.out.println("Enter new Member ID: ");
+					records.get(i).setNumberID(scan.nextInt());
+				}
+				else if(c == 'N')
+				{
+					System.out.println("Enter new name: ");
+					records.get(i).setName(scan.nextLine());
+				}
+				else if(c == 'A')
+				{
+					System.out.println("Enter new address: ");
+					records.get(i).setAddress(scan.nextLine());
+				}
+				else if(c == 'C')
+				{
+					System.out.println("Enter new city: ");
+					records.get(i).setCity(scan.nextLine());
+				}
+				else if(c == 'S')
+				{
+					System.out.println("Enter new state: ");
+					records.get(i).setState(scan.nextLine());
+				}
+				else if(c == 'Z')
+				{
+					System.out.println("Enter new ZIP code: ");
+					records.get(i).setZIP(scan.nextLine());
+				}
+				else
+				{
+					System.out.println("Invalid Choice.");
+					scan.close();
+					return false;
+				}
+				System.out.println("Information Updated.");
+				scan.close();
+				return true;
+			}
+		}
+		{System.out.println("Member not found\n");} //For some reason, printing needs to be included in brackets in a method
+		
 		return false;
 	}
 
