@@ -82,7 +82,7 @@ public class MembersDatabase extends Database{
 				return true;
 			}
 		}
-		{System.out.println("Member not found\n");} //For some reason, printing needs to be included in brackets in a method
+		System.out.println("Member not found\n"); //For some reason, printing needs to be included in brackets in a method
 		
 		return false;
 	}
