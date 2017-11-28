@@ -29,8 +29,12 @@ public class MembersDatabase extends Database{
 		scan.close();
 	}
 
-	
+
 	@Override
+	/**
+	 * This allows the operator to edit information about a member.
+	 * @param idToChange This indicates which member to edit
+	 */
 	public boolean edit(int idToChange) {
 		// Implementation attempt by Caleb
 		for(int i = 0; i < records.size(); i++)
