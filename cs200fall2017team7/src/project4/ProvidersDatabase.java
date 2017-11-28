@@ -70,5 +70,9 @@ public class ProvidersDatabase extends Database {
 	public int getSize() {
 		return records.size();
 	}
+	
+	public String getName(int index) {
+		return records.get(index).getName();
+	}
 
 }
