@@ -122,26 +122,4 @@ public abstract class Database {
 	members.search(memberId).addClaim(newClaim);
 	user_input.close();
 	}
-	
-	public void toXML(){
-		XStream xstream = new XStream();
-		String xml = xstream.toXML(this);
-		try
-		{
-			BufferedWriter email = new BufferedWriter( new FileWriter("database.txt"));
-		    email.write(xml);
-		    email.close();
-		}
-		catch ( IOException e)
-		{
-			System.out.println("Exception in Emailing"); 	
-		}
-	}
-	
-	public Database fromXML() throws IOException{
-		String text = new String(Files.readAllBytes(Paths.get("file")), StandardCharsets.UTF_8);
-		XStream xstream = new XStream();
-		return (Database)xstream.fromXML(text);
-	}
-	
 }
