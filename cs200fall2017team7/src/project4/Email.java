@@ -3,6 +3,9 @@ package project4;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -11,13 +14,18 @@ import java.util.Scanner;
  * @author Chris
  *
  */
-public class Email {
-
+public class Email {	
+	
 	/**
 	 * For Requesting 'emails'
 	 * @return email as a string
 	 */
 	public void requestEmail(MembersDatabase members, ProvidersDatabase providers){
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd ");// set up the date and time format
+		Date date = new Date();
+		
+		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Please enter the number for the type of report you want:\n");
 		System.out.println("1: Member Report\n2: Provider Report");
@@ -27,12 +35,12 @@ public class Email {
 			System.out.println("Please enter the ID of the Member you would like to generate the report for: ");
 			int memberID = scan.nextInt();
 			MemberReport report = new MemberReport(memberID, members);
-			Emailer(members.getName(memberID), report.toString());
+			Emailer(members.getName(memberID)+dateFormat.format(date), report.toString());
 		} else if (option == 2) {
 			System.out.println("Please enter the ID of the Provider you would like to generate the report for: ");
 			int providerID = scan.nextInt();
 			ProviderReport report = new ProviderReport(providerID, providers);
-			Emailer(providers.getName(providerID), report.toString());
+			Emailer(providers.getName(providerID)+dateFormat.format(date), report.toString());
 		} else {
 			System.out.println("ERROR: Incorrect option");
 		}
