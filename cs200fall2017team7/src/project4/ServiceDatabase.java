@@ -18,9 +18,9 @@ public class ServiceDatabase {
 	public ServiceDatabase() throws IOException {
 		BufferedReader bufferedReader = null;
 		Service readInService;
-		int serviceCode;
-		int price;
-		String serviceName = null;
+		int theServiceCode;
+		int thePrice;
+		String theServiceName = null;
 		String line = null;
 		Scanner s;
 		
@@ -29,14 +29,16 @@ public class ServiceDatabase {
 			services = new ArrayList<Service>();
 			while((line = bufferedReader.readLine()) != null)
 			{
+				theServiceName = "";
 				s = new Scanner(line);
-				serviceCode = s.nextInt();
-				price = s.nextInt();
+				theServiceCode = s.nextInt();
+				thePrice = s.nextInt();
 				while(s.hasNext())
 				{
-					serviceName += s.next();
+					theServiceName += s.next();
+					theServiceName += " ";
 				}
-				readInService = new Service(serviceCode, price, serviceName);
+				readInService = new Service(theServiceCode, thePrice, theServiceName);
 				services.add(readInService);
 			}
 		} catch (FileNotFoundException e) {

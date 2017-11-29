@@ -20,8 +20,16 @@ public class Setup {
 
 	public static void main(String[] args) throws IOException{
 	
+		ServiceDatabase serviceDatabase = new ServiceDatabase();
+		for(int i = 0; i < serviceDatabase.services.size(); i++)
+		{
+			System.out.print(serviceDatabase.services.get(i).getServiceCode());
+			System.out.print(" " + serviceDatabase.services.get(i).getPrice());
+			System.out.println(" " + serviceDatabase.services.get(i).getServiceName());
+		}
 		
-		MembersDatabase members = new MembersDatabase();
+		
+		/*MembersDatabase members = new MembersDatabase();
 		members = (MembersDatabase) fromXML("swagmoney");
 		members.add(new Member(1, "Joe", "123 Main St", "Tuscaloosa", "AL", "30541"));
 		members.add(new Member(2, "Harry", "1131 Jackson Ave", "Tuscaloosa", "AL", "30541"));
@@ -31,7 +39,7 @@ public class Setup {
 		ProvidersDatabase providers = new ProvidersDatabase();
 		providers.add(new Provider(100, "Dr Smith Cholocate", "321 Other main Street", "Asoolacsut", "lA", "14503"));
 		System.out.println(providers.getRecords(100));
-		toXML("swagmoney", members);
+		toXML("swagmoney", members);*/
 		
 		
 	}
