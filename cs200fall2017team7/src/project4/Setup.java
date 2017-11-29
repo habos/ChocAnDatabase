@@ -45,21 +45,25 @@ public class Setup {
 		//ProvidersDatabase providers = new ProvidersDatabase();
 		//providers.add(new Provider(100, "Dr Smith Cholocate", "321 Other main Street", "Asoolacsut", "lA", "14503"));
 		//System.out.println(providers.getRecords(100));
-		toXML("swagmoney", members);
+		//toXML("swagmoney", members);
 		
 		
 	}
 
 	
 	public static void toXML(String fileName, Database database){
+		//Initialize xstream and get rid of useless error
+		File f = new File(fileName + ".txt");
 		XStream xstream = new XStream(new StaxDriver());
 		XStream.setupDefaultSecurity(xstream);
 		AnyTypePermission per = new AnyTypePermission();
 		xstream.addPermission(per);
+		//Convert database to xml file
 		String xml = xstream.toXML(database);
+		//Write to file
 		try
 		{
-			BufferedWriter email = new BufferedWriter( new FileWriter(fileName + ".txt"));
+			BufferedWriter email = new BufferedWriter( new FileWriter(f));
 		    email.write(xml);
 		    email.close();
 		}
@@ -67,17 +71,21 @@ public class Setup {
 		{
 			System.out.println("Exception in Emailing"); 	
 		}
-		System.out.println(xml);
 	}
 	
 	public static Database fromXML(String fileName) throws IOException{
-		BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName + ".txt"));
+		//Initialize bufferReader and read in the line from the file
+		File f = new File(fileName + ".txt");
+		BufferedReader bufferedReader = new BufferedReader(new FileReader(f));
 		String text = bufferedReader.readLine();
-		System.out.println(text);
+		bufferedReader.close();
+		f.delete();
+		//Initialize xstream and get rid of useless error
 		XStream xstream = new XStream(new StaxDriver());
 		XStream.setupDefaultSecurity(xstream);
 		AnyTypePermission per = new AnyTypePermission();
 		xstream.addPermission(per);
+		//Return the database from the xml
 		return (Database) xstream.fromXML(text);
 	}
 	
