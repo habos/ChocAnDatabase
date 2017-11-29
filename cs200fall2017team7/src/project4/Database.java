@@ -22,10 +22,13 @@ public abstract class Database {
 	public Database() {
 		records = new ArrayList<Record>();
 	}
+	
 	public abstract void add();//adds record, with prompts
 	
 	public Record search(int id) {
+		
 		Iterator<Record> records = this.records.iterator();
+		
 		while(records.hasNext())
 		{
 			Record record = records.next();
@@ -41,7 +44,8 @@ public abstract class Database {
 	public boolean delete(int id) {
 		Iterator <Record> records = this.records.iterator();
 		Record record = null;
-		while(records.hasNext()) {
+		while(records.hasNext()) 
+		{
 			record = records.next();
 			if(record.matches(id)) {
 				System.out.println("Deleting "+ record.getName()+ " of ID "+record.getId());
@@ -53,9 +57,12 @@ public abstract class Database {
 		return false;
 	}
 	public boolean contains(int id) {
+		
 		Iterator <Record> records = this.records.iterator();
 		Record record = null;
-		while(records.hasNext()) {
+		
+		while(records.hasNext()) 
+		{
 			record = records.next();
 			if(record.matches(id)) {
 				return true;
@@ -67,7 +74,8 @@ public abstract class Database {
 	public String getName(int id) {
 		Iterator <Record> records = this.records.iterator();
 		Record record = null;
-		while(records.hasNext()) {
+		while(records.hasNext()) 
+		{
 			record = records.next();
 			if(record.matches(id)) {
 				return record.getName();
