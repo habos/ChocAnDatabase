@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 /**
- * Creates 'emails' from reports (saves it too a text file)
+ * Creates 'emails' from reports (saves it to a text file)
  * 
  * @author Chris
  *
