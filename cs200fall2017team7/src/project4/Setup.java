@@ -1,7 +1,9 @@
 package project4;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -64,7 +66,8 @@ public class Setup {
 	}
 	
 	public static Database fromXML(String fileName) throws IOException{
-		String text = new String(Files.readAllBytes(Paths.get(fileName + ".txt")), StandardCharsets.UTF_8);
+		BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName + ".txt"));
+		
 		XStream xstream = new XStream();
 		return (Database)xstream.fromXML(text);
 	}
