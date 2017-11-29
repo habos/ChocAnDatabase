@@ -111,7 +111,9 @@ public abstract class Record {
 			return true;
 		return false;
 	}
+	
 	public abstract String getClaims();
+	
 	public void addClaim(Claim claim) {
 		claims.add(claim);
 	}
