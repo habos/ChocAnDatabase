@@ -103,7 +103,7 @@ public abstract class Database {
 	
 	public void addClaim(ProvidersDatabase providers, MembersDatabase members) {
 	Date date = new Date();
-	DateFormat dateFormat = new SimpleDateFormat("MM–DD–YYYY hh:mm:ss");// set up the date and time format
+	DateFormat dateFormat = new SimpleDateFormat("MMï¿½DDï¿½YYYY hh:mm:ss");// set up the date and time format
 	Scanner user_input = new Scanner(System.in);
 	
 	System.out.println("Enter Provider ID: ");
@@ -123,7 +123,7 @@ public abstract class Database {
 	
 	System.out.println("Enter any comments: ");
 	String comments = user_input.nextLine();
-	System.out.println("Enter date service was provided (MM–DD–YYYY).");
+	System.out.println("Enter date service was provided (MMï¿½DDï¿½YYYY).");
 	String manualDate = user_input.nextLine();
 	Claim newClaim =new Claim(provID, providerName, memberId, memberName, dateFormat.format(date), servCode, serviceName,  fee, comments, manualDate);
 	providers.search(provID).addClaim(newClaim);
