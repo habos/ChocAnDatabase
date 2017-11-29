@@ -9,6 +9,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
+
 import org.xmlpull.v1.*;
 
 /**
@@ -38,7 +40,7 @@ public class Setup {
 
 	
 	public static void toXML(String fileName, Database database){
-		XStream xstream = new XStream();
+		XStream xstream = new XStream(new StaxDriver());
 		String xml = xstream.toXML(database);
 		try
 		{
