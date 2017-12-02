@@ -35,15 +35,22 @@ public class Setup {
 		
 		
 		MembersDatabase members = new MembersDatabase();
-		members = (MembersDatabase) fromXML("swagmoney");
-		members.toString();
-		//members.add(new Member(1, "Joe", "123 Main St", "Tuscaloosa", "AL", "30541"));
-		//members.add(new Member(2, "Harry", "1131 Jackson Ave", "Tuscaloosa", "AL", "30541"));
-		System.out.println(members.getRecords(2));
+		//members = (MembersDatabase) fromXML("swagmoney");
+		ProvidersDatabase providers = new ProvidersDatabase();
+		members.add(new Member(1, "Joe", "123 Main St", "Tuscaloosa", "AL", "30541"));
+		members.add(new Member(2, "Harry", "1131 Jackson Ave", "Tuscaloosa", "AL", "30541"));
+		providers.add(new Provider(5, "Monsters INC", "69 BoogieWithoutTheHoodie Ln", "Atlanta", "GA", "42066"));
+		System.out.println(providers.contains(5));
+		providers.getName(5);
+		//providers.addClaim(providers, members, serviceDatabase);
+		Email email = new Email();
+		members.add();
+		members.getRecords(6);
+		email.requestEmail(members, providers);
+		//System.out.println(members.getRecords(2));
 		//members.delete(1);
 		System.out.println(members.getRecords(1));
-		//ProvidersDatabase providers = new ProvidersDatabase();
-		//providers.add(new Provider(100, "Dr Smith Cholocate", "321 Other main Street", "Asoolacsut", "lA", "14503"));
+		providers.add(new Provider(100, "Dr Smith Cholocate", "321 Other main Street", "Asoolacsut", "lA", "14503"));
 		//System.out.println(providers.getRecords(100));
 		//toXML("swagmoney", members);
 		

@@ -43,4 +43,15 @@ public class Service {
 	public String getServiceName() {
 		return serviceName;
 	}
+
+	/**
+	 * Checks if the id matches a serviceCode
+	 * @param id : the given serviceCode
+	 * @return boolean : whether it matches
+	 */
+	public boolean matches(int id) {
+		if(id == this.serviceCode)
+			return true;
+		return false;
+	}
 }

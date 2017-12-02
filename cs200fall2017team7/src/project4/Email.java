@@ -27,13 +27,16 @@ public class Email {
 		
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Please enter the number for the type of report you want:\n");
+		System.out.println("Please enter the number for the type of report you want:");
 		System.out.println("1: Member Report\n2: Provider Report");
 		int option = scan.nextInt();
-		scan.close();
 		if (option == 1) {
 			System.out.println("Please enter the ID of the Member you would like to generate the report for: ");
 			int memberID = scan.nextInt();
+			while (!members.contains(memberID)) {
+				System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID: ");
+				memberID = scan.nextInt();
+			}
 			MemberReport report = new MemberReport(memberID, members);
 			Emailer(members.getName(memberID)+dateFormat.format(date), report.toString());
 		} else if (option == 2) {
@@ -44,6 +47,7 @@ public class Email {
 		} else {
 			System.out.println("ERROR: Incorrect option");
 		}
+		scan.close();
 
 	}
 	/**

@@ -1,6 +1,7 @@
 package project4;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 
@@ -79,5 +80,20 @@ public class ServiceDatabase {
 			}
 		} 
 		return price;
+	}
+	
+	public boolean contains(int id) {
+		
+		Iterator <Service> services = this.services.iterator();
+		Service service = null;
+		
+		while(services.hasNext()) 
+		{
+			service = services.next();
+			if(service.matches(id)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

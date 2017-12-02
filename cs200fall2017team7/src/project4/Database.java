@@ -68,15 +68,14 @@ public abstract class Database {
 				return true;
 			}
 		}
-		System.out.println("Failed to find record with ID of "+ id);
+		//System.out.println("Failed to find record with ID of "+ id);
 		return false;
 	}
 	public String getName(int id) {
 		Iterator <Record> records = this.records.iterator();
-		Record record = null;
 		while(records.hasNext()) 
 		{
-			record = records.next();
+			Record record = records.next();
 			if(record.matches(id)) {
 				return record.getName();
 			}
@@ -84,6 +83,7 @@ public abstract class Database {
 		System.out.println("Failed to find record with ID of "+ id);
 		return "";
 	}
+	
 	public String getRecords(int id) {
 		Iterator<Record> records = this.records.iterator();
 		while(records.hasNext())
@@ -101,25 +101,34 @@ public abstract class Database {
 	
 	
 	
-	public void addClaim(ProvidersDatabase providers, MembersDatabase members) {
+	public void addClaim(ProvidersDatabase providers, MembersDatabase members, ServiceDatabase services) {
 	Date date = new Date();
 	DateFormat dateFormat = new SimpleDateFormat("MM�DD�YYYY hh:mm:ss");// set up the date and time format
 	Scanner user_input = new Scanner(System.in);
 	
 	System.out.println("Enter Provider ID: ");
 	int provID = user_input.nextInt();
+	while (!providers.contains(provID)) {
+		System.out.println("The ID you have entered does not exist for a provider.  Please enter a new Provider ID: ");
+		provID = user_input.nextInt();
+	}
 	String providerName = providers.getName(provID);
 	System.out.println("Enter Member ID: ");
 	int memberId = user_input.nextInt();
+	while (!members.contains(memberId)) {
+		System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID: ");
+		memberId = user_input.nextInt();
+	}
 	String memberName = members.getName(memberId);
 	System.out.println("Enter Service Code: ");
 	int servCode = user_input.nextInt();
 	user_input.nextLine();
-	
-	//FIXME: add provider directory
-	int fee=1;
-	String serviceName = "**Placeholder Service Name**";
-	//
+	while (!services.contains(servCode)) {
+		System.out.println("The Service Code you have entered does not match any Service Code in the Directory.  Please enter a new Service Code: ");
+		servCode = user_input.nextInt();
+	}
+	int fee = services.getPrice(servCode);
+	String serviceName = services.getName(servCode);
 	
 	System.out.println("Enter any comments: ");
 	String comments = user_input.nextLine();
@@ -128,6 +137,5 @@ public abstract class Database {
 	Claim newClaim =new Claim(provID, providerName, memberId, memberName, dateFormat.format(date), servCode, serviceName,  fee, comments, manualDate);
 	providers.search(provID).addClaim(newClaim);
 	members.search(memberId).addClaim(newClaim);
-	user_input.close();
 	}
 }
