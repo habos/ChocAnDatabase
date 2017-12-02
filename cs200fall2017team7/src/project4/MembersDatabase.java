@@ -14,7 +14,10 @@ public class MembersDatabase extends Database{
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Please enter member's ID: ");
 		int id = scan.nextInt();
-		scan.nextLine();
+		while(contains(id)){
+			System.out.println("The ID you have entered already exists for another member.  Please enter a new member ID: ");
+			id = scan.nextInt();
+		}
 		System.out.println("Please enter member's name: ");
 		String name = scan.nextLine();
 		System.out.println("Please enter member's address: ");

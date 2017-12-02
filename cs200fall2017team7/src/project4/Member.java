@@ -24,7 +24,7 @@ public class Member extends Record {
 		this.suspended = suspended;
 	}
 	
-
+	
 	
 	/**
 	 * Checks if member is suspended
