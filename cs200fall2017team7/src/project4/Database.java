@@ -132,7 +132,7 @@ public abstract class Database {
 	
 	System.out.println("Enter any comments: ");
 	String comments = user_input.nextLine();
-	System.out.println("Enter date service was provided (MM�DD�YYYY).");
+	System.out.println("Enter date service was provided (MM/DD/YYYY).");
 	String manualDate = user_input.nextLine();
 	Claim newClaim =new Claim(provID, providerName, memberId, memberName, dateFormat.format(date), servCode, serviceName,  fee, comments, manualDate);
 	providers.search(provID).addClaim(newClaim);
