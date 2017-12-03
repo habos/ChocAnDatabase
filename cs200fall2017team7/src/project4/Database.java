@@ -25,6 +25,12 @@ public abstract class Database {
 	
 	public abstract void add();//adds record, with prompts
 	
+	/**
+	 * This method searches through our records in an attempt to return the record that matches a specific ID number.
+	 * 
+	 * @param id The ID to be searched for.
+	 * @return the record that matches the ID passed in or null if not found.
+	 */
 	public Record search(int id) {
 		
 		Iterator<Record> records = this.records.iterator();
