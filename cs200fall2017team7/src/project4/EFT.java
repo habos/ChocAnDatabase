@@ -3,7 +3,7 @@ package project4;
 public class EFT extends Report{
 	
 	/**
-	 * This function writes the relavant info into the EFT
+	 * This function writes the relevant info into the EFT
 	 * @param providerName
 	 * @param providerID
 	 * @param price
