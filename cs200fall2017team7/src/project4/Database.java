@@ -103,7 +103,7 @@ public abstract class Database {
 	
 	public void addClaim(ProvidersDatabase providers, MembersDatabase members, ServiceDatabase services) {
 	Date date = new Date();
-	DateFormat dateFormat = new SimpleDateFormat("MM�DD�YYYY hh:mm:ss");// set up the date and time format
+	DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY hh:mm:ss");// set up the date and time format
 	Scanner user_input = new Scanner(System.in);
 	
 	System.out.println("Enter Provider ID: ");
