@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
@@ -24,23 +25,18 @@ import org.xmlpull.v1.*;
 public class Setup {
 
 	public static void main(String[] args) throws IOException{
-	
+		
+		//Initialization of databases
 		ServiceDatabase serviceDatabase = new ServiceDatabase();
-		for(int i = 0; i < serviceDatabase.services.size(); i++)
-		{
-			System.out.print(serviceDatabase.services.get(i).getServiceCode());
-			System.out.print(" " + serviceDatabase.services.get(i).getPrice());
-			System.out.println(" " + serviceDatabase.services.get(i).getServiceName());
-		}
-		
-		
 		MembersDatabase members = new MembersDatabase();
-		//members = (MembersDatabase) fromXML("swagmoney");
 		ProvidersDatabase providers = new ProvidersDatabase();
+		
+		//members = (MembersDatabase) fromXML("swagmoney");
+		
 		members.add(new Member(1, "Joe", "123 Main St", "Tuscaloosa", "AL", "30541"));
 		members.add(new Member(2, "Harry", "1131 Jackson Ave", "Tuscaloosa", "AL", "30541"));
 		providers.add(new Provider(5, "Monsters INC", "69 BoogieWithoutTheHoodie Ln", "Atlanta", "GA", "42066"));
-		System.out.println(providers.contains(5));
+		//System.out.println(providers.contains(5));
 		providers.getName(5);
 		//providers.addClaim(providers, members, serviceDatabase);
 		Email email = new Email();
@@ -49,11 +45,46 @@ public class Setup {
 		email.requestEmail(members, providers);
 		//System.out.println(members.getRecords(2));
 		//members.delete(1);
-		System.out.println(members.getRecords(1));
+		//System.out.println(members.getRecords(1));
 		providers.add(new Provider(100, "Dr Smith Cholocate", "321 Other main Street", "Asoolacsut", "lA", "14503"));
 		//System.out.println(providers.getRecords(100));
 		//toXML("swagmoney", members);
 		
+		System.out.print("Which terminal would you like to simulate? P/M/O/A: ");
+		Scanner scan = new Scanner(System.in);
+		char c = scan.nextLine().trim().charAt(0);
+		
+		//Provider Terminal
+		if(c == 'P')
+		{
+			System.out.print("\nYou have chosen provider terminal. Please enter your provider number: ");
+			int providerNumber = scan.nextInt();
+			if(providers.contains( providerNumber ) )
+			{
+				System.out.println("Welcome, " + providers.getName(providerNumber) + ".");
+				System.out.print("Please enter a member number: ");
+				int memberNumber = scan.nextInt();
+				if(members.contains(memberNumber))
+				{
+					if(!((Member) members.search(memberNumber)).isSuspended())
+					{
+						System.out.println("Validated");
+					}
+					else
+					{
+						System.out.println("This member is suspended");
+					}
+				}
+				else
+				{
+					System.out.println("Invalid Number");
+				}
+			}
+			else
+			{
+				System.out.println("The provider number you entered was not found.");
+			}
+		}
 		
 	}
 
