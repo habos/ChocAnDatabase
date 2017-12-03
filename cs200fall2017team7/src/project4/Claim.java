@@ -66,16 +66,24 @@ public class Claim {
 	}
 
 	/**
+	 * This method will return whether or not a provider matches a particular provider ID.
 	 * 
-	 * @param id
-	 * @return if id matches
+	 *
+	 * @param id the ID to be tested for a match
+	 * @return if id matches or not
 	 */
 	public boolean matchProvider(int id) {
 		if (id == providerId)
 			return true;
 		return false;
 	}
-
+	/**
+	 * This method will return whether or not a member matches a particular member ID.
+	 * 
+	 *
+	 * @param id the ID to be tested for a match
+	 * @return if id matches or not
+	 */
 	public boolean matchMember(int id) {
 		if (id == memberId)
 			return true;

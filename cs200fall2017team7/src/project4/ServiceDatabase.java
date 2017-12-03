@@ -81,7 +81,11 @@ public class ServiceDatabase {
 		} 
 		return price;
 	}
-	
+	/**
+	 * This searches the arraylist to see if a certain service has been provided
+	 * @param id of the service provided
+	 * @return
+	 */
 	public boolean contains(int id) {
 		
 		Iterator <Service> services = this.services.iterator();
