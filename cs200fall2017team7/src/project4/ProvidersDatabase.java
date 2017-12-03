@@ -30,7 +30,7 @@ public class ProvidersDatabase extends Database {
 		System.out.println("Please enter provider's ZIP: ");
 		String ZIP = scan.nextLine();
 		records.add(new Provider(id, name, address, city, state, ZIP));
-		scan.close();
+		//scan.close();
 	}
 
 

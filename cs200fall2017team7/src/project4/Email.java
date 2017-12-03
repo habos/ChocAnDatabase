@@ -47,7 +47,7 @@ public class Email {
 		} else {
 			System.out.println("ERROR: Incorrect option");
 		}
-		scan.close();
+		//scan.close();
 
 	}
 	/**
