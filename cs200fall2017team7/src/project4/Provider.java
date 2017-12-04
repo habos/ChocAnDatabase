@@ -26,7 +26,7 @@ public class Provider extends Record {
 
 	/**
 	 * This method gets the list of claims files by a provider.
-	 * @param none
+	 * 
 	 * @return list of claims that match
 	 */
 	@Override

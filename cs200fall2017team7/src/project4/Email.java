@@ -44,7 +44,7 @@ public class Email {
 	 * The manager would use this method to "request" an "email" consisting of members of and providers.
 	 * @param members List of members in our database
 	 * @param providers List of providers in our database
-	 * @return void
+	 * 
 	 */
 	public void requestEmail(MembersDatabase members, ProvidersDatabase providers){
 		
@@ -80,7 +80,7 @@ public class Email {
 	 * 
 	 * @param recipient The recipient of the email
 	 * @param text Text to be written to a file
-	 * @return void
+	 * 
 	 */
 	public void Emailer(String recipient, String text) {
 		

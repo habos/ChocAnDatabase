@@ -109,8 +109,9 @@ public class ProvidersDatabase extends Database {
 	}
 
 	/**
-	 * 
-	 * @param the
+	 *  This method gets an individual fee
+	 *  
+	 * @param recordLocation
 	 *            location in records to get the claims
 	 * @return the fee for a claim in records
 	 */
@@ -135,7 +136,7 @@ public class ProvidersDatabase extends Database {
 
 	/**
 	 * 
-	 * @param takes
+	 * @param recordLocation
 	 *            in the records location
 	 * @return the number of claims for a record
 	 */
@@ -157,7 +158,7 @@ public class ProvidersDatabase extends Database {
 
 	/**
 	 * 
-	 * @param takes
+	 * @param index
 	 *            in the record location
 	 * @return returns the name of the provider
 	 */
