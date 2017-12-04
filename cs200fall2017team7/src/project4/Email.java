@@ -92,7 +92,7 @@ public class Email {
 	 * 
 	 */
 	public void Emailer(String path, String recipient, String text) {
-		File f = new File(path+"/"+recipient);
+		File f = new File("Data/"+path+"/"+recipient);
 		try
 		{
 			BufferedWriter email = new BufferedWriter( new FileWriter(f));

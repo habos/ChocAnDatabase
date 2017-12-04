@@ -32,25 +32,11 @@ public class Setup {
 		ProvidersDatabase providers = new ProvidersDatabase();
 		
 		//refreshFiles(false);
+		if(fromXML("members") != null)
+			members = (MembersDatabase) fromXML("members");
+		if(fromXML("proiders") != null)
+			providers = (ProvidersDatabase) fromXML("providers");
 		
-		members = (MembersDatabase) fromXML("members");
-		providers = (ProvidersDatabase) fromXML("providers");
-		
-		//members.add(new Member(1, "Joe", "123 Main St", "Tuscaloosa", "AL", "30541"));
-		//members.add(new Member(2, "Harry", "1131 Jackson Ave", "Tuscaloosa", "AL", "30541"));
-		//providers.add(new Provider(5, "Monsters INC", "69 BoogieWithoutTheHoodie Ln", "Atlanta", "GA", "42066"));
-		//System.out.println(providers.contains(5));
-		providers.getName(5);
-		//providers.addClaim(providers, members, serviceDatabase);
-		Email email = new Email();
-		//members.add();
-		members.getRecords(6);
-		email.requestEmail(members, providers);
-		//System.out.println(members.getRecords(2));
-		//members.delete(1);
-		//System.out.println(members.getRecords(1));
-		//providers.add(new Provider(100, "Dr Smith Cholocate", "321 Other main Street", "Asoolacsut", "lA", "14503"));
-		//System.out.println(providers.getRecords(100));
 		toXML("members", members);
 		toXML("providers", providers);
 		
@@ -63,7 +49,7 @@ public class Setup {
 		{
 			System.out.print("\nYou have chosen provider terminal. Please enter your provider number: ");
 			int providerNumber = scan.nextInt();
-			if(providers.contains( providerNumber ) )
+			if(providers.contains(providerNumber))
 			{
 				System.out.println("Welcome, " + providers.getName(providerNumber) + ".");
 				System.out.print("Please enter a member number: ");
@@ -101,6 +87,7 @@ public class Setup {
 			else
 			{
 				System.out.println("The provider number you entered was not found.");
+				
 			}
 		}
 		
@@ -114,7 +101,7 @@ public class Setup {
 	 */	
 	public static void toXML(String fileName, Database database){
 		//Initialize xstream and get rid of useless error
-		File f = new File(fileName + ".txt");
+		File f = new File("Data/SavedData/" + fileName + ".txt");
 		XStream xstream = new XStream(new StaxDriver());
 		XStream.setupDefaultSecurity(xstream);
 		AnyTypePermission per = new AnyTypePermission();
@@ -141,7 +128,9 @@ public class Setup {
 	 */
 	public static Database fromXML(String fileName) throws IOException{
 		//Initialize bufferReader and read in the line from the file
-		File f = new File(fileName + ".txt");
+		File f = new File("Data/SavedData/" + fileName + ".txt");
+		if(!f.exists())
+			return null;
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(f));
 		String text = bufferedReader.readLine();
 		bufferedReader.close();

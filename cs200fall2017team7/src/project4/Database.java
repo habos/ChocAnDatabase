@@ -80,7 +80,6 @@ public abstract class Database {
 				return true;
 			}
 		}
-		//System.out.println("Failed to find record with ID of "+ id);
 		return false;
 	}
 	public String getName(int id) {
