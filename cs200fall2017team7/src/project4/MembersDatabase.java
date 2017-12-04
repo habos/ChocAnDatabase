@@ -17,8 +17,10 @@ public class MembersDatabase extends Database {
 		int id = scan.nextInt();
 		// Make sure that there are no duplicate IDs
 		while (contains(id)){
-			System.out.println("The ID you have entered already exists for another member.  Please enter a new member ID: ");
+			System.out.println("The ID you have entered already exists for another member.  Please enter a new member ID or -1 to exit: ");
 			id = scan.nextInt();
+			if(id == -1)
+				break;
 		}
 		scan.nextLine();
 		System.out.println("Please enter member's name: ");
@@ -34,7 +36,6 @@ public class MembersDatabase extends Database {
 		// Create and add the Member to MembersDatabase
 		records.add(new Member(id, name, address, city, state, ZIP));
 		// Close the scanner
-		//scan.close();
 	}
 
 	/**

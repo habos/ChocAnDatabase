@@ -8,7 +8,7 @@ public class MemberReport extends Report {
 	 * @param memberData personal data corresponding to the member
 	 * @return void
 	 */
-	public void MemberReport(int id, MembersDatabase memberData){
+	public MemberReport(int id, MembersDatabase memberData){
 		report = memberData.getRecords(id);
 	}
 	
