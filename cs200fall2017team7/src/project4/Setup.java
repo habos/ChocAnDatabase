@@ -92,7 +92,12 @@ public class Setup {
 		
 	}
 
-	
+	/**
+	 * This method puts the data contained in our database into an XML file to accomplish persistence. 
+	 * @param fileName filename to write to
+	 * @param database database to pull data from
+	 * @return void
+	 */	
 	public static void toXML(String fileName, Database database){
 		//Initialize xstream and get rid of useless error
 		File f = new File(fileName + ".txt");
@@ -114,7 +119,12 @@ public class Setup {
 			System.out.println("Exception in Emailing"); 	
 		}
 	}
-	
+	/**
+	 * This method takes the data from our XML file in order to re-construct our database upon each session to accomplish persistence.
+	 * @param fileName the name of the file to pull data from
+	 * @throws IOException
+	 * @return Database 
+	 */
 	public static Database fromXML(String fileName) throws IOException{
 		//Initialize bufferReader and read in the line from the file
 		File f = new File(fileName + ".txt");
