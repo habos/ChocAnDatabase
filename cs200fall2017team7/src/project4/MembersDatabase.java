@@ -43,6 +43,7 @@ public class MembersDatabase extends Database {
 	 * 
 	 * @param idToChange
 	 *            : This indicates which member to edit
+	 * @return boolean whether or not the function was successful
 	 */
 	@Override
 	public boolean edit(int idToChange) {
