@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -15,6 +16,15 @@ import java.util.Scanner;
  *
  */
 public class Email {	
+	
+	
+	public void mainAccountingProcedure(MembersDatabase members, ProvidersDatabase providers){
+			
+		for(Provider p : providers){
+			
+		}
+	}
+	
 	
 	/**
 	 * The manager would use this method to "request" an "email" consisting of members of and providers.
@@ -49,8 +59,6 @@ public class Email {
 		} else {
 			System.out.println("ERROR: Incorrect option");
 		}
-		//scan.close();
-
 	}
 	
 	/**

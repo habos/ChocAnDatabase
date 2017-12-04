@@ -35,7 +35,6 @@ public class MembersDatabase extends Database {
 		String ZIP = scan.nextLine();
 		// Create and add the Member to MembersDatabase
 		records.add(new Member(id, name, address, city, state, ZIP));
-		// Close the scanner
 	}
 
 	/**

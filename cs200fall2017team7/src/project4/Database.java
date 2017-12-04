@@ -110,7 +110,10 @@ public abstract class Database {
 	
 	public abstract boolean edit(int idToChange);//edit records
 	
-	
+	public Iterator<Record> giveMeAnIterator(){
+		Iterator <Record> records = this.records.iterator();
+		return records;
+	}
 	
 	
 	public void addClaim(ProvidersDatabase providers, MembersDatabase members, ServiceDatabase services) {
