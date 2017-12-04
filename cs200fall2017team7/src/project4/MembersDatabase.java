@@ -36,7 +36,6 @@ public class MembersDatabase extends Database {
 		// Create and add the Member to MembersDatabase
 		records.add(new Member(id, name, address, city, state, ZIP));
 		// Close the scanner
-		//scan.close();
 	}
 
 	/**
