@@ -111,5 +111,11 @@ public abstract class Record {
 		
 	}
 	
+	public boolean hasClaims(){
+	if(claims.size() > 0)
+		return true;
+	return false;
+	}
+	
 
 }

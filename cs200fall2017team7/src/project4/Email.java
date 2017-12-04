@@ -18,10 +18,24 @@ import java.util.Scanner;
 public class Email {	
 	
 	
-	public void mainAccountingProcedure(MembersDatabase members, ProvidersDatabase providers){
-			
-		for(Provider p : providers){
-			
+	public void mainAccountingProcedure(MembersDatabase membersDatabase, ProvidersDatabase providersDatabase){
+		DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY");
+		Date date = new Date();
+		Iterator<Record> members = membersDatabase.giveMeAnIterator();
+		Iterator<Record> providers = providersDatabase.giveMeAnIterator();
+		while(members.hasNext()){
+			Record record = members.next();
+			if(record.hasClaims()){
+				MemberReport report = new MemberReport(record.getId(), membersDatabase);
+				Emailer(record.getName()+" "+dateFormat.format(date), report.toString());
+			}
+		}
+		while(providers.hasNext()){
+			Record record = providers.next();
+			if(record.hasClaims()){
+				ProviderReport report = new ProviderReport(record.getId(), providersDatabase);
+				Emailer(record.getName()+" "+dateFormat.format(date), report.toString());
+			}
 		}
 	}
 	

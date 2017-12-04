@@ -11,5 +11,4 @@ public class MemberReport extends Report {
 	public MemberReport(int id, MembersDatabase memberData){
 		report = memberData.getRecords(id);
 	}
-	
 }

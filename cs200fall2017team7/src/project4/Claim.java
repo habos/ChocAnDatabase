@@ -12,6 +12,7 @@ public class Claim {
 	String providerName;
 	String serviceName;
 	int fee;
+	boolean isCurrent;
 
 	public Claim(int providerId, String providerName, int memberId, String memberName, String currentDate,
 			int serviceCode, String serviceName, int fee, String comments, String dateProvided) {
@@ -26,6 +27,7 @@ public class Claim {
 		this.fee = fee;
 		this.comments = comments;
 		this.dateProvided = dateProvided;
+		isCurrent = true;
 
 	}
 	public Claim( String currentDate, String dateProvided, int providerId, int memberId, int serviceCode, String comments) {
@@ -35,6 +37,7 @@ public class Claim {
 		this.serviceCode = serviceCode;
 		this.comments = comments;
 		this.dateProvided = dateProvided;
+		isCurrent = true;
 		
 	}
 
