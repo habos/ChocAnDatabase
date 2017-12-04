@@ -84,7 +84,7 @@ public class ServiceDatabase {
 	/**
 	 * This searches the arraylist to see if a certain service has been provided
 	 * @param id of the service provided
-	 * @return
+	 * @return boolean on whether or not the ID is contained
 	 */
 	public boolean contains(int id) {
 		
