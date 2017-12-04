@@ -73,6 +73,20 @@ public class Setup {
 					if(!((Member) members.search(memberNumber)).isSuspended())
 					{
 						System.out.println("Validated");
+						System.out.println("Would you like to make a claim? y/n: ");
+						c = scan.nextLine().trim().charAt(0);
+						if(c == 'y')
+						{
+							
+						}
+						else if(c =='n')
+						{
+							System.out.println("Logging out...");
+						}
+						else
+						{
+							//TODO
+						}
 					}
 					else
 					{
