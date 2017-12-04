@@ -6,7 +6,9 @@ public class ProviderReport extends Report {
 	
 	/**
 	 * Constructor
-	 * @param prov
+	 * @param id - the corresponding provider ID
+	 * @param providerData - personal data corresponding to the provider
+	 * @return void
 	 */
 	public ProviderReport(int id, ProvidersDatabase providerData){
 		report = providerData.getRecords(id);

@@ -55,8 +55,10 @@ public class ProvidersDatabase extends Database {
 					System.out.println("Enter new Provider ID: ");
 					int id = scan.nextInt();
 					while (contains(id)) {
-						System.out.println("The ID you have entered already exists for another provider.  Please enter a new Provider ID: ");
+						System.out.println("The ID you have entered already exists for another provider.  Please enter a new Provider ID or enter -1 to exit: ");
 						id = scan.nextInt();
+						if(id == -1)
+							break;
 					}
 					records.get(i).setNumberID(id);
 				} else if (c == 'N') {

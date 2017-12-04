@@ -24,6 +24,11 @@ public class Provider extends Record {
 		 +getClaims();
 	}
 
+	/**
+	 * This method gets the list of claims files by a provider.
+	 * @param none
+	 * @return list of claims that match
+	 */
 	@Override
 	public String getClaims() {	
 		Iterator<Claim> claims = this.claims.iterator();

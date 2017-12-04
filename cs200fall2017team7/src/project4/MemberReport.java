@@ -4,9 +4,11 @@ public class MemberReport extends Report {
 	
 	/**
 	 * Constructor
-	 * @param mem = a member object
+	 * @param id the corresponding member ID
+	 * @param memberData personal data corresponding to the member
+	 * @return void
 	 */
-	public MemberReport(int id, MembersDatabase memberData){
+	public void MemberReport(int id, MembersDatabase memberData){
 		report = memberData.getRecords(id);
 	}
 	
