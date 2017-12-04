@@ -37,9 +37,6 @@ public class Setup {
 		if(fromXML("proiders") != null)
 			providers = (ProvidersDatabase) fromXML("providers");
 		
-		toXML("members", members);
-		toXML("providers", providers);
-		
 		System.out.print("Which terminal would you like to simulate? P/M/O/A: ");
 		Scanner scan = new Scanner(System.in);
 		char c = scan.nextLine().trim().charAt(0);
@@ -86,7 +83,7 @@ public class Setup {
 			}
 			else
 			{
-				System.out.println("The provider number you entered was not found.");
+				//invalidID("provider", members, providers);
 				
 			}
 		}
@@ -156,7 +153,40 @@ public class Setup {
 		mem.createNewFile();
 		if(!pro.exists())
 		pro.createNewFile();
-	}	
+	}
+	
+	public static void exit(MembersDatabase members, ProvidersDatabase providers){
+		toXML("Members", members);
+		toXML("Providers", providers);
+	}
+	
+	public static int invalidID(String chooseDatabase, MembersDatabase members, ProvidersDatabase providers){
+		Scanner user_input = new Scanner(System.in);
+		int id = -1738;
+		if(chooseDatabase.equals("member")){
+			while (!members.contains(id)) {
+				System.out.println("The ID you have entered does not exist for a member.  Please enter a new Member ID or enter -1 to exit: ");
+				id = user_input.nextInt();
+				if(id == -1){
+					exit(members, providers);
+					return id;
+				}
+			}
+		}else if(chooseDatabase.equals("provider")){
+			while (!providers.contains(id)) {
+				System.out.println("The ID you have entered does not exist for a provider.  Please enter a new Provider ID or enter -1 to exit: ");
+				id = user_input.nextInt();
+				if(id == -1){
+					exit(members, providers);
+					return id;
+				}
+			}
+		}
+		else{
+			System.out.println("Read the comments stupid you coded something wrong");
+		}
+		return id;
+	}
 	
 }
 	
