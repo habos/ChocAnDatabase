@@ -8,9 +8,9 @@ public class EFT extends Report{
 	 * @param providerID ID of provider
 	 * @param price price of fee to be paid
 	 */
-	public EFT(String providerName, int providerID, int price ){
+	public EFT(String providerName, int providerID, int fee){
 		
-		report = "Provider Name: "+providerName+"\nProvider ID: "+providerID+"\nFee to be paid: "+price+"\n";
+		report = "Provider Name: "+providerName+"\nProvider ID: "+providerID+"\nFee to be paid: "+fee+"\n";
 		
 	}
 	

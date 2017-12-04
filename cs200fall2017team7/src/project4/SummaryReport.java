@@ -25,7 +25,7 @@ public class SummaryReport extends Report{
 		numProvidersServices = 0;
 		
 		
-		for(int i =0; i<providers.getSize(); i++) 
+		for(int i = 0; i < providers.getSize(); i++) 
 		{
 			if(providers.getIndivFee(i) != 0)
 			{
@@ -41,7 +41,7 @@ public class SummaryReport extends Report{
 			}
 		}
 		
-		report+= "\nTotal Providers who provided service: "+numProvidersServices+"\nTotal Consultations: "+totalConsultations+"\nTotal Fees: "+totalFees;
+		report += "\nTotal Providers who provided service: "+numProvidersServices+"\nTotal Consultations: "+totalConsultations+"\nTotal Fees: "+totalFees;
 		
 	}
 	

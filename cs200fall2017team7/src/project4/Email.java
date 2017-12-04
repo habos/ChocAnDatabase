@@ -1,6 +1,7 @@
 package project4;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -8,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Scanner;
+
 
 /**
  * Creates 'emails' from reports (saves it to a text file)
@@ -21,22 +23,29 @@ public class Email {
 	public void mainAccountingProcedure(MembersDatabase membersDatabase, ProvidersDatabase providersDatabase){
 		DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY");
 		Date date = new Date();
-		Iterator<Record> members = membersDatabase.giveMeAnIterator();
+		Iterator<Record> member = membersDatabase.giveMeAnIterator();
 		Iterator<Record> providers = providersDatabase.giveMeAnIterator();
-		while(members.hasNext()){
-			Record record = members.next();
+		while(member.hasNext()){
+			Record record = member.next();
 			if(record.hasClaims()){
 				MemberReport report = new MemberReport(record.getId(), membersDatabase);
-				Emailer(record.getName()+" "+dateFormat.format(date), report.toString());
+				Emailer("MemberReports", record.getName()+" "+dateFormat.format(date), report.toString());
 			}
+			record.setIsCurrentFalse();
 		}
 		while(providers.hasNext()){
 			Record record = providers.next();
 			if(record.hasClaims()){
 				ProviderReport report = new ProviderReport(record.getId(), providersDatabase);
-				Emailer(record.getName()+" "+dateFormat.format(date), report.toString());
+				Emailer("ProviderReports", record.getName()+" "+dateFormat.format(date), report.toString());
+				EFT eft = new EFT(record.getName(), record.getId(), record.getClaimFee());
+				Emailer("EFTReports", record.getName(), eft.toString());
 			}
+			record.setIsCurrentFalse();
 		}
+		SummaryReport summary = new SummaryReport(providersDatabase);
+		Emailer("SummaryReports", "SummaryReport " + dateFormat.format(date), summary.toString());
+		
 	}
 	
 	
@@ -64,12 +73,12 @@ public class Email {
 				memberID = scan.nextInt();
 			}
 			MemberReport report = new MemberReport(memberID, members);
-			Emailer(members.getName(memberID)+dateFormat.format(date), report.toString());
+			Emailer("MemberReports", members.getName(memberID)+dateFormat.format(date), report.toString());
 		} else if (option == 2) {
 			System.out.println("Please enter the ID of the Provider you would like to generate the report for: ");
 			int providerID = scan.nextInt();
 			ProviderReport report = new ProviderReport(providerID, providers);
-			Emailer(providers.getName(providerID)+dateFormat.format(date), report.toString());
+			Emailer("ProviderReports", providers.getName(providerID)+dateFormat.format(date), report.toString());
 		} else {
 			System.out.println("ERROR: Incorrect option");
 		}
@@ -82,11 +91,11 @@ public class Email {
 	 * @param text Text to be written to a file
 	 * 
 	 */
-	public void Emailer(String recipient, String text) {
-		
+	public void Emailer(String path, String recipient, String text) {
+		File f = new File(path+"/"+recipient);
 		try
 		{
-			BufferedWriter email = new BufferedWriter( new FileWriter(recipient+".txt"));
+			BufferedWriter email = new BufferedWriter( new FileWriter(f));
 		    email.write(text);
 		    email.close();
 		}

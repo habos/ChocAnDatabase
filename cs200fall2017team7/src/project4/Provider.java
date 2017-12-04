@@ -37,6 +37,7 @@ public class Provider extends Record {
 		while(claims.hasNext())
 		{
 			Claim claim = claims.next();
+			if(claim.isCurrent)
 				matchingClaims += claim.toStringProvider();		
 		}
 			return matchingClaims;	

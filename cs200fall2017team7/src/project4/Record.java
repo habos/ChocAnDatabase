@@ -96,26 +96,28 @@ public abstract class Record {
 	
 	public int getClaimFee() {
 		int feeTotal = 0;
-		
-		
-		for (int i = 0; i < claims.size(); i++)
-		{
-			feeTotal+=claims.get(i).getFee();
+		for (int i = 0; i < claims.size(); i++){
+			if(claims.get(i).isCurrent)
+				feeTotal+=claims.get(i).getFee();
 		}
-		
 		return feeTotal;
 	}
 
 	public int getConsultants() {
 		return claims.size();
-		
 	}
 	
 	public boolean hasClaims(){
-	if(claims.size() > 0)
-		return true;
-	return false;
+		for(int i = 0; i < claims.size(); i++){
+			if(claims.get(i).isCurrent)
+				return true;
+			}
+		return false;
 	}
 	
-
+	public void setIsCurrentFalse(){
+		for(int i = 0; i < claims.size(); i++){
+			claims.get(i).isCurrent = false;
+		}
+	}
 }

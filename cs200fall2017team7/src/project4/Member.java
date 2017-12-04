@@ -86,6 +86,7 @@ public class Member extends Record {
 			while(claims.hasNext())
 			{
 				Claim claim = claims.next();
+				if(claim.isCurrent)
 					matchingClaims += claim.toStringMember();		
 			}
 				return matchingClaims;	
