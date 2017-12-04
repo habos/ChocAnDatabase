@@ -121,23 +121,30 @@ public abstract class Database {
 	System.out.println("Enter Provider ID: ");
 	int provID = user_input.nextInt();
 	while (!providers.contains(provID)) {
-		System.out.println("The ID you have entered does not exist for a provider.  Please enter a new Provider ID: ");
+		System.out.println("The ID you have entered does not exist for a provider.  Please enter a new Provider ID or enter -1 to exit: ");
 		provID = user_input.nextInt();
+		if(provID == -1)
+			break;
 	}
 	String providerName = providers.getName(provID);
 	System.out.println("Enter Member ID: ");
 	int memberId = user_input.nextInt();
 	while (!members.contains(memberId)) {
-		System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID: ");
+		System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID or enter -1 to exit: ");
 		memberId = user_input.nextInt();
+		if(memberId == -1)
+			break;
 	}
 	String memberName = members.getName(memberId);
 	System.out.println("Enter Service Code: ");
 	int servCode = user_input.nextInt();
 	user_input.nextLine();
 	while (!services.contains(servCode)) {
-		System.out.println("The Service Code you have entered does not match any Service Code in the Directory.  Please enter a new Service Code: ");
+		System.out.println("The Service Code you have entered does not match any Service Code in the Directory.  Please enter a new Service Code or enter -1 to exit: ");
 		servCode = user_input.nextInt();
+		if(servCode == -1){
+			break;
+		}
 	}
 	int fee = services.getPrice(servCode);
 	String serviceName = services.getName(servCode);
