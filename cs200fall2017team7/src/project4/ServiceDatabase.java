@@ -100,4 +100,16 @@ public class ServiceDatabase {
 		}
 		return false;
 	}
+	public String toString()
+	{
+		Iterator <Service> services = this.services.iterator();
+		Service service = null;
+		String output = "";
+		while(services.hasNext())
+		{
+			service = services.next();
+			output += service.getServiceName() + " " + service.getPrice() + " " + service.getServiceName() + "\n";
+		}
+		return output;
+	}
 }
