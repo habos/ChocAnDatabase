@@ -1,5 +1,8 @@
 package project4;
-
+/**
+ * Entity stereotype class that contains data for claims and methods to access the data.
+ * @author Logan
+ */
 public class Claim {
 
 	private int providerId;
@@ -40,38 +43,45 @@ public class Claim {
 		isCurrent = true;
 		
 	}
-
+	
+	/**
+	 * Gets the provider ID.
+	 * @return providerID 
+	 */
 	public int getID() {
 		return providerId;
 	}
 
-	// FIXME- make into correct form of output (needs two more for prov and member
-	// report)
+	//NOTE: Check to see if we ever use this method.
+	/**
+	 * Returns a string with claim information
+	 */
 	public String toString() {
 		return "Current date and time: " + currentDate + "\n" + "Date service was provided: " + dateProvided + "\n"
 				+ "Provider number: " + providerId + "\n" + "Member number: " + memberId + "\n" + "Service Code: "
 				+ serviceCode + "\nComments: " + comments;
 	}
 
+	/**
+	 * Returns a string consisting of claim information that a provider needs.
+	 * @return A string formatted in accordance with requirements
+	 */
 	public String toStringProvider() {
 		return "Date of Service: " + dateProvided + "\nDate and time data were recived by the computer: " + currentDate
 				+ "\nMember name: " + memberName + "\nMember number: " + memberId + "\nService code: " + serviceCode
 				+ "fee to be paid: $" + fee;
 	}
 
+	/**
+	 * Returns a string consisting of claim information that a member needs
+	 * @return A string formatted in accordance with requirements
+	 */
 	public String toStringMember() {
 		return "Date of service: " + dateProvided + "\nProvider name: " + providerName + "\nService name: " + serviceName;
-
 	}
 	
-	public String persistenceToString(){
-		return currentDate + "\n" + dateProvided + "\n" + providerId + "\n" + memberId + "\n" + serviceCode + "\n" + comments + "\n#";
-	}
-
 	/**
 	 * This method will return whether or not a provider matches a particular provider ID.
-	 * 
-	 *
 	 * @param id the ID to be tested for a match
 	 * @return if id matches or not
 	 */
@@ -93,6 +103,10 @@ public class Claim {
 		return false;
 	}
 	
+	/**
+	 * Gets fee for the claim.
+	 * @return The fee
+	 */
 	public int getFee() {
 		return fee;
 	}
