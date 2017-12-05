@@ -42,7 +42,7 @@ public class Setup {
 		char c = scan.nextLine().trim().charAt(0);
 		
 		//Provider Terminal
-		if(c == 'P')
+		if(c == 'P' || c == 'p')
 		{
 			System.out.print("\nYou have chosen provider terminal. Please enter your provider number: ");
 			int providerNumber = scan.nextInt();
