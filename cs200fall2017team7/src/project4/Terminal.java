@@ -22,7 +22,7 @@ import org.xmlpull.v1.*;
  * @author Chris
  *
  */
-public class Setup {
+public class Terminal {
 
 	public static void main(String[] args) throws IOException{
 		
