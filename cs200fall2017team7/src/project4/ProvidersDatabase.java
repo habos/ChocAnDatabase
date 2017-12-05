@@ -19,6 +19,7 @@ public class ProvidersDatabase extends Database {
 			System.out.println("The ID you have entered already exists for another provider.  Please enter a new provider ID: ");
 			id = scan.nextInt();
 		}
+		scan.nextLine();
 		System.out.println("Please enter provider's name: ");
 		String name = scan.nextLine();
 		System.out.println("Please enter provider's address: ");
