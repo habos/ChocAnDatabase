@@ -28,8 +28,8 @@ public class SummaryReport extends Report{
 		overallTotal = 0;
 		providerConsultations = 0;
 		
-		totalConsultations = providers.getTotalConsultant();
-		totalFees = providers.getTotalFee();
+		totalConsultations =  0;//providers.getTotalConsultant();
+		totalFees =     0;//providers.getTotalFee();
 		numProvidersServices = 0;
 		
 		
@@ -46,7 +46,11 @@ public class SummaryReport extends Report{
 				
 				report+= providerName+"\n"+"Provider Fee Total: "+providerTotalFee+"\nProvider Total Consultations: "+providerConsultations;
 				
+				totalConsultations+=providerConsultations;
+				totalFees+= providerTotalFee;
 			}
+			
+
 		}
 		
 		report += "\nTotal Providers who provided service: "+numProvidersServices+"\nTotal Consultations: "+totalConsultations+"\nTotal Fees: "+totalFees;
