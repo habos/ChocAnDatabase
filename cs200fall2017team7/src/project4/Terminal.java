@@ -54,60 +54,14 @@ public class Terminal {
 		case('M'):
 			break;
 		case('O'):
+			operatorTerminal(members, providers);
+			exit(members, providers);
 			break;
 		case('A'):
 			break;
 		case('E'):
 			break;
 		}
-		
-		//Provider Terminal
-		/*if(c == 'P' || c == 'p')
-		{
-			System.out.print("\nYou have chosen provider terminal. Please enter your provider number: ");
-			int providerNumber = scan.nextInt();
-			if(providers.contains(providerNumber))
-			{
-				System.out.println("Welcome, " + providers.getName(providerNumber) + ".");
-				System.out.print("Please enter a member number: ");
-				int memberNumber = scan.nextInt();
-				if(members.contains(memberNumber))
-				{
-					if(!((Member) members.search(memberNumber)).isSuspended())
-					{
-						System.out.println("Validated");
-						System.out.println("Would you like to make a claim? y/n: ");
-						c = scan.nextLine().trim().charAt(0);
-						if(c == 'y')
-						{
-							//TODO
-						}
-						else if(c =='n')
-						{
-							System.out.println("Logging out...");
-						}
-						else
-						{
-							//TODO
-						}
-					}
-					else
-					{
-						System.out.println("This member is suspended");
-					}
-				}
-				else
-				{
-					System.out.println("Invalid Number");
-				}
-			}
-			else
-			{
-				//invalidID("provider", members, providers);
-				
-			}
-		}*/
-		
 	}
 
 	/**
