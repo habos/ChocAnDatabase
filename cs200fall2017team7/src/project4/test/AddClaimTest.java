@@ -18,13 +18,13 @@ import project4.Record;
  * @author Caleb
  *
  */
-class AddClaimTest {
+public class AddClaimTest {
 
 	ProvidersDatabase providersDatabase;
 	MembersDatabase membersDatabase;
 	ServiceDatabase serviceDatabase;
 	@Before
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		providersDatabase = new ProvidersDatabase();
 		membersDatabase = new MembersDatabase();
 		serviceDatabase = new ServiceDatabase();
@@ -35,18 +35,18 @@ class AddClaimTest {
 
 	//Test for success
 	@Test
-	void testSearchSuccess() {
+	public void testSearchSuccess() {
 		assertEquals(10, providersDatabase.search(10).getId());
 	}
 	//Test for failure
 	@Test
-	void testSearchFailure() {
+	public void testSearchFailure() {
 		assertNotEquals(20, providersDatabase.search(10).getId());
 	}
 
 	//Test for success
 	@Test
-	void testContainsSuccess() {
+	public void testContainsSuccess() {
 		int flag = 0;
 		if(membersDatabase.contains(20))
 		{
@@ -56,7 +56,7 @@ class AddClaimTest {
 	}
 	//Test for failure
 	@Test
-	void testContainsFailure() {
+	 public void testContainsFailure() {
 		int flag = 0;
 		if(membersDatabase.contains(80))
 		{
@@ -66,7 +66,7 @@ class AddClaimTest {
 	}
 	//Test for success
 	@Test
-	void testAddClaimSuccess() {
+	public void testAddClaimSuccess() {
 		int flag = 0;
 		providersDatabase.addClaim(providersDatabase, membersDatabase, serviceDatabase, 10, 20);
 		if(providersDatabase.search(10).hasClaims())
@@ -77,7 +77,7 @@ class AddClaimTest {
 	}
 	//Test for failure
 	@Test
-	void testAddClaimFailure() {
+	public void testAddClaimFailure() {
 		int flag = 0;
 		providersDatabase.addClaim(providersDatabase, membersDatabase, serviceDatabase, 10, 20);
 		if(providersDatabase.search(30).hasClaims())
