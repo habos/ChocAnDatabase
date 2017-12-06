@@ -33,7 +33,6 @@ public class Email {
 				MemberReport report = new MemberReport(record.getId(), membersDatabase);
 				emailer("MemberReports", record.getName()+dateFormat.format(date), report.toString());
 			}
-			//record.setIsCurrentFalse();
 		}
 		while(providers.hasNext()){
 			Record record = providers.next();
@@ -43,10 +42,18 @@ public class Email {
 				EFT eft = new EFT(record.getName(), record.getId(), record.getClaimFee());
 				emailer("EFTReports", record.getName(), eft.toString());
 			}
-			record.setIsCurrentFalse();
 		}
 		SummaryReport summary = new SummaryReport(providersDatabase);
 		emailer("SummaryReports", "SummaryReport" + dateFormat.format(date), summary.toString());
+		
+		while(providers.hasNext()){
+			Record record = providers.next();
+			record.setIsCurrentFalse();
+		}
+		while(member.hasNext()){
+			Record record = member.next();
+			record.setIsCurrentFalse();
+		}
 		System.out.println("Main Accouning Procedure has run");
 	}
 	
