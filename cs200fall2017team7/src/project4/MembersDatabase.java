@@ -83,12 +83,10 @@ public class MembersDatabase extends Database {
 				} else {
 					// User's choice was out of bounds
 					System.out.println("Invalid Choice.");
-					scan.close();
 					return false;
 				}
 				// Success in edit
 				System.out.println("Information Updated.");
-				scan.close();
 				return true;
 			}
 		}

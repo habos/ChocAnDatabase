@@ -272,8 +272,14 @@ public class Terminal {
 								members.add();
 								break;
 							case(2):
+								System.out.println("Enter the Member ID for the member you would like to delete:");
+								int memberID = scan.nextInt();
+								members.delete(memberID);
 								break;
 							case(3):
+								System.out.println("Enter the Member ID for the member you would like to edit:");
+								int memberId = scan.nextInt();
+								members.edit(memberId);
 								break;
 							case(4):
 								continueMemberManagement = false;
@@ -285,7 +291,36 @@ public class Terminal {
 					}//end while
 					break;
 				case(2):
-					
+					boolean continueProviderManagement = true;
+					while(continueProviderManagement){
+						System.out.println("Welcome to provider management.  Please choose one of the following options:");
+						System.out.println("Enter '1' to add provider.");
+						System.out.println("Enter '2' to delete provider.");
+						System.out.println("Enter '3' to edit provider.");
+						System.out.println("Enter '4' to exit.");
+						int providerChoice = scan.nextInt();
+						switch(providerChoice){
+							case(1):
+								providers.add();
+								break;
+							case(2):
+								System.out.println("Enter the Member ID for the member you would like to delete:");
+								int providerID = scan.nextInt();
+								providers.delete(providerID);
+								break;
+							case(3):
+								System.out.println("Enter the Member ID for the member you would like to edit:");
+								int providerId = scan.nextInt();
+								members.edit(providerId);
+								break;
+							case(4):
+								continueProviderManagement = false;
+								break;
+							default:
+								System.out.println("You have not chosen one of the options. Please try again.");
+								break;
+						}//end switch
+					}//end while
 					break;
 				case(3):
 					continueOperatorTerminal = false;
@@ -295,6 +330,6 @@ public class Terminal {
 					break;
 			}
 		}
-	}
+	}//end operators terminal
 }
 
