@@ -44,7 +44,7 @@ public class SummaryReport extends Report{
 				providerConsultations = providers.getConsultant(i);
 				providerName = providers.getName(i);
 				
-				report+= providerName+"\n"+"Provider Fee Total: "+providerTotalFee+"\nProvider Total Consultations: "+providerConsultations;
+				report+= "Provider Name: "+providerName+"\n"+"Provider Fee Total: "+providerTotalFee+"\nProvider Total Consultations: "+providerConsultations;
 
 			}
 			
