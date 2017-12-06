@@ -158,7 +158,7 @@ public abstract class Database {
 		System.out.println("The Service Code you have entered does not match any Service Code in the Directory.  Please enter a new Service Code or enter -1 to exit: ");
 		servCode = user_input.nextInt();
 		if(servCode == -1){
-			break;
+			return;
 		}
 	}
 	int fee = services.getPrice(servCode);
