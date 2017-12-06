@@ -27,7 +27,7 @@ public class ProviderManagementTest {
 	//test for success
 	@Test
 	public void testAddSuccess() {
-		ByteArrayInputStream newInput = new ByteArrayInputStream("9876\nJohn\n190UniversityBlvd\nTuscaloosa\nAlabama\n36695".getBytes());
+		ByteArrayInputStream newInput = new ByteArrayInputStream("9876\nJohn\n190 University Blvd\nTuscaloosa\nAlabama\n36695".getBytes());
 		System.setIn(newInput);
 		providers.add();
 		System.setIn(System.in);
@@ -39,28 +39,42 @@ public class ProviderManagementTest {
 	@Test
 	public void testAddFailure() {
 		ByteArrayInputStream newInput = new ByteArrayInputStream("9876\nJohn\n190 University Blvd\nTuscaloosa\nAlabama\n36695".getBytes());
-
 		System.setIn(newInput);
 		providers.add();
+		
+		ByteArrayInputStream nextInput = new ByteArrayInputStream("9876\n-1".getBytes());
+		System.setIn(nextInput);
+		assertFalse(providers.add());
+		
 		System.setIn(System.in);
-				
-
 	}
 
 
 	//test for success
-	@Test
-	public void testEditSuccess() {	
-	}
+	//@Test
+	//public void testEditSuccess() {	
+	//	ByteArrayInputStream newInput = new ByteArrayInputStream("");
+	//	System.setIn(newInput);
+		
+	//	providers.edit();
+		
+	//}
 	
 	//test for failure
-	@Test
-	public void testEditFailure() {
-	}
+	//@Test
+	//public void testEditFailure() {
+	//}
 	
 	//test for success
+	@Test
+	public void testDeleteSuccess() {
+		providers.delete(1234);
+		assertFalse(providers.contains(1234));		
+	}
 
 	//test for failure
-
+	//@Test
+	//public void testDeleteFailure() {
+	//}
 
 }
