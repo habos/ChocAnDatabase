@@ -40,32 +40,37 @@ public class Terminal {
 		
 		boolean programRunning = true;
 		while(programRunning){
-			System.out.print("Which terminal would you like to simulate? P/M/O/A: ");
-			System.out.println("Enter 'P' if you're a provider.");
-			System.out.println("Enter 'M' if you're a manager");
-			System.out.println("Enter 'O' if you're a operator");
-			System.out.println("Enter 'A' if you're part of Acme Accounting Services");
-			System.out.println("Enter 'E' to exit.");
+			System.out.println("Which terminal would you like to simulate?");
+			System.out.println("Enter '1' if you're a provider.");
+			System.out.println("Enter '2' if you're a manager");
+			System.out.println("Enter '3' if you're a operator");
+			System.out.println("Enter '4' if you're part of Acme Accounting Services");
+			System.out.println("Enter '5' to exit.");
 			Scanner scan = new Scanner(System.in);
 			char c = scan.nextLine().trim().charAt(0);
 		
 			switch(c){
-			case('P'):
+			case('1'):
 				providerTerminal(members, providers, serviceDatabase);
 				exit(members, providers);
 				break;
-			case('M'):
+			case('2'):
+				managerTerminal(members, providers);
+				exit(members, providers);
 				break;
-			case('O'):
+			case('3'):
 				operatorTerminal(members, providers);
 				exit(members, providers);
 				break;
-			case('A'):
+			case('4'):
 				acmeTerminal(members, providers);
 				exit(members, providers);
 				break;
-			case('E'):
+			case('5'):
 				programRunning = false;
+				break;
+			default:
+				System.out.println("You have not chosen one of the options. Please try agian.");
 				break;
 			}
 		}
@@ -335,5 +340,31 @@ public class Terminal {
 			}//end switch
 		}//end while
 	}//end ACME terminal
+	
+	public static void managerTerminal(MembersDatabase members, ProvidersDatabase providers){
+		Scanner scan = new Scanner(System.in);
+		boolean continueManagerTerminal = true;
+		while(continueManagerTerminal){
+			System.out.println("Welcome to the Manager terminal! Please choose one of the following options.");
+			System.out.println("Enter '1' to request a report.");
+			System.out.println("Enter '2' to simulate 'Main Accounting Procedure'.");
+			System.out.println("Enter '3' to exit.");
+			int choice = scan.nextInt();
+			switch(choice){
+				case(1):
+					
+					break;
+				case(2):
+					
+					break;
+				case(3):
+					continueManagerTerminal = false;
+					break;
+				default:
+					System.out.println("You have not chosen one of the options. Please try agian.");
+					break;
+			}
+		}
+	}
 }
 
