@@ -27,7 +27,7 @@ public class ProviderManagementTest {
 	//test for success
 	@Test
 	public void testAddSuccess() {
-		ByteArrayInputStream newInput = new ByteArrayInputStream("9876\nJohn\n190 University Blvd\nTuscaloosa\nAlabama\n36695".getBytes());
+		ByteArrayInputStream newInput = new ByteArrayInputStream("9876\nJohn\n190UniversityBlvd\nTuscaloosa\nAlabama\n36695".getBytes());
 		System.setIn(newInput);
 		providers.add();
 		System.setIn(System.in);
@@ -39,28 +39,28 @@ public class ProviderManagementTest {
 	@Test
 	public void testAddFailure() {
 		ByteArrayInputStream newInput = new ByteArrayInputStream("9876\nJohn\n190 University Blvd\nTuscaloosa\nAlabama\n36695".getBytes());
+		
 		System.setIn(newInput);
 		providers.add();
 		System.setIn(System.in);
 				
-		assert
+
 	}
 
 
 	//test for success
 	@Test
-	public void testEditSuccess() {
-		
+	public void testEditSuccess() {	
 	}
 	
 	//test for failure
 	@Test
 	public void testEditFailure() {
-		
 	}
 	
 	//test for success
-	@Test
+
+	//test for failure
 
 
 }
