@@ -54,60 +54,14 @@ public class Terminal {
 		case('M'):
 			break;
 		case('O'):
+			operatorTerminal(members, providers);
+			exit(members, providers);
 			break;
 		case('A'):
 			break;
 		case('E'):
 			break;
 		}
-		
-		//Provider Terminal
-		/*if(c == 'P' || c == 'p')
-		{
-			System.out.print("\nYou have chosen provider terminal. Please enter your provider number: ");
-			int providerNumber = scan.nextInt();
-			if(providers.contains(providerNumber))
-			{
-				System.out.println("Welcome, " + providers.getName(providerNumber) + ".");
-				System.out.print("Please enter a member number: ");
-				int memberNumber = scan.nextInt();
-				if(members.contains(memberNumber))
-				{
-					if(!((Member) members.search(memberNumber)).isSuspended())
-					{
-						System.out.println("Validated");
-						System.out.println("Would you like to make a claim? y/n: ");
-						c = scan.nextLine().trim().charAt(0);
-						if(c == 'y')
-						{
-							//TODO
-						}
-						else if(c =='n')
-						{
-							System.out.println("Logging out...");
-						}
-						else
-						{
-							//TODO
-						}
-					}
-					else
-					{
-						System.out.println("This member is suspended");
-					}
-				}
-				else
-				{
-					System.out.println("Invalid Number");
-				}
-			}
-			else
-			{
-				//invalidID("provider", members, providers);
-				
-			}
-		}*/
-		
 	}
 
 	/**
@@ -272,8 +226,14 @@ public class Terminal {
 								members.add();
 								break;
 							case(2):
+								System.out.println("Enter the Member ID for the member you would like to delete:");
+								int memberID = scan.nextInt();
+								members.delete(memberID);
 								break;
 							case(3):
+								System.out.println("Enter the Member ID for the member you would like to edit:");
+								int memberId = scan.nextInt();
+								members.edit(memberId);
 								break;
 							case(4):
 								continueMemberManagement = false;
@@ -285,7 +245,36 @@ public class Terminal {
 					}//end while
 					break;
 				case(2):
-					
+					boolean continueProviderManagement = true;
+					while(continueProviderManagement){
+						System.out.println("Welcome to provider management.  Please choose one of the following options:");
+						System.out.println("Enter '1' to add provider.");
+						System.out.println("Enter '2' to delete provider.");
+						System.out.println("Enter '3' to edit provider.");
+						System.out.println("Enter '4' to exit.");
+						int providerChoice = scan.nextInt();
+						switch(providerChoice){
+							case(1):
+								providers.add();
+								break;
+							case(2):
+								System.out.println("Enter the Member ID for the member you would like to delete:");
+								int providerID = scan.nextInt();
+								providers.delete(providerID);
+								break;
+							case(3):
+								System.out.println("Enter the Member ID for the member you would like to edit:");
+								int providerId = scan.nextInt();
+								members.edit(providerId);
+								break;
+							case(4):
+								continueProviderManagement = false;
+								break;
+							default:
+								System.out.println("You have not chosen one of the options. Please try again.");
+								break;
+						}//end switch
+					}//end while
 					break;
 				case(3):
 					continueOperatorTerminal = false;
@@ -295,6 +284,6 @@ public class Terminal {
 					break;
 			}
 		}
-	}
+	}//end operators terminal
 }
 
