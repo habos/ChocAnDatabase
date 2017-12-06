@@ -1,8 +1,5 @@
 package project4;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class ProvidersDatabase extends Database {
