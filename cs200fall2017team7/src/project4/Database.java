@@ -147,24 +147,7 @@ public abstract class Database {
 	Date date = new Date();
 	DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY hh:mm:ss");// set up the date and time format
 	Scanner user_input = new Scanner(System.in);
-	
-	/*System.out.println("Enter Provider ID: ");
-	int provID = user_input.nextInt();
-	while (!providers.contains(provID)) {
-		System.out.println("The ID you have entered does not exist for a provider.  Please enter a new Provider ID or enter -1 to exit: ");
-		provID = user_input.nextInt();
-		if(provID == -1)
-			break;
-	}
-	String providerName = providers.getName(provID);
-	System.out.println("Enter Member ID: ");
-	int memberId = user_input.nextInt();
-	while (!members.contains(memberId)) {
-		System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID or enter -1 to exit: ");
-		memberId = user_input.nextInt();
-		if(memberId == -1)
-			break;
-	}*/
+
 	String providerName = providers.getName(provID);
 	String memberName = members.getName(memberId);
 	System.out.println("Enter Service Code: ");

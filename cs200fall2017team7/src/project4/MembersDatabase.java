@@ -114,8 +114,9 @@ public class MembersDatabase extends Database {
 						return false;
 					break;
 			}
-			invalidMember = true;
+			invalidMember = false;
 		}
+		System.out.println("Validated!");
 		return true;
 	}
 

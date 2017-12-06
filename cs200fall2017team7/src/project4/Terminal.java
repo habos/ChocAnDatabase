@@ -27,9 +27,9 @@ public class Terminal {
 		ProvidersDatabase providers = new ProvidersDatabase();
 		
 		//refreshFiles(false);
-		if(fromXML("members") != null)
+		if(fromXML("Members") != null)
 			members = (MembersDatabase) fromXML("Members");
-		if(fromXML("proiders") != null)
+		if(fromXML("Providers") != null)
 			providers = (ProvidersDatabase) fromXML("Providers");
 		
 		
@@ -109,7 +109,6 @@ public class Terminal {
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(f));
 		String text = bufferedReader.readLine();
 		bufferedReader.close();
-		f.delete();
 		//Initialize xstream and get rid of useless error
 		XStream xstream = new XStream(new StaxDriver());
 		XStream.setupDefaultSecurity(xstream);

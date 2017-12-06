@@ -58,7 +58,7 @@ public class Claim {
 	 */
 	public String toString() {
 		return "Current date and time: " + currentDate + "\n" + "Date service was provided: " + dateProvided + "\n"
-				+ "Provider number: " + providerId + "\n" + "Member number: " + memberId + "\n" + "Service Code: "
+				+ "Provider number: " + providerId + "\n" + "Member number: " + memberId + "\nService Code: "
 				+ serviceCode + "\nComments: " + comments;
 	}
 
@@ -69,7 +69,7 @@ public class Claim {
 	public String toStringProvider() {
 		return "Date of Service: " + dateProvided + "\nDate and time data were recived by the computer: " + currentDate
 				+ "\nMember name: " + memberName + "\nMember number: " + memberId + "\nService code: " + serviceCode
-				+ "fee to be paid: $" + fee;
+				+ "\nFee to be paid: $" + fee;
 	}
 
 	/**
