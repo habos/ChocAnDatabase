@@ -33,7 +33,7 @@ public class Email {
 				MemberReport report = new MemberReport(record.getId(), membersDatabase);
 				emailer("MemberReports", record.getName()+dateFormat.format(date), report.toString());
 			}
-			record.setIsCurrentFalse();
+			//record.setIsCurrentFalse();
 		}
 		while(providers.hasNext()){
 			Record record = providers.next();
