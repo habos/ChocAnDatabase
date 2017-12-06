@@ -63,7 +63,7 @@ public class ProvidersDatabase extends Database {
 						System.out.println("The ID you have entered already exists for another provider.  Please enter a new Provider ID or enter -1 to exit: ");
 						id = scan.nextInt();
 						if(id == -1)
-							break;
+							return false;
 					}
 					records.get(i).setNumberID(id);
 				} else if (c == 'N') {
