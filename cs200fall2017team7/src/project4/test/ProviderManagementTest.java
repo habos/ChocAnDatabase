@@ -24,7 +24,7 @@ public class ProviderManagementTest {
 		providers.add(new Provider( 1234, "Colin Macwilliam", "190 University Blvd", "Tuscaloosa", "AL", "36695"));
 	}
 
-	//test for success
+	//test Add for success
 	@Test
 	public void testAddSuccess() {
 		ByteArrayInputStream newInput = new ByteArrayInputStream("9876\nJohn\n190 University Blvd\nTuscaloosa\nAlabama\n36695".getBytes());
@@ -33,9 +33,10 @@ public class ProviderManagementTest {
 		System.setIn(System.in);
 		
 		assertTrue(providers.contains(9876));
+		System.out.println("testAddSuccess complete!");
 	}
 	
-	//test for failure
+	//test Add for failure
 	@Test
 	public void testAddFailure() {
 		ByteArrayInputStream newInput = new ByteArrayInputStream("9876\nJohn\n190 University Blvd\nTuscaloosa\nAlabama\n36695".getBytes());
@@ -47,34 +48,44 @@ public class ProviderManagementTest {
 		assertFalse(providers.add());
 		
 		System.setIn(System.in);
+		System.out.println("testAddFailure complete!");
 	}
 
 
-	//test for success
-	//@Test
-	//public void testEditSuccess() {	
-	//	ByteArrayInputStream newInput = new ByteArrayInputStream("");
-	//	System.setIn(newInput);
+	//test Edit for success
+	@Test
+	public void testEditSuccess() {		
+		ByteArrayInputStream newInput = new ByteArrayInputStream("I\n12345".getBytes());
+		System.setIn(newInput);
+		providers.edit(1234);
+		System.setIn(System.in);
 		
-	//	providers.edit();
-		
-	//}
+		assertTrue(providers.contains(12345));
+		System.out.println("testEditSuccess complete!");
+	}
 	
-	//test for failure
-	//@Test
-	//public void testEditFailure() {
-	//}
+	//test Edit for failure
+	@Test
+	public void testEditFailure() {
+		providers.edit(12345);
+		assertFalse(providers.contains(12345));
+		System.out.println("testEditFailure complete!");
+	}
 	
-	//test for success
+	//test Delete for success
 	@Test
 	public void testDeleteSuccess() {
 		providers.delete(1234);
-		assertFalse(providers.contains(1234));		
+		assertFalse(providers.contains(1234));
+		System.out.println("testDeleteSuccess complete!");
 	}
 
-	//test for failure
-	//@Test
-	//public void testDeleteFailure() {
-	//}
+	//test Delete for failure
+	@Test
+	public void testDeleteFailure() {
+		providers.delete(12345);
+		assertFalse(providers.contains(12345));
+		System.out.println("testDeleteFailure complete!");
+	}
 
 }
