@@ -1,5 +1,9 @@
 package project4;
 
+/**
+ * Entity class for a summary report
+ * @author Logan
+ */
 public class SummaryReport extends Report{
 
 	protected int providerTotalFee;
@@ -12,6 +16,10 @@ public class SummaryReport extends Report{
 	
 	protected String providerName;
 	
+	/**
+	 * Constructor
+	 * @param providers Provider database
+	 */
 	public SummaryReport(ProvidersDatabase providers) {
 		 
 		report = "";
