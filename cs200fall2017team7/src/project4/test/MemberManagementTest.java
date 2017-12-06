@@ -54,10 +54,10 @@ public class MemberManagementTest {
 	@Test
 	public void testAddFalse() {
 		
-		ByteArrayInputStream in = new ByteArrayInputStream("abdc\ns\nsd\nadf\n".getBytes());
+		ByteArrayInputStream in = new ByteArrayInputStream("111111\n-1\n".getBytes());
 		System.setIn(in);
-		members.add();
-	
+		assertFalse(members.add());
+		
 		System.setIn(System.in);
 		
 	}
