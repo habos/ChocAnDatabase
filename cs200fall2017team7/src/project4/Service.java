@@ -22,15 +22,26 @@ public class Service {
 		serviceName = newServiceName;
 	}
 	
-
+	/**
+	 * Gets service code for the service
+	 * @return The service code
+	 */
 	public int getServiceCode() {
 		return serviceCode;
 	}
 
+	/**
+	 * Gets the price for the service
+	 * @return The price
+	 */
 	public int getPrice() {
 		return price;
 	}
 
+	/**
+	 * Gets the name of the service
+	 * @return The name
+	 */
 	public String getServiceName() {
 		return serviceName;
 	}
