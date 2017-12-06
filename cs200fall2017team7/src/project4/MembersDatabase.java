@@ -96,5 +96,29 @@ public class MembersDatabase extends Database {
 		System.out.println("Member not found. Failed to update.");
 		return false;
 	}
+	
+	public boolean validate(int id){
+		Scanner scan = new Scanner(System.in);
+		boolean invalidMember = true;
+		while(invalidMember){
+			if(!records.contains(id)){
+				while (!records.contains(id)) {
+					System.out.println("The ID you have entered does not exist for a member.  Please enter a new Member ID or enter -1 to exit: ");
+					id = scan.nextInt();
+					if(id == -1)
+						return false;
+				}
+			}
+			if(((Member) records.get(id)).isSuspended()){
+					System.out.println("The Member you want to validate is suspended. Please enter a new Member ID or enter -1 to exit: ");
+					id = scan.nextInt();
+					if(id == -1)
+						return false;
+					break;
+			}
+			invalidMember = true;
+		}
+		return true;
+	}
 
 }
