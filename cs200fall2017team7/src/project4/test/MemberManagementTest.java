@@ -54,12 +54,12 @@ public class MemberManagementTest {
 	@Test
 	public void testAddFalse() {
 		
-		ByteArrayInputStream in = new ByteArrayInputStream("123456\nLogan\nBrooklyn\nTuscaloosa\nAlabama\n35757".getBytes());
+		ByteArrayInputStream in = new ByteArrayInputStream("abdc\ns\nsd\nadf\n".getBytes());
 		System.setIn(in);
 		members.add();
 	
 		System.setIn(System.in);
-		assertFalse(members.contains(123456));
+		
 	}
 	
 	@Test
