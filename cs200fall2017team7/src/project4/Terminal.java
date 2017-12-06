@@ -61,6 +61,8 @@ public class Terminal {
 				exit(members, providers);
 				break;
 			case('A'):
+				acmeTerminal(members, providers);
+				exit(members, providers);
 				break;
 			case('E'):
 				programRunning = false;
@@ -291,7 +293,7 @@ public class Terminal {
 		}
 	}//end operators terminal
 	
-	public void acmeTerminal(MembersDatabase members, ProvidersDatabase providers){
+	public static void acmeTerminal(MembersDatabase members, ProvidersDatabase providers){
 		Scanner scan = new Scanner(System.in);
 		boolean continueACMETerminal = true;
 		while(continueACMETerminal){
