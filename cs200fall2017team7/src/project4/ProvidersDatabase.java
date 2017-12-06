@@ -80,12 +80,12 @@ public class ProvidersDatabase extends Database {
 				} else {
 					// User's choice was out of bounds
 					System.out.println("Invalid Choice.");
-					scan.close();
+					//scan.close();
 					return false;
 				}
 				// Success in edit
 				System.out.println("Information Updated.");
-				scan.close();
+				//scan.close();
 				return true;
 			}
 		}
