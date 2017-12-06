@@ -37,30 +37,35 @@ public class Terminal {
 		if(fromXML("proiders") != null)
 			providers = (ProvidersDatabase) fromXML("providers");
 		
-		System.out.print("Which terminal would you like to simulate? P/M/O/A: ");
-		System.out.println("Enter 'P' if you're a provider.");
-		System.out.println("Enter 'M' if you're a manager");
-		System.out.println("Enter 'O' if you're a operator");
-		System.out.println("Enter 'A' if you're part of Acme Accounting Services");
-		System.out.println("Enter 'E' to exit.");
-		Scanner scan = new Scanner(System.in);
-		char c = scan.nextLine().trim().charAt(0);
 		
-		switch(c){
-		case('P'):
-			providerTerminal(members, providers, serviceDatabase);
-			exit(members, providers);
-			break;
-		case('M'):
-			break;
-		case('O'):
-			operatorTerminal(members, providers);
-			exit(members, providers);
-			break;
-		case('A'):
-			break;
-		case('E'):
-			break;
+		boolean programRunning = true;
+		while(programRunning){
+			System.out.print("Which terminal would you like to simulate? P/M/O/A: ");
+			System.out.println("Enter 'P' if you're a provider.");
+			System.out.println("Enter 'M' if you're a manager");
+			System.out.println("Enter 'O' if you're a operator");
+			System.out.println("Enter 'A' if you're part of Acme Accounting Services");
+			System.out.println("Enter 'E' to exit.");
+			Scanner scan = new Scanner(System.in);
+			char c = scan.nextLine().trim().charAt(0);
+		
+			switch(c){
+			case('P'):
+				providerTerminal(members, providers, serviceDatabase);
+				exit(members, providers);
+				break;
+			case('M'):
+				break;
+			case('O'):
+				operatorTerminal(members, providers);
+				exit(members, providers);
+				break;
+			case('A'):
+				break;
+			case('E'):
+				programRunning = false;
+				break;
+			}
 		}
 	}
 
@@ -285,5 +290,48 @@ public class Terminal {
 			}
 		}
 	}//end operators terminal
+	
+	public void acmeTerminal(MembersDatabase members, ProvidersDatabase providers){
+		Scanner scan = new Scanner(System.in);
+		boolean continueACMETerminal = true;
+		while(continueACMETerminal){
+			System.out.println("Welcome to the ACME terminal! Please choose one of the following options: ");
+			System.out.println("Enter '1' to change member balance.");
+			System.out.print("Enter '2' to exit.");
+			int choice = scan.nextInt();
+			switch(choice){
+				case(1):
+					System.out.println("Please enter the Member ID of the member whose balance you would like to change.");
+					int memberNumber = scan.nextInt();
+					if(!members.contains(memberNumber)){
+						memberNumber = invalidID("member", members, providers);
+						if(memberNumber == -1){
+							System.out.println("Returning to terminal.");
+							break;
+						}
+					}
+					System.out.println("Enter the amount you would like to change balance.  Negative values charge the member and positive add money to the members account.");
+					System.out.println("If a members balance is less than zero, that member will be suspended.");
+					int changeInBalance = scan.nextInt();
+					((Member) members.search(memberNumber)).changeBalance(changeInBalance);
+					System.out.println(members.search(memberNumber).getName() + "'s balance is now " + ((Member) members.search(memberNumber)).getBalance()); 
+					if(((Member) members.search(memberNumber)).getBalance() < 0){
+						((Member) members.search(memberNumber)).setSuspended(true);
+						System.out.println(members.search(memberNumber).getName() + " is now suspended.");
+					}
+					if(((Member) members.search(memberNumber)).getBalance() >= 0){
+						((Member) members.search(memberNumber)).setSuspended(false);
+						System.out.println(members.search(memberNumber).getName() + " is now unsuspended.");
+					}
+					break;
+				case(2):
+					continueACMETerminal = false;
+					break;
+				default:
+					System.out.println("You have not chosen one of the options. Please try agian.");
+					break;
+			}//end switch
+		}//end while
+	}//end ACME terminal
 }
 
