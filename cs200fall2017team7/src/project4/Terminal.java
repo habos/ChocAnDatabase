@@ -40,7 +40,7 @@ public class Terminal {
 		
 		boolean programRunning = true;
 		while(programRunning){
-			System.out.print("Which terminal would you like to simulate? P/M/O/A: ");
+			System.out.println("Which terminal would you like to simulate? P/M/O/A/E: ");
 			System.out.println("Enter 'P' if you're a provider.");
 			System.out.println("Enter 'M' if you're a manager");
 			System.out.println("Enter 'O' if you're a operator");
@@ -335,5 +335,7 @@ public class Terminal {
 			}//end switch
 		}//end while
 	}//end ACME terminal
+	
+	//public static void memberTerminal()
 }
 
