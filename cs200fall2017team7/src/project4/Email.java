@@ -31,7 +31,7 @@ public class Email {
 			Record record = member.next();
 			if(record.hasClaims()){
 				MemberReport report = new MemberReport(record.getId(), membersDatabase);
-				emailer("MemberReports", record.getName()+" "+dateFormat.format(date), report.toString());
+				emailer("MemberReports", record.getName()+dateFormat.format(date), report.toString());
 			}
 			record.setIsCurrentFalse();
 		}
@@ -39,14 +39,14 @@ public class Email {
 			Record record = providers.next();
 			if(record.hasClaims()){
 				ProviderReport report = new ProviderReport(record.getId(), providersDatabase);
-				emailer("ProviderReports", record.getName()+" "+dateFormat.format(date), report.toString());
+				emailer("ProviderReports", record.getName()+dateFormat.format(date), report.toString());
 				EFT eft = new EFT(record.getName(), record.getId(), record.getClaimFee());
 				emailer("EFTReports", record.getName(), eft.toString());
 			}
 			record.setIsCurrentFalse();
 		}
 		SummaryReport summary = new SummaryReport(providersDatabase);
-		emailer("SummaryReports", "SummaryReport " + dateFormat.format(date), summary.toString());
+		emailer("SummaryReports", "SummaryReport" + dateFormat.format(date), summary.toString());
 		System.out.println("Main Accouning Procedure has run");
 	}
 	

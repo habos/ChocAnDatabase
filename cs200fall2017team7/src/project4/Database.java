@@ -145,7 +145,7 @@ public abstract class Database {
 	 */
 	public void addClaim(ProvidersDatabase providers, MembersDatabase members, ServiceDatabase services, int provID, int memberId) {
 	Date date = new Date();
-	DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY hh:mm:ss");// set up the date and time format
+	DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY hh:mm:ss");
 	Scanner user_input = new Scanner(System.in);
 
 	String providerName = providers.getName(provID);
