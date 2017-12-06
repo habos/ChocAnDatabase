@@ -22,7 +22,7 @@ public class Email {
 	 * @param membersDatabase Member database
 	 * @param providersDatabase Provider database
 	 */
-	public void mainAccountingProcedure(MembersDatabase membersDatabase, ProvidersDatabase providersDatabase){
+	public static void mainAccountingProcedure(MembersDatabase membersDatabase, ProvidersDatabase providersDatabase){
 		DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY");
 		Date date = new Date();
 		Iterator<Record> member = membersDatabase.giveMeAnIterator();
@@ -31,7 +31,7 @@ public class Email {
 			Record record = member.next();
 			if(record.hasClaims()){
 				MemberReport report = new MemberReport(record.getId(), membersDatabase);
-				emailer("MemberReports", record.getName()+" "+dateFormat.format(date), report.toString());
+				emailer("MemberReports", record.getName()+dateFormat.format(date), report.toString());
 			}
 			record.setIsCurrentFalse();
 		}
@@ -39,15 +39,15 @@ public class Email {
 			Record record = providers.next();
 			if(record.hasClaims()){
 				ProviderReport report = new ProviderReport(record.getId(), providersDatabase);
-				emailer("ProviderReports", record.getName()+" "+dateFormat.format(date), report.toString());
+				emailer("ProviderReports", record.getName()+dateFormat.format(date), report.toString());
 				EFT eft = new EFT(record.getName(), record.getId(), record.getClaimFee());
 				emailer("EFTReports", record.getName(), eft.toString());
 			}
 			record.setIsCurrentFalse();
 		}
 		SummaryReport summary = new SummaryReport(providersDatabase);
-		emailer("SummaryReports", "SummaryReport " + dateFormat.format(date), summary.toString());
-		
+		emailer("SummaryReports", "SummaryReport" + dateFormat.format(date), summary.toString());
+		System.out.println("Main Accouning Procedure has run");
 	}
 	
 	
@@ -57,7 +57,7 @@ public class Email {
 	 * @param providers List of providers in our database
 	 * 
 	 */
-	public void requestEmail(MembersDatabase members, ProvidersDatabase providers){
+	public static void requestEmail(MembersDatabase members, ProvidersDatabase providers){
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd ");// set up the date and time format
 		Date date = new Date();
@@ -71,16 +71,26 @@ public class Email {
 			System.out.println("Please enter the ID of the Member you would like to generate the report for: ");
 			int memberID = scan.nextInt();
 			while (!members.contains(memberID)) {
-				System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID: ");
+				System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID: (Enter -1 to Exit)");
 				memberID = scan.nextInt();
+				if(memberID == -1)
+					return;
 			}
 			MemberReport report = new MemberReport(memberID, members);
 			emailer("MemberReports", members.getName(memberID)+dateFormat.format(date), report.toString());
+			System.out.println("Email for member has been sent.");
 		} else if (option == 2) {
 			System.out.println("Please enter the ID of the Provider you would like to generate the report for: ");
 			int providerID = scan.nextInt();
+			while (!providers.contains(providerID)) {
+				System.out.println("The ID you have entered does not exist for a provider.  Please enter a new provider ID: (Enter -1 to Exit)");
+				providerID = scan.nextInt();
+				if(providerID == -1)
+					return;
+			}
 			ProviderReport report = new ProviderReport(providerID, providers);
 			emailer("ProviderReports", providers.getName(providerID)+dateFormat.format(date), report.toString());
+			System.out.println("Email for provider has been sent.");
 		} else {
 			System.out.println("ERROR: Incorrect option");
 		}
@@ -93,7 +103,7 @@ public class Email {
 	 * @param text Text to be written to a file
 	 * 
 	 */
-	public void emailer(String path, String recipient, String text) {
+	public static void emailer(String path, String recipient, String text) {
 		File f = new File("Data/"+path+"/"+recipient);
 		try
 		{

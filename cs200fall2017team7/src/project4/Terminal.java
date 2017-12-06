@@ -6,16 +6,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 import com.thoughtworks.xstream.security.AnyTypePermission;
-
-import org.xmlpull.v1.*;
 
 /**
  * Start of the program (currently for testing)
@@ -32,40 +27,42 @@ public class Terminal {
 		ProvidersDatabase providers = new ProvidersDatabase();
 		
 		//refreshFiles(false);
-		if(fromXML("members") != null)
-			members = (MembersDatabase) fromXML("members");
-		if(fromXML("proiders") != null)
-			providers = (ProvidersDatabase) fromXML("providers");
+		if(fromXML("Members") != null)
+			members = (MembersDatabase) fromXML("Members");
+		if(fromXML("Providers") != null)
+			providers = (ProvidersDatabase) fromXML("Providers");
 		
 		
 		boolean programRunning = true;
 		while(programRunning){
-			System.out.println("Which terminal would you like to simulate? P/M/O/A/E: ");
-			System.out.println("Enter 'P' if you're a provider.");
-			System.out.println("Enter 'M' if you're a manager");
-			System.out.println("Enter 'O' if you're a operator");
-			System.out.println("Enter 'A' if you're part of Acme Accounting Services");
-			System.out.println("Enter 'E' to exit.");
+			System.out.println("Which terminal would you like to simulate?");
+			System.out.println("Enter '1' if you're a provider.");
+			System.out.println("Enter '2' if you're a manager");
+			System.out.println("Enter '3' if you're a operator");
+			System.out.println("Enter '4' if you're part of Acme Accounting Services");
+			System.out.println("Enter '5' to exit.");
 			Scanner scan = new Scanner(System.in);
 			char c = scan.nextLine().trim().charAt(0);
 		
 			switch(c){
-			case('P'):
+			case('1'):
 				providerTerminal(members, providers, serviceDatabase);
-				exit(members, providers);
 				break;
-			case('M'):
+			case('2'):
+				managerTerminal(members, providers);
 				break;
-			case('O'):
+			case('3'):
 				operatorTerminal(members, providers);
-				exit(members, providers);
 				break;
-			case('A'):
+			case('4'):
 				acmeTerminal(members, providers);
+				break;
+			case('5'):
+				programRunning = false;
 				exit(members, providers);
 				break;
-			case('E'):
-				programRunning = false;
+			default:
+				System.out.println("You have not chosen one of the options. Please try agian.");
 				break;
 			}
 		}
@@ -112,7 +109,6 @@ public class Terminal {
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(f));
 		String text = bufferedReader.readLine();
 		bufferedReader.close();
-		f.delete();
 		//Initialize xstream and get rid of useless error
 		XStream xstream = new XStream(new StaxDriver());
 		XStream.setupDefaultSecurity(xstream);
@@ -120,20 +116,6 @@ public class Terminal {
 		xstream.addPermission(per);
 		//Return the database from the xml
 		return (Database) xstream.fromXML(text);
-	}
-	public static void refreshFiles(boolean doDelete) throws IOException {
-		File mem = new File("members.txt");
-		File pro = new File("providers.txt");
-		if(doDelete) {
-		if(mem.exists()) 
-			mem.delete();
-		if(pro.exists())
-			pro.delete();
-		}
-		if(!mem.exists())
-		mem.createNewFile();
-		if(!pro.exists())
-		pro.createNewFile();
 	}
 	
 	public static void exit(MembersDatabase members, ProvidersDatabase providers){
@@ -336,6 +318,30 @@ public class Terminal {
 		}//end while
 	}//end ACME terminal
 	
-	//public static void memberTerminal()
+	public static void managerTerminal(MembersDatabase members, ProvidersDatabase providers){
+		Scanner scan = new Scanner(System.in);
+		boolean continueManagerTerminal = true;
+		while(continueManagerTerminal){
+			System.out.println("Welcome to the Manager terminal! Please choose one of the following options.");
+			System.out.println("Enter '1' to request a report.");
+			System.out.println("Enter '2' to simulate 'Main Accounting Procedure'.");
+			System.out.println("Enter '3' to exit.");
+			int choice = scan.nextInt();
+			switch(choice){
+				case(1):
+					Email.requestEmail(members, providers);
+					break;
+				case(2):
+					Email.mainAccountingProcedure(members, providers);
+					break;
+				case(3):
+					continueManagerTerminal = false;
+					break;
+				default:
+					System.out.println("You have not chosen one of the options. Please try agian.");
+					break;
+			}
+		}
+	}
 }
 

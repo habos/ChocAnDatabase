@@ -1,8 +1,5 @@
 package project4;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class ProvidersDatabase extends Database {
@@ -80,12 +77,12 @@ public class ProvidersDatabase extends Database {
 				} else {
 					// User's choice was out of bounds
 					System.out.println("Invalid Choice.");
-					scan.close();
+					//scan.close();
 					return false;
 				}
 				// Success in edit
 				System.out.println("Information Updated.");
-				scan.close();
+				//scan.close();
 				return true;
 			}
 		}

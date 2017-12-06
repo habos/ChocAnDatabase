@@ -1,11 +1,5 @@
 package project4;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -150,27 +144,11 @@ public abstract class Database {
 	 * @param services Service database
 	 */
 	public void addClaim(ProvidersDatabase providers, MembersDatabase members, ServiceDatabase services, int provID, int memberId) {
-	Date date = new Date();
-	DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY hh:mm:ss");// set up the date and time format
-	Scanner user_input = new Scanner(System.in);
 	
-	/*System.out.println("Enter Provider ID: ");
-	int provID = user_input.nextInt();
-	while (!providers.contains(provID)) {
-		System.out.println("The ID you have entered does not exist for a provider.  Please enter a new Provider ID or enter -1 to exit: ");
-		provID = user_input.nextInt();
-		if(provID == -1)
-			break;
-	}
-	String providerName = providers.getName(provID);
-	System.out.println("Enter Member ID: ");
-	int memberId = user_input.nextInt();
-	while (!members.contains(memberId)) {
-		System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID or enter -1 to exit: ");
-		memberId = user_input.nextInt();
-		if(memberId == -1)
-			break;
-	}*/
+	DateFormat dateFormat = new SimpleDateFormat("MM/dd/YYYY hh:mm:ss");
+	Date date = new Date();
+	Scanner user_input = new Scanner(System.in);
+
 	String providerName = providers.getName(provID);
 	String memberName = members.getName(memberId);
 	System.out.println("Enter Service Code: ");
