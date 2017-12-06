@@ -1,4 +1,10 @@
 package project4.test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
+import org.junit.Before;
+import org.junit.Test;
+
 import project4.Database;
 import project4.ProvidersDatabase;
 import project4.MembersDatabase;
@@ -7,9 +13,6 @@ import project4.Provider;
 import project4.Member;
 import project4.Record;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 /**
  * Testing AddClaim and other database methods
  * @author Caleb
@@ -20,7 +23,7 @@ class AddClaimTest {
 	ProvidersDatabase providersDatabase;
 	MembersDatabase membersDatabase;
 	ServiceDatabase serviceDatabase;
-	@BeforeEach
+	@Before
 	void setUp() throws Exception {
 		providersDatabase = new ProvidersDatabase();
 		membersDatabase = new MembersDatabase();
