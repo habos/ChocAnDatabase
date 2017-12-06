@@ -9,7 +9,7 @@ public class MembersDatabase extends Database {
 	 * The add() method prompts the user to enter information for a new Member
 	 * and adds it to the MemberDatabase
 	 */
-	public void add() {
+	public boolean add() {
 		// Create a new scanner
 		Scanner scan = new Scanner(System.in);
 		// Start asking the user for information
@@ -20,7 +20,7 @@ public class MembersDatabase extends Database {
 			System.out.println("The ID you have entered already exists for another member.  Please enter a new member ID or -1 to exit: ");
 			id = scan.nextInt();
 			if(id == -1)
-				return;
+				return false;
 		}
 		scan.nextLine();
 		System.out.println("Please enter member's name: ");
@@ -35,6 +35,7 @@ public class MembersDatabase extends Database {
 		String ZIP = scan.nextLine();
 		// Create and add the Member to MembersDatabase
 		records.add(new Member(id, name, address, city, state, ZIP));
+		return true;
 	}
 
 	/**

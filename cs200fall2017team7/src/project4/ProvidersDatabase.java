@@ -8,13 +8,19 @@ public class ProvidersDatabase extends Database {
 	 * The add() method prompts the user to enter information for a new Provider
 	 * and adds it to the ProviderDatabase
 	 */
-	public void add() {
+	public boolean add() {
+		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Please enter provider's ID: ");
 		int id = scan.nextInt();
-		while (contains(id)) {
-			System.out.println("The ID you have entered already exists for another provider.  Please enter a new provider ID: ");
+		while (contains(id)) {	
+			System.out.println("The ID you have entered already exists for another provider.  Please enter a new provider ID or enter -1 to exit: ");
 			id = scan.nextInt();
+			
+			if (id == -1) {
+				return false;
+			}
+		
 		}
 		scan.nextLine();
 		System.out.println("Please enter provider's name: ");
@@ -29,6 +35,7 @@ public class ProvidersDatabase extends Database {
 		String ZIP = scan.nextLine();
 		records.add(new Provider(id, name, address, city, state, ZIP));
 		//scan.close();
+		return true;
 	}
 
 

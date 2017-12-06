@@ -171,7 +171,12 @@ public abstract class Record {
 	 * @return Total number of claims
 	 */
 	public int getTotalNumberOfClaims() {
-		return claims.size();
+		int claimTotal=0;
+		for(int i = 0; i < claims.size();i++) {
+			if(claims.get(i).isCurrent)
+				claimTotal++;
+		}
+		return claimTotal;
 	}
 	
 	/**

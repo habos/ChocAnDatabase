@@ -42,9 +42,9 @@ public class SummaryReport extends Report{
 				
 				providerTotalFee = providers.getIndivFee(i);
 				providerConsultations = providers.getConsultant(i);
-				providerName = providers.getName(i);
+				providerName = providers.getNameByIndex(i);
 				
-				report+= providerName+"\n"+"Provider Fee Total: "+providerTotalFee+"\nProvider Total Consultations: "+providerConsultations;
+				report+= "Provider Name: "+providerName+"\n"+"Provider Fee Total: "+providerTotalFee+"\nProvider Total Consultations: "+providerConsultations;
 
 			}
 			

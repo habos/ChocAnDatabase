@@ -23,7 +23,7 @@ public abstract class Database {
 		records = new ArrayList<Record>();
 	}
 	
-	public abstract void add();//adds record, with prompts
+	public abstract boolean add();//adds record, with prompts
 	
 	/**
 	 * This method searches through our records in an attempt to return the record that matches a specific ID number.
