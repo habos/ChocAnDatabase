@@ -2,6 +2,8 @@ package project4.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import java.io.ByteArrayInputStream;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -68,6 +70,8 @@ public class AddClaimTest {
 	@Test
 	public void testAddClaimSuccess() {
 		int flag = 0;
+		ByteArrayInputStream in = new ByteArrayInputStream("100000\nasfd\n11/11/1111".getBytes());
+		System.setIn(in);
 		providersDatabase.addClaim(providersDatabase, membersDatabase, serviceDatabase, 10, 20);
 		if(providersDatabase.search(10).hasClaims())
 		{
@@ -79,6 +83,8 @@ public class AddClaimTest {
 	@Test
 	public void testAddClaimFailure() {
 		int flag = 0;
+		ByteArrayInputStream in = new ByteArrayInputStream("100000\nasfd\n11/11/1111".getBytes());
+		System.setIn(in);
 		providersDatabase.addClaim(providersDatabase, membersDatabase, serviceDatabase, 10, 20);
 		if(providersDatabase.search(30).hasClaims())
 		{
