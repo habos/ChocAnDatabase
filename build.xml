@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="cs200fall2017team7">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../Applications/Eclipse.app/Contents/Eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="cs200fall2017team7.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="cs200fall2017team7/xpp3_min-1.1.4c.jar"/>
+        <pathelement location="cs200fall2017team7/xstream-1.4.10.jar"/>
+        <pathelement location="cs200fall2017team7/kxml2-2.1.8.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="cs200fall2017team7/src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="cs200fall2017team7/src"/>
+            <classpath refid="cs200fall2017team7.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="Setup">
+        <java classname="project4.Setup" failonerror="true" fork="yes">
+            <classpath refid="cs200fall2017team7.classpath"/>
+        </java>
+    </target>
+    <target name="Terminal">
+        <java classname="project4.Terminal" failonerror="true" fork="yes">
+            <classpath refid="cs200fall2017team7.classpath"/>
+        </java>
+    </target>
+              	<target name="jar" description="Bundles the application as a JAR file" depends="clean, build">
+              	     
+              	    <copy includeemptydirs="false" todir="cs200fall2017team7/release">
+              	            <fileset dir="cs200fall2017team7/release">
+              	            <include name="**/*.class"/>
+              	            </fileset>
+              	    </copy>
+              	     
+              	    <jar destfile="Project4.jar"
+              	        basedir="cs200fall2017team7"
+              	        needxmlfile="false">
+              	    </jar>
+              	</target>
+</project>
