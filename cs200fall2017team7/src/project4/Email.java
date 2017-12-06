@@ -57,7 +57,7 @@ public class Email {
 	 * @param providers List of providers in our database
 	 * 
 	 */
-	public void requestEmail(MembersDatabase members, ProvidersDatabase providers){
+	public static void requestEmail(MembersDatabase members, ProvidersDatabase providers){
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd ");// set up the date and time format
 		Date date = new Date();
@@ -71,14 +71,22 @@ public class Email {
 			System.out.println("Please enter the ID of the Member you would like to generate the report for: ");
 			int memberID = scan.nextInt();
 			while (!members.contains(memberID)) {
-				System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID: ");
+				System.out.println("The ID you have entered does not exist for a member.  Please enter a new member ID: (Enter -1 to Exit)");
 				memberID = scan.nextInt();
+				if(memberID == -1)
+					return;
 			}
 			MemberReport report = new MemberReport(memberID, members);
 			emailer("MemberReports", members.getName(memberID)+dateFormat.format(date), report.toString());
 		} else if (option == 2) {
 			System.out.println("Please enter the ID of the Provider you would like to generate the report for: ");
 			int providerID = scan.nextInt();
+			while (!providers.contains(providerID)) {
+				System.out.println("The ID you have entered does not exist for a provider.  Please enter a new provider ID: (Enter -1 to Exit)");
+				providerID = scan.nextInt();
+				if(providerID == -1)
+					return;
+			}
 			ProviderReport report = new ProviderReport(providerID, providers);
 			emailer("ProviderReports", providers.getName(providerID)+dateFormat.format(date), report.toString());
 		} else {
@@ -93,7 +101,7 @@ public class Email {
 	 * @param text Text to be written to a file
 	 * 
 	 */
-	public void emailer(String path, String recipient, String text) {
+	public static void emailer(String path, String recipient, String text) {
 		File f = new File("Data/"+path+"/"+recipient);
 		try
 		{
