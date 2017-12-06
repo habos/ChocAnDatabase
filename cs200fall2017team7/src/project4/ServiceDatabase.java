@@ -100,6 +100,10 @@ public class ServiceDatabase {
 		}
 		return false;
 	}
+	/**
+	 * Gets the services in service database and puts it into a string
+	 * @return A string that is the provider directory, formatted like the document itself
+	 */
 	public String toString()
 	{
 		Iterator <Service> services = this.services.iterator();
