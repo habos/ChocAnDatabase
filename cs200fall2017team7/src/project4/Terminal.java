@@ -48,6 +48,8 @@ public class Terminal {
 		
 		switch(c){
 		case('P'):
+			providerTerminal(members, providers, serviceDatabase);
+			exit(members, providers);
 			break;
 		case('M'):
 			break;
@@ -234,12 +236,63 @@ public class Terminal {
 					System.out.println("Please enter a member id for the member you would like to bill.");
 					int memberId = scan.nextInt();
 					if(members.validate(memberId))
-						members.addClaim(providers, members, services);
+						members.addClaim(providers, members, services, providerNumber, memberId);
 					break;
 				case(4):
 					continueProviderTerminal = false;
 					break;
-			
+				default:
+					System.out.println("You have not chosen one of the options. Please try again.");
+					break;
+			}
+		}
+	}
+	
+	public static void operatorTerminal(MembersDatabase members, ProvidersDatabase providers){
+		Scanner scan = new Scanner(System.in);
+		boolean continueOperatorTerminal = true;
+		while(continueOperatorTerminal){
+			System.out.println("Welcome to the operators terminal! Please choose one of the following options:");
+			System.out.println("Enter '1' to manage the members database.");
+			System.out.println("Enter '2' to manage the providers database.");
+			System.out.println("Enter '3' to exit.");
+			int choice = scan.nextInt();
+			switch(choice){
+				case(1):
+					boolean continueMemberManagement = true;
+					while(continueMemberManagement){
+						System.out.println("Welcome to member management.  Please choose one of the following options:");
+						System.out.println("Enter '1' to add member.");
+						System.out.println("Enter '2' to delete member.");
+						System.out.println("Enter '3' to edit member.");
+						System.out.println("Enter '4' to exit.");
+						int memberChoice = scan.nextInt();
+						switch(memberChoice){
+							case(1):
+								members.add();
+								break;
+							case(2):
+								break;
+							case(3):
+								break;
+							case(4):
+								continueMemberManagement = false;
+								break;
+							default:
+								System.out.println("You have not chosen one of the options. Please try again.");
+								break;
+						}//end switch
+					}//end while
+					break;
+				case(2):
+					
+					break;
+				case(3):
+					continueOperatorTerminal = false;
+					break;
+				default:
+					System.out.println("You have not chosen one of the options. Please try again.");
+					break;
 			}
 		}
 	}

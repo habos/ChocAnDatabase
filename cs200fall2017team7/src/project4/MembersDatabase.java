@@ -20,7 +20,7 @@ public class MembersDatabase extends Database {
 			System.out.println("The ID you have entered already exists for another member.  Please enter a new member ID or -1 to exit: ");
 			id = scan.nextInt();
 			if(id == -1)
-				break;
+				return;
 		}
 		scan.nextLine();
 		System.out.println("Please enter member's name: ");
