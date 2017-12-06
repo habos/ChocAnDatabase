@@ -22,7 +22,7 @@ public class Email {
 	 * @param membersDatabase Member database
 	 * @param providersDatabase Provider database
 	 */
-	public void mainAccountingProcedure(MembersDatabase membersDatabase, ProvidersDatabase providersDatabase){
+	public static void mainAccountingProcedure(MembersDatabase membersDatabase, ProvidersDatabase providersDatabase){
 		DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY");
 		Date date = new Date();
 		Iterator<Record> member = membersDatabase.giveMeAnIterator();
@@ -47,7 +47,7 @@ public class Email {
 		}
 		SummaryReport summary = new SummaryReport(providersDatabase);
 		emailer("SummaryReports", "SummaryReport " + dateFormat.format(date), summary.toString());
-		
+		System.out.println("Main Accouning Procedure has run");
 	}
 	
 	
@@ -78,6 +78,7 @@ public class Email {
 			}
 			MemberReport report = new MemberReport(memberID, members);
 			emailer("MemberReports", members.getName(memberID)+dateFormat.format(date), report.toString());
+			System.out.println("Email for member has been sent.");
 		} else if (option == 2) {
 			System.out.println("Please enter the ID of the Provider you would like to generate the report for: ");
 			int providerID = scan.nextInt();
@@ -89,6 +90,7 @@ public class Email {
 			}
 			ProviderReport report = new ProviderReport(providerID, providers);
 			emailer("ProviderReports", providers.getName(providerID)+dateFormat.format(date), report.toString());
+			System.out.println("Email for provider has been sent.");
 		} else {
 			System.out.println("ERROR: Incorrect option");
 		}

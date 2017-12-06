@@ -352,10 +352,10 @@ public class Terminal {
 			int choice = scan.nextInt();
 			switch(choice){
 				case(1):
-					
+					Email.requestEmail(members, providers);
 					break;
 				case(2):
-					
+					Email.mainAccountingProcedure(members, providers);
 					break;
 				case(3):
 					continueManagerTerminal = false;
