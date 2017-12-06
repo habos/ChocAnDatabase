@@ -149,12 +149,12 @@ public abstract class Database {
 	 * @param members Members database
 	 * @param services Service database
 	 */
-	public void addClaim(ProvidersDatabase providers, MembersDatabase members, ServiceDatabase services) {
+	public void addClaim(ProvidersDatabase providers, MembersDatabase members, ServiceDatabase services, int provID, int memberId) {
 	Date date = new Date();
 	DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY hh:mm:ss");// set up the date and time format
 	Scanner user_input = new Scanner(System.in);
 	
-	System.out.println("Enter Provider ID: ");
+	/*System.out.println("Enter Provider ID: ");
 	int provID = user_input.nextInt();
 	while (!providers.contains(provID)) {
 		System.out.println("The ID you have entered does not exist for a provider.  Please enter a new Provider ID or enter -1 to exit: ");
@@ -170,7 +170,8 @@ public abstract class Database {
 		memberId = user_input.nextInt();
 		if(memberId == -1)
 			break;
-	}
+	}*/
+	String providerName = providers.getName(provID);
 	String memberName = members.getName(memberId);
 	System.out.println("Enter Service Code: ");
 	int servCode = user_input.nextInt();
