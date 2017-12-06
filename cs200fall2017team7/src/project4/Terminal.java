@@ -37,9 +37,9 @@ public class Terminal {
 		while(programRunning){
 			System.out.println("Which terminal would you like to simulate?");
 			System.out.println("Enter '1' if you're a provider.");
-			System.out.println("Enter '2' if you're a manager");
-			System.out.println("Enter '3' if you're a operator");
-			System.out.println("Enter '4' if you're part of Acme Accounting Services");
+			System.out.println("Enter '2' if you're a manager.");
+			System.out.println("Enter '3' if you're a operator.");
+			System.out.println("Enter '4' if you're part of Acme Accounting Services.");
 			System.out.println("Enter '5' to exit.");
 			Scanner scan = new Scanner(System.in);
 			char c = scan.nextLine().trim().charAt(0);
