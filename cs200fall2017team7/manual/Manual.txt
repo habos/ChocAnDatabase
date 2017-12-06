@@ -1,0 +1,47 @@
+Upon startup of the program the user is present with the five options
+	Enter '1' if you're a provider.
+	Enter '2' if you're a manager.
+	Enter '3' if you're a operator.
+	Enter '4' if you're part of Acme Accounting Services.
+	Enter '5' to exit.
+To select a option type in a one of the numbers (1-5) and press enter to select a option.
+
+Upon selecting option '1':
+	
+	The Program then asks the user to input their provider ID
+		-If the user inputs an invalid provider ID they will be prompted to re-enter the provider ID until either a valid
+		 provider ID is entered or until -1 is inputed.
+		 	-If -1 is entered the user will be returned to the starting screen.
+	
+	After the ID validation the user is greeted with the following screen:
+		Welcome to the Provider Terminal! Please choose one of the following options.
+		Enter '1' to request provider directory.
+		Enter '2' to validate a member.
+		Enter '3' to bill a member.
+		Enter '4' to exit.
+	
+	Again to select an option type on of the numbers (1-4) shown and press enter to select a option.
+	
+		Upon selecting option '1':
+			
+			The screen will immediately display the current contents of the latest provider directory.
+		
+		Upon selecting option '2':
+			
+			The user will be prompted to enter a member ID number.
+				-If the user inputs an invalid member ID they will be prompted to re-enter the member ID until either a valid
+					 member ID is entered or until -1 is inputed.
+				 	-If -1 is entered the user will be returned to the provider screen.
+			Once the number is valid the system will display "Validated" and return to the provider menu
+		
+		Upon selecting option '3':
+			
+			The user will be prompted to enter a member ID number.
+				-If the user inputs an invalid member ID they will be prompted to re-enter the member ID until either a valid
+					 member ID is entered or until -1 is inputed.
+				 	-If -1 is entered the user will be returned to the provider screen.
+			
+			Once a valid member ID is entered the program the program will prompt the user to enter a valid service code.
+				-If the user inputs an invalid service code they will be prompted to re-enter the service code until either a valid
+				 service code is entered 
+			
