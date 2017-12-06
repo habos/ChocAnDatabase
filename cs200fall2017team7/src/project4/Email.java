@@ -31,7 +31,7 @@ public class Email {
 			Record record = member.next();
 			if(record.hasClaims()){
 				MemberReport report = new MemberReport(record.getId(), membersDatabase);
-				Emailer("MemberReports", record.getName()+" "+dateFormat.format(date), report.toString());
+				emailer("MemberReports", record.getName()+" "+dateFormat.format(date), report.toString());
 			}
 			record.setIsCurrentFalse();
 		}
@@ -39,14 +39,14 @@ public class Email {
 			Record record = providers.next();
 			if(record.hasClaims()){
 				ProviderReport report = new ProviderReport(record.getId(), providersDatabase);
-				Emailer("ProviderReports", record.getName()+" "+dateFormat.format(date), report.toString());
+				emailer("ProviderReports", record.getName()+" "+dateFormat.format(date), report.toString());
 				EFT eft = new EFT(record.getName(), record.getId(), record.getClaimFee());
-				Emailer("EFTReports", record.getName(), eft.toString());
+				emailer("EFTReports", record.getName(), eft.toString());
 			}
 			record.setIsCurrentFalse();
 		}
 		SummaryReport summary = new SummaryReport(providersDatabase);
-		Emailer("SummaryReports", "SummaryReport " + dateFormat.format(date), summary.toString());
+		emailer("SummaryReports", "SummaryReport " + dateFormat.format(date), summary.toString());
 		
 	}
 	
@@ -75,12 +75,12 @@ public class Email {
 				memberID = scan.nextInt();
 			}
 			MemberReport report = new MemberReport(memberID, members);
-			Emailer("MemberReports", members.getName(memberID)+dateFormat.format(date), report.toString());
+			emailer("MemberReports", members.getName(memberID)+dateFormat.format(date), report.toString());
 		} else if (option == 2) {
 			System.out.println("Please enter the ID of the Provider you would like to generate the report for: ");
 			int providerID = scan.nextInt();
 			ProviderReport report = new ProviderReport(providerID, providers);
-			Emailer("ProviderReports", providers.getName(providerID)+dateFormat.format(date), report.toString());
+			emailer("ProviderReports", providers.getName(providerID)+dateFormat.format(date), report.toString());
 		} else {
 			System.out.println("ERROR: Incorrect option");
 		}
@@ -93,7 +93,7 @@ public class Email {
 	 * @param text Text to be written to a file
 	 * 
 	 */
-	public void Emailer(String path, String recipient, String text) {
+	public void emailer(String path, String recipient, String text) {
 		File f = new File("Data/"+path+"/"+recipient);
 		try
 		{
