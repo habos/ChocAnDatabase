@@ -28,9 +28,9 @@ public class Terminal {
 		
 		//refreshFiles(false);
 		if(fromXML("members") != null)
-			members = (MembersDatabase) fromXML("members");
+			members = (MembersDatabase) fromXML("Members");
 		if(fromXML("proiders") != null)
-			providers = (ProvidersDatabase) fromXML("providers");
+			providers = (ProvidersDatabase) fromXML("Providers");
 		
 		
 		boolean programRunning = true;
@@ -47,19 +47,15 @@ public class Terminal {
 			switch(c){
 			case('1'):
 				providerTerminal(members, providers, serviceDatabase);
-				exit(members, providers);
 				break;
 			case('2'):
 				managerTerminal(members, providers);
-				exit(members, providers);
 				break;
 			case('3'):
 				operatorTerminal(members, providers);
-				exit(members, providers);
 				break;
 			case('4'):
 				acmeTerminal(members, providers);
-				exit(members, providers);
 				break;
 			case('5'):
 				programRunning = false;
@@ -121,20 +117,6 @@ public class Terminal {
 		xstream.addPermission(per);
 		//Return the database from the xml
 		return (Database) xstream.fromXML(text);
-	}
-	public static void refreshFiles(boolean doDelete) throws IOException {
-		File mem = new File("members.txt");
-		File pro = new File("providers.txt");
-		if(doDelete) {
-		if(mem.exists()) 
-			mem.delete();
-		if(pro.exists())
-			pro.delete();
-		}
-		if(!mem.exists())
-		mem.createNewFile();
-		if(!pro.exists())
-		pro.createNewFile();
 	}
 	
 	public static void exit(MembersDatabase members, ProvidersDatabase providers){
