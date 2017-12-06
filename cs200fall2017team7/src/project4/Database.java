@@ -12,7 +12,7 @@ import java.util.Scanner;
  * The superclass for MembersDatabase and ProvidersDatabase.
  * @author Chris
  */
-public abstract boolean class Database {
+public abstract class Database {
 	
 	protected ArrayList<Record> records;
 	

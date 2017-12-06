@@ -39,7 +39,7 @@ public class ProviderManagementTest {
 	@Test
 	public void testAddFailure() {
 		ByteArrayInputStream newInput = new ByteArrayInputStream("9876\nJohn\n190 University Blvd\nTuscaloosa\nAlabama\n36695".getBytes());
-		
+
 		System.setIn(newInput);
 		providers.add();
 		System.setIn(System.in);
