@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 
-    <target name="clean">
-        <delete dir="build"/>
+    <target name="init">
+    <mkdir dir="classes"/>
     </target>
 
-    <target name="compile">
-        <mkdir dir="build/classes"/>
-        <javac srcdir="src" destdir="build/classes"/>
+    <target name="compile" depends="init">
+        <javac srcdir="src/project4" destdir="classes"/>
     </target>
 
-    <target name="jar">
-        <jar destfile="release/jar/Terminal.jar" basedir="build/classes">
-            <manifest>
-                <attribute name="Main-Class" value="project4.Terminal"/>
-            </manifest>
-        </jar>
+    <target name="compress" depends="compile">
+        <jar destfile="release/Terminal.jar" basedir="classes"/>
     </target>
 
     <target name="run">
