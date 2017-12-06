@@ -24,15 +24,10 @@ public class MemberManagementTest {
 
 	MembersDatabase members;
 	
-	
-	
-	
 	@Before
 	public void setUp() throws Exception {
 		members = new MembersDatabase();
 		members.add(new Member( 111111, "Logan", "Dumbass Lane", "Tuscaloosa", "Alabama", "35757"));
-		
-		
 	}
 
 	//test for success
