@@ -63,6 +63,7 @@ public class Terminal {
 				break;
 			case('5'):
 				programRunning = false;
+				exit(members, providers);
 				break;
 			default:
 				System.out.println("You have not chosen one of the options. Please try agian.");
