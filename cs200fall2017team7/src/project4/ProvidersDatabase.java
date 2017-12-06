@@ -130,7 +130,7 @@ public class ProvidersDatabase extends Database {
 		int numConsultants = 0;
 
 		for (int i = 0; i < records.size(); i++) {
-			numConsultants += records.get(i).getConsultants();
+			numConsultants += records.get(i).getTotalNumberOfClaims();
 		}
 		return numConsultants;
 	}
@@ -144,7 +144,7 @@ public class ProvidersDatabase extends Database {
 
 	public int getConsultant(int recordLocation) {
 
-		return records.get(recordLocation).getConsultants();
+		return records.get(recordLocation).getTotalNumberOfClaims();
 
 	}
 
