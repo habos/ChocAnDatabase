@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import project4.ServiceDatabase;
 
-public class ServicesDatabase {
+public class ServicesDatabaseTest {
 
 	ServiceDatabase services;
 	
@@ -22,12 +22,16 @@ public class ServicesDatabase {
 	}
 	@Test
 	public void testGetNameFalse() {
-		assert("Chocolate Bath",services.getName(100000));
+		assertNotEquals("Liposuction",services.getName(100000));
 	}
 
 	@Test
-	public void testGetPrice() {
+	public void testGetPriceTrue() {
 		assertEquals(150, services.getPrice(100000));
+	}
+	@Test
+	public void testGetPriceFalse() {
+		assertNotEquals(150, services.getPrice(0));
 	}
 
 	@Test
@@ -35,7 +39,7 @@ public class ServicesDatabase {
 assertTrue(services.contains(100000));	}
 	@Test
 	public void testContainsFalse() {
-assertTrue(services.contains(0));	}
+assertFalse(services.contains(0));	}
 
 
 

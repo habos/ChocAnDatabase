@@ -39,6 +39,7 @@ public class ServiceDatabase {
 					theServiceName += s.next();
 					theServiceName += " ";
 				}
+				theServiceName = theServiceName.trim();
 				readInService = new Service(theServiceCode, thePrice, theServiceName);
 				services.add(readInService);
 			}
