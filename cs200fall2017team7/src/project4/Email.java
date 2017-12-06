@@ -13,13 +13,15 @@ import java.util.Scanner;
 
 /**
  * Creates 'emails' from reports (saves it to a text file)
- * 
  * @author Chris
- *
  */
 public class Email {	
 	
-	
+	/**
+	 * This creates all the needed reports for the main accounting procedure
+	 * @param membersDatabase Member database
+	 * @param providersDatabase Provider database
+	 */
 	public void mainAccountingProcedure(MembersDatabase membersDatabase, ProvidersDatabase providersDatabase){
 		DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY");
 		Date date = new Date();

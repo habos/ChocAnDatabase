@@ -14,11 +14,17 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 
-
+/**
+ * The superclass for MembersDatabase and ProvidersDatabase.
+ * @author Chris
+ */
 public abstract class Database {
 	
 	protected ArrayList<Record> records;
 	
+	/**
+	 * Constructor
+	 */
 	public Database() {
 		records = new ArrayList<Record>();
 	}
@@ -44,6 +50,10 @@ public abstract class Database {
 		}
 			return null ;
 	}
+	/**
+	 * Adds record to database.
+	 * @param record
+	 */
 	public void add(Record record) {
 		records.add(record);
 	}
@@ -68,6 +78,11 @@ public abstract class Database {
 		System.out.println("Failed to find record with ID of "+ id);
 		return false;
 	}
+	/**
+	 * Checks if the database contains a record that matches an id
+	 * @param id The id to compare against database entries
+	 * @return True if the database contains the id, false if it does not.
+	 */
 	public boolean contains(int id) {
 		
 		Iterator <Record> records = this.records.iterator();
@@ -82,6 +97,11 @@ public abstract class Database {
 		}
 		return false;
 	}
+	/**
+	 * Finds the entry that matches an id, and returns the name
+	 * @param id The id to match
+	 * @return The string that is the name of the person that has the id sent in as a paramater
+	 */
 	public String getName(int id) {
 		Iterator <Record> records = this.records.iterator();
 		while(records.hasNext()) 
@@ -95,6 +115,11 @@ public abstract class Database {
 		return "";
 	}
 	
+	/**
+	 * Returns a record in the form of a string to be used in reports
+	 * @param id The id to search for in the database
+	 * @return The record in the form of a properly formatted string
+	 */
 	public String getRecords(int id) {
 		Iterator<Record> records = this.records.iterator();
 		while(records.hasNext())
@@ -109,12 +134,21 @@ public abstract class Database {
 	
 	public abstract boolean edit(int idToChange);//edit records
 	
+	/**
+	 * It returns an iterator for the records arraylist
+	 * @return The iterator for the records arraylist
+	 */
 	public Iterator<Record> giveMeAnIterator(){
 		Iterator <Record> records = this.records.iterator();
 		return records;
 	}
 	
-	
+	/**
+	 * Adds a claim.
+	 * @param providers Providers database
+	 * @param members Members database
+	 * @param services Service database
+	 */
 	public void addClaim(ProvidersDatabase providers, MembersDatabase members, ServiceDatabase services) {
 	Date date = new Date();
 	DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY hh:mm:ss");// set up the date and time format

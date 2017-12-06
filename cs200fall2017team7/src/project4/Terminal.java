@@ -38,11 +38,29 @@ public class Terminal {
 			providers = (ProvidersDatabase) fromXML("providers");
 		
 		System.out.print("Which terminal would you like to simulate? P/M/O/A: ");
+		System.out.println("Enter 'P' if you're a provider.");
+		System.out.println("Enter 'M' if you're a manager");
+		System.out.println("Enter 'O' if you're a operator");
+		System.out.println("Enter 'A' if you're part of Acme Accounting Services");
+		System.out.println("Enter 'E' to exit.");
 		Scanner scan = new Scanner(System.in);
 		char c = scan.nextLine().trim().charAt(0);
 		
+		switch(c){
+		case('P'):
+			break;
+		case('M'):
+			break;
+		case('O'):
+			break;
+		case('A'):
+			break;
+		case('E'):
+			break;
+		}
+		
 		//Provider Terminal
-		if(c == 'P' || c == 'p')
+		/*if(c == 'P' || c == 'p')
 		{
 			System.out.print("\nYou have chosen provider terminal. Please enter your provider number: ");
 			int providerNumber = scan.nextInt();
@@ -86,7 +104,7 @@ public class Terminal {
 				//invalidID("provider", members, providers);
 				
 			}
-		}
+		}*/
 		
 	}
 
@@ -168,7 +186,6 @@ public class Terminal {
 				System.out.println("The ID you have entered does not exist for a member.  Please enter a new Member ID or enter -1 to exit: ");
 				id = user_input.nextInt();
 				if(id == -1){
-					exit(members, providers);
 					return id;
 				}
 			}
@@ -177,7 +194,6 @@ public class Terminal {
 				System.out.println("The ID you have entered does not exist for a provider.  Please enter a new Provider ID or enter -1 to exit: ");
 				id = user_input.nextInt();
 				if(id == -1){
-					exit(members, providers);
 					return id;
 				}
 			}
@@ -188,6 +204,38 @@ public class Terminal {
 		return id;
 	}
 	
+	public static void providerTerminal(MembersDatabase members, ProvidersDatabase providers, ServiceDatabase services){
+		Scanner scan = new Scanner(System.in);
+		System.out.print("You have chosen provider terminal. Please enter your provider number: ");
+		int providerNumber = scan.nextInt();
+		if(!providers.contains(providerNumber)){
+			providerNumber = invalidID("provider", members, providers);
+			if(providerNumber == -1)
+				return;
+		}
+		boolean continueProviderTerminal = true;
+		while(continueProviderTerminal){
+			System.out.println("Welcome to the Provider Terminal! Please choose one of the following options.");
+			System.out.println("Enter '1' to request provider directory.");
+			System.out.println("Enter '2' to validate a member.");
+			System.out.println("Enter '3' to bill a member.");
+			System.out.println("Enter '4' to exit.");
+			int choice = scan.nextInt();
+			switch(choice){
+				case(1):
+					services.toString();
+					break;
+				case(2):
+					
+					break;
+				case(3):
+					break;
+				case(4):
+					continueProviderTerminal = false;
+					break;
+			
+			}
+		}
+	}
 }
-	
 
