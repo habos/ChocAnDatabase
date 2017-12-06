@@ -1,4 +1,7 @@
 package project4;
+
+import java.io.IOException;
+
 /**
  * Entity stereotype class that contains data for claims and methods to access the data.
  * @author Logan
@@ -33,7 +36,7 @@ public class Claim {
 		isCurrent = true;
 
 	}
-	public Claim( String currentDate, String dateProvided, int providerId, int memberId, int serviceCode, String comments) {
+	public Claim( String currentDate, String dateProvided, int providerId, int memberId, int serviceCode, String comments) throws IOException {
 		this.providerId = providerId;
 		this.memberId=memberId;
 		this.currentDate = currentDate;
@@ -41,6 +44,9 @@ public class Claim {
 		this.comments = comments;
 		this.dateProvided = dateProvided;
 		isCurrent = true;
+		ServiceDatabase services = new ServiceDatabase();
+		this.fee = services.getPrice(serviceCode);
+		this.serviceName = services.getName(serviceCode);
 		
 	}
 	
