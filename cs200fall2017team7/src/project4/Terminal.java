@@ -226,9 +226,15 @@ public class Terminal {
 					services.toString();
 					break;
 				case(2):
-					
+					System.out.println("Please enter a member id to validate that member: ");
+					int memberID = scan.nextInt();
+					members.validate(memberID);
 					break;
 				case(3):
+					System.out.println("Please enter a member id for the member you would like to bill.");
+					int memberId = scan.nextInt();
+					if(members.validate(memberId))
+						members.addClaim(providers, members, services);
 					break;
 				case(4):
 					continueProviderTerminal = false;
