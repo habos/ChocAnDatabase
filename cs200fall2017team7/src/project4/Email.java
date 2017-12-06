@@ -23,7 +23,7 @@ public class Email {
 	 * @param providersDatabase Provider database
 	 */
 	public static void mainAccountingProcedure(MembersDatabase membersDatabase, ProvidersDatabase providersDatabase){
-		DateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY");
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 		Date date = new Date();
 		Iterator<Record> member = membersDatabase.giveMeAnIterator();
 		Iterator<Record> providers = providersDatabase.giveMeAnIterator();
@@ -59,7 +59,7 @@ public class Email {
 	 */
 	public static void requestEmail(MembersDatabase members, ProvidersDatabase providers){
 		
-		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd ");// set up the date and time format
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");// set up the date and time format
 		Date date = new Date();
 		
 		

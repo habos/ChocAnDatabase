@@ -168,7 +168,7 @@ public class Terminal {
 			int choice = scan.nextInt();
 			switch(choice){
 				case(1):
-					services.toString();
+					System.out.println(services.toString());
 					break;
 				case(2):
 					System.out.println("Please enter a member id to validate that member: ");
