@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project cs200fall2017team7">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}/../.."/>
+    <property name="dir.jarfile" value="${dir.buildfile}/release"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/Untitled.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="project4.Terminal"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.workspace}/cs200fall2017team7/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/xpp3_min-1.1.4c.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/xstream-1.4.10.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/kxml2-2.1.8.jar"/>
+        </jar>
+    </target>
+</project>
