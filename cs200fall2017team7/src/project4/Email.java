@@ -27,6 +27,8 @@ public class Email {
 		Date date = new Date();
 		Iterator<Record> member = membersDatabase.giveMeAnIterator();
 		Iterator<Record> providers = providersDatabase.giveMeAnIterator();
+		SummaryReport summary = new SummaryReport(providersDatabase);
+		emailer("SummaryReports", "SummaryReport" + dateFormat.format(date), summary.toString());
 		while(member.hasNext()){
 			Record record = member.next();
 			if(record.hasClaims()){
@@ -42,16 +44,6 @@ public class Email {
 				EFT eft = new EFT(record.getName(), record.getId(), record.getClaimFee());
 				emailer("EFTReports", record.getName(), eft.toString());
 			}
-		}
-		SummaryReport summary = new SummaryReport(providersDatabase);
-		emailer("SummaryReports", "SummaryReport" + dateFormat.format(date), summary.toString());
-		
-		while(providers.hasNext()){
-			Record record = providers.next();
-			record.setIsCurrentFalse();
-		}
-		while(member.hasNext()){
-			Record record = member.next();
 			record.setIsCurrentFalse();
 		}
 		System.out.println("Main Accouning Procedure has run");
