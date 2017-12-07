@@ -158,3 +158,9 @@ Upon selecting option '4':
 ----------------------------------------------------------------------------------
 Upon selecting option '5':
 	The user exits the program.
+----------------------------------------------------------------------------------
+Citations
+	Librariers from Xtreme.thotworks.com:
+				kxml2.jar
+				xpp3_min-1.1.4c.jar
+				xstream-1.4.10.jar 
