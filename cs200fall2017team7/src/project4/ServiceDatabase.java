@@ -113,7 +113,7 @@ public class ServiceDatabase {
 		while(services.hasNext())
 		{
 			service = services.next();
-			output += service.getServiceName() + " " + service.getPrice() + " " + service.getServiceName() + "\n";
+			output += service.getPrice() + " " + service.getPrice() + " " + service.getServiceName() + "\n";
 		}
 		return output;
 	}
