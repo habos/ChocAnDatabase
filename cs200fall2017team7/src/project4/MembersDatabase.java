@@ -2,6 +2,12 @@ package project4;
 
 import java.util.Scanner;
 
+/**
+ * Contains all information about current members
+ * @author Chris
+ * @author Caleb
+ * @author Harry
+ */
 public class MembersDatabase extends Database {
 
 	@Override

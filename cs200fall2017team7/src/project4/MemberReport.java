@@ -1,5 +1,11 @@
 package project4;
 
+/**
+ * Reports sent to members.
+ * @author Chris
+ * @author Harry
+ */
+
 public class MemberReport extends Report {
 	
 	/**

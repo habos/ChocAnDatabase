@@ -10,11 +10,22 @@ import java.util.Iterator;
 public class Provider extends Record {
 	
 
-
+	/**
+	 * Constructor
+	 * @param id
+	 * @param name
+	 * @param address
+	 * @param city
+	 * @param state
+	 * @param ZIP
+	 */
 	public Provider(int id, String name, String address, String city, String state, String ZIP) {
 		super(id, name, address, city, state, ZIP);
 	}
 
+	/**
+	 * Returns a formatted string containing provider information
+	 */
 	public String toString(){
 	return "Provider name: " + name + "\n"
 		 + "Provider number: " + id + "\n"
