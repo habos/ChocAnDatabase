@@ -153,18 +153,58 @@ public abstract class Database {
 	String memberName = members.getName(memberId);
 	System.out.println("Enter Service Code: ");
 	int servCode = user_input.nextInt();
+	int validated = 0; //new line
+	int userConfirmation = 2; //new line
 	user_input.nextLine();
-	while (!services.contains(servCode)) {
-		System.out.println("The Service Code you have entered does not match any Service Code in the Directory.  Please enter a new Service Code or enter -1 to exit: ");
-		servCode = user_input.nextInt();
-		if(servCode == -1){
-			return;
+	while (!services.contains(servCode) ||  validated == 0) {
+		if(!services.contains(servCode))
+		{
+			validated = 0;
+			System.out.println("The Service Code you have entered does not match any Service Code in the Directory.  Please enter a new Service Code or enter -1 to exit: ");
+			servCode = user_input.nextInt();
+			if(servCode == -1){
+				return;
+			}
 		}
+		else if(validated == 0)
+		{
+			System.out.println("The service corresponding to the code you entered is " + services.getName(servCode) + ". Is this the correct service?");
+			System.out.println("Enter '1' to confirm.");
+			System.out.println("Enter '2' to enter new service code.");
+			userConfirmation = user_input.nextInt();
+			switch(userConfirmation) {
+			case(1):
+				System.out.println("Confirmed.");
+				validated = 1;
+				break;
+			case(2):
+				validated = 0;
+				System.out.println("Please enter a new service code or enter -1 to exit.");
+				servCode = user_input.nextInt();
+				if(servCode == -1) {
+					return;
+				}
+				break;
+			default:
+				validated = 0;
+				System.out.println("Invalid input. Please try again.");
+				break;
+			}
+			
+			
+		}
+		else
+		{
+			System.out.println("This shouldn't execute.");
+		}
+		
 	}
+	
 	int fee = services.getPrice(servCode);
 	String serviceName = services.getName(servCode);
 	
 	System.out.println("Enter any comments: ");
+	user_input.nextLine();
 	String comments = user_input.nextLine();
 	System.out.println("Enter date service was provided (MM/DD/YYYY).");
 	String manualDate = user_input.nextLine();
