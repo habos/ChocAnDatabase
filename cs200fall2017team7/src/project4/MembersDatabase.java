@@ -13,8 +13,9 @@ public class MembersDatabase extends Database {
 		// Create a new scanner
 		Scanner scan = new Scanner(System.in);
 		// Start asking the user for information
-		System.out.println("Please enter member's ID: ");
+		System.out.println("Please enter member's ID: (enter -1 to exit)");
 		int id = scan.nextInt();
+		if(id==-1) {return false;}
 		// Make sure that there are no duplicate IDs
 		while (contains(id)){
 			System.out.println("The ID you have entered already exists for another member.  Please enter a new member ID or -1 to exit: ");
