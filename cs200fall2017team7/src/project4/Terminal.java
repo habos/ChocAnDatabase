@@ -199,8 +199,10 @@ public class Terminal {
 				case(3):
 					System.out.println("Please enter a member id for the member you would like to bill.");
 					int memberId = scan.nextInt();
-					if(members.validate(memberId))
-						members.addClaim(providers, members, services, providerNumber, memberId);
+					memberId = members.validate(memberId);
+					if(memberId == -1)
+						return;
+					members.addClaim(providers, members, services, providerNumber, memberId);
 					break;
 				case(4):
 					continueProviderTerminal = false;

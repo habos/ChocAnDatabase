@@ -70,18 +70,6 @@ public class MemberManagementTest {
 		System.setIn(System.in);
 
 	}
-	
-	@Test
-	public void testValidateTrue() {
-		assertTrue(members.validate(111111));
-	}
-	@Test
-	public void testValidateFalse() {
-		ByteArrayInputStream in = new ByteArrayInputStream("-1\n".getBytes());
-		System.setIn(in);
-		assertFalse(members.validate(123));
-		System.setIn(System.in);
-	}
 
 	@Test
 	public void testDeleteTrue() {

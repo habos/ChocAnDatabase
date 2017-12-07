@@ -103,7 +103,7 @@ public class MembersDatabase extends Database {
 		return false;
 	}
 	
-	public boolean validate(int id){
+	public int validate(int id){
 		Scanner scan = new Scanner(System.in);
 		boolean invalidMember = true;
 		while(invalidMember){
@@ -112,20 +112,20 @@ public class MembersDatabase extends Database {
 					System.out.println("The ID you have entered does not exist for a member.  Please enter a new Member ID or enter -1 to exit: ");
 					id = scan.nextInt();
 					if(id == -1)
-						return false;
+						return -1;
 				}
 			}
 			if(((Member) this.search(id)).isSuspended()){
 					System.out.println("The Member you want to validate is suspended. Please enter a new Member ID or enter -1 to exit: ");
 					id = scan.nextInt();
 					if(id == -1)
-						return false;
+						return -1;
 					break;
 			}
 			invalidMember = false;
 		}
 		System.out.println("Validated!");
-		return true;
+		return id;
 	}
 
 }
