@@ -65,7 +65,7 @@ public class Claim {
 	public String toString() {
 		return "Current date and time: " + currentDate + "\n" + "Date service was provided: " + dateProvided + "\n"
 				+ "Provider number: " + providerId + "\n" + "Member number: " + memberId + "\nService Code: "
-				+ serviceCode + "\nComments: " + comments;
+				+ serviceCode + "\nComments: " + comments + "\n";
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class Claim {
 	public String toStringProvider() {
 		return "Date of Service: " + dateProvided + "\nDate and time data were received by the computer: " + currentDate
 				+ "\nMember name: " + memberName + "\nMember number: " + memberId + "\nService code: " + serviceCode
-				+ "\nFee to be paid: $" + fee;
+				+ "\nFee to be paid: $" + fee + "\n";
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class Claim {
 	 * @return A string formatted in accordance with requirements
 	 */
 	public String toStringMember() {
-		return "Date of service: " + dateProvided + "\nProvider name: " + providerName + "\nService name: " + serviceName;
+		return "Date of service: " + dateProvided + "\nProvider name: " + providerName + "\nService name: " + serviceName + "\n";
 	}
 	
 	/**
