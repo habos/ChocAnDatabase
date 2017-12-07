@@ -13,12 +13,16 @@ import com.thoughtworks.xstream.io.xml.StaxDriver;
 import com.thoughtworks.xstream.security.AnyTypePermission;
 
 /**
- * Start of the program (currently for testing)
- * @author Chris
- *
+ * The user interface that simulates different terminals
+ * @author Harry
  */
 public class Terminal {
 
+	/**
+	 * Main
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException{
 		
 		//Initialization of databases
@@ -118,11 +122,23 @@ public class Terminal {
 		return (Database) xstream.fromXML(text);
 	}
 	
+	/**
+	 * Saves data from member and provider databases into their respective files
+	 * @param members Member database
+	 * @param providers Provider database
+	 */
 	public static void exit(MembersDatabase members, ProvidersDatabase providers){
 		toXML("Members", members);
 		toXML("Providers", providers);
 	}
 	
+	/**
+	 * Checks to see if a member or provider ID exists
+	 * @param chooseDatabase Member or provider
+	 * @param members Member database
+	 * @param providers Provider database
+	 * @return
+	 */
 	public static int invalidID(String chooseDatabase, MembersDatabase members, ProvidersDatabase providers){
 		Scanner user_input = new Scanner(System.in);
 		int id = -1738;
@@ -149,6 +165,12 @@ public class Terminal {
 		return id;
 	}
 	
+	/**
+	 * Simulated provider terminal
+	 * @param members Member database
+	 * @param providers Provider database
+	 * @param services Service database
+	 */
 	public static void providerTerminal(MembersDatabase members, ProvidersDatabase providers, ServiceDatabase services){
 		Scanner scan = new Scanner(System.in);
 		System.out.print("You have chosen provider terminal. Please enter your provider number: ");
@@ -191,6 +213,11 @@ public class Terminal {
 		}
 	}
 	
+	/**
+	 * Simulated operator terminal
+	 * @param members Member database
+	 * @param providers Provider database
+	 */
 	public static void operatorTerminal(MembersDatabase members, ProvidersDatabase providers){
 		Scanner scan = new Scanner(System.in);
 		boolean continueOperatorTerminal = true;
@@ -281,13 +308,18 @@ public class Terminal {
 		}
 	}//end operators terminal
 	
+	/**
+	 * Simulated Acme Terminal
+	 * @param members Member database
+	 * @param providers Provider database
+	 */
 	public static void acmeTerminal(MembersDatabase members, ProvidersDatabase providers){
 		Scanner scan = new Scanner(System.in);
 		boolean continueACMETerminal = true;
 		while(continueACMETerminal){
 			System.out.println("Welcome to the ACME terminal! Please choose one of the following options: ");
 			System.out.println("Enter '1' to change member balance.");
-			System.out.print("Enter '2' to exit.");
+			System.out.println("Enter '2' to exit.");
 			int choice = scan.nextInt();
 			switch(choice){
 				case(1):
@@ -324,6 +356,11 @@ public class Terminal {
 		}//end while
 	}//end ACME terminal
 	
+	/**
+	 * Simulated manager terminal
+	 * @param members Member database
+	 * @param providers Provider database
+	 */
 	public static void managerTerminal(MembersDatabase members, ProvidersDatabase providers){
 		Scanner scan = new Scanner(System.in);
 		boolean continueManagerTerminal = true;

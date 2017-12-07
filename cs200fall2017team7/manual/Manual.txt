@@ -1,3 +1,10 @@
+ChocAn DataSystems
+---------------------------------------------------------------------------------------------------------------
+Setup:
+	1.Export the "release" folder to your computer.
+	2.Double click RUN.bat
+---------------------------------------------------------------------------------------------------------------
+Running the program:
 Upon startup of the program the user is present with the five options
 	Enter '1' if you're a provider.
 	Enter '2' if you're a manager.
@@ -5,7 +12,7 @@ Upon startup of the program the user is present with the five options
 	Enter '4' if you're part of Acme Accounting Services.
 	Enter '5' to exit.
 To select a option type in a one of the numbers (1-5) and press enter to select a option.
-
+---------------------------------------------------------------------------------------------------------------
 Upon selecting option '1':
 	
 	The Program then asks the user to input their provider ID
@@ -20,7 +27,7 @@ Upon selecting option '1':
 		Enter '3' to bill a member.
 		Enter '4' to exit.
 	
-	Again to select an option type on of the numbers (1-4) shown and press enter to select a option.
+	To select an option type on of the numbers (1-4) shown and press enter to select a option.
 	
 		Upon selecting option '1':
 			
@@ -41,7 +48,113 @@ Upon selecting option '1':
 					 member ID is entered or until -1 is inputed.
 				 	-If -1 is entered the user will be returned to the provider screen.
 			
-			Once a valid member ID is entered the program the program will prompt the user to enter a valid service code.
+			Once a valid member ID is entered the program the program will display "Validated" and prompt the user to enter a valid service code.
 				-If the user inputs an invalid service code they will be prompted to re-enter the service code until either a valid
-				 service code is entered 
+				 service code or -1 is entered 
+				-If  -1 is entered the user is taken back to the provider menu
 			
+			Once a valid service code is entered the user will be prompted to enter any comments about the claim. 
+			
+			Then the user will be prompted to enter the date (MM/DD/YYYY) the service was performed.
+			
+			This will add the claim to the claims list.
+			
+		Upon Selecting option '4':
+			
+			The user will be taken back to the starting menu.
+----------------------------------------------------------------------------------------------------------
+Upon selecting option '2':
+
+	The user is greeted with the starting screen:
+		Welcome to the Manager terminal! Please choose one of the following options.
+		Enter '1' to request a report.
+		Enter '2' to simulate 'Main Accounting Procedure'.
+		Enter '3' to exit.
+		
+	To select an option type on of the numbers (1-3) shown and press enter to select a option.
+	
+	Upon selecting option '1':
+			
+			The user is greeted with the screen:
+				Please enter the number for the type of report you want:
+				1: Member Report
+				2: Provider Report 
+				
+				Selecting either option will result in the user being prompted to enter a valid provider/user ID. If the first number intered is not a
+				valid ID the system will continue to prompt the  user to try again or enter -1.
+				-If negative one is entered the user is taken back to the first screen.
+				
+				Once a valid ID is entered the system will send an email with the provider/member information.
+	
+	Upon selecting option '2':
+			The program automatically compiles the reports and saves them to their respective folders.
+	
+	Upon selecting option '3':
+			The user is taken back to the starting menu.
+------------------------------------------------------------------------------------------------------------
+Upon selecting option '3':
+	
+	The user is greeted with the starting screen:
+		Welcome to the operators terminal! Please choose one of the following options:
+		Enter '1' to manage the members database.
+		Enter '2' to manage the providers database.
+		Enter '3' to exit.
+		
+	Upon selecting either option 1 or 2:
+		The user will prompted with the screen:
+			Welcome to (provider/member) management.  Please choose one of the following options:
+			Enter '1' to add (provider/member).
+			Enter '2' to delete (provider/member).
+			Enter '3' to edit (provider/member).
+			Enter '4' to exit.
+		 
+			*Depending on the option selection the menu displays either member or provider
+			
+			Upon selecting option '1':
+					The user is prompted to enter a new member/provider ID.
+					If the ID is already taken the user is prompted to enter a new ID or enter -1 to go back to the starting menu.
+					
+					Once a valid ID is made the user will be prompted to enter the member/providers name, address, city, state, ZIP.
+					After ZIP is entered the user is taken back to the starting screen.
+			
+			Upon selecting option '2':
+					The user is prompted to enter the member/provider ID they wish to delete.
+					
+					Once a valid ID is entered the system says "Deleting (name) of ID (ID)" and takes the user back to the (member/provider) screen.
+					 
+			Upon selecting option '3':	
+					The user is prompted to enter the member/provider ID they wish to edit.
+					
+					Once a valid ID is entered the message:
+						What would you like to change? I/N/A/C/S/Z:
+						*I is the ID, N is the name, A is the address, C is the city, S is the street, Z is the ZIP 
+						-If the user enters an invalid choice it prints an error message and takes you back to the member/provider menu
+					
+					Once a valid selection is made the console will accept any input for N/A/C/S/Z. If you enter an already taken ID in I the system will
+					ask you to choose a different ID or exit back to the menu with -1.
+						
+			Upon selecting option '4':
+					The user is returned to the starting screen.
+					
+	Upon selecting option '3':
+		The user is returned to the starting menu.
+----------------------------------------------------------------------------------
+Upon selecting option '4':
+
+	The user is greeted with the following screen:
+		Welcome to the ACME terminal! Please choose one of the following options: 
+		Enter '1' to change member balance.
+		Enter '2' to exit.
+		
+		Upon selecting option '1':
+			The user is prompted to enter a valid member ID. If the entered ID is not valid the user is prompted to enter a new ID or -1 to 
+			go back to the starting menu.
+			
+			Once a valid member ID is entered the user enters the balance change of that member. The balance change can be both positive and negative.
+			If the members balance drops below zero the member is automatically suspended until the balance rises above zero.
+			
+		Upon Selecting option '2':
+			The user is taken back to the starting menu.
+----------------------------------------------------------------------------------
+Upon selecting option '5':
+	The user exits the program.

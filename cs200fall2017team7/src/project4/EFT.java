@@ -1,5 +1,10 @@
 package project4;
 
+/**
+ * Special type of report that contains EFT information.
+ * @author Logan
+ */
+
 public class EFT extends Report{
 	
 	/**
