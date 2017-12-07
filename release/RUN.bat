@@ -1,1 +1,1 @@
-java -jar ChocAn2.jar
+java -jar ChocAn.jar
