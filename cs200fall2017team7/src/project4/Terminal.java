@@ -76,7 +76,6 @@ public class Terminal {
 	 * This method puts the data contained in our database into an XML file to accomplish persistence. 
 	 * @param fileName filename to write to
 	 * @param database database to pull data from
-	 * @return void
 	 */	
 	public static void toXML(String fileName, Database database){
 		//Initialize xstream and get rid of useless error
