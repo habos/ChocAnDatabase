@@ -58,18 +58,43 @@ public class MemberManagementTest {
 	}
 	
 	@Test
-	public void testEdit() {
-		fail("Not yet implemented");
+	public void testEditTrue() {
+		ByteArrayInputStream in = new ByteArrayInputStream("N\nBoogy\n".getBytes());
+		System.setIn(in);
+		members.edit(111111);
+		
+		assertEquals("Boogy",members.getName(111111));
+		System.setIn(System.in);
+	}
+	
+	@Test
+	public void testEditFalse() {
+		ByteArrayInputStream in = new ByteArrayInputStream("B\n".getBytes());
+		System.setIn(in);
+		assertFalse(members.edit(111111));
+		System.setIn(System.in);
+
+	}
+	
+	@Test
+	public void testValidateTrue() {
+		assertTrue(members.validate(111111));
+	}
+	@Test
+	public void testValidateFalse() {
+		ByteArrayInputStream in = new ByteArrayInputStream("-1\n".getBytes());
+		System.setIn(in);
+		assertFalse(members.validate(123));
+		System.setIn(System.in);
 	}
 
 	@Test
-	public void testValidate() {
-		fail("Not yet implemented");
+	public void testDeleteTrue() {
+		assertTrue(members.delete(111111));
 	}
 
 	@Test
-	public void testDelete() {
-		fail("Not yet implemented");
+	public void testDeleteFalse() {
+		assertFalse(members.delete(321));
 	}
-
 }
