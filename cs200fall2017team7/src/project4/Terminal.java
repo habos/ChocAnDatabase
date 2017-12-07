@@ -212,6 +212,7 @@ public class Terminal {
 						int memberChoice = scan.nextInt();
 						switch(memberChoice){
 							case(1):
+								
 								members.add();
 								break;
 							case(2):
@@ -222,6 +223,11 @@ public class Terminal {
 							case(3):
 								System.out.println("Enter the Member ID for the member you would like to edit:");
 								int memberId = scan.nextInt();
+								while(memberId<0) {
+									System.out.println("Error: please enter a valid member ID: (enter -1 to exit)");
+									memberId = scan.nextInt();
+									if(memberId ==-1)break;
+								}
 								members.edit(memberId);
 								break;
 							case(4):
