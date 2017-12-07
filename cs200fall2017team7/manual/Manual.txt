@@ -5,7 +5,7 @@ Setup:
 	2.Double click RUN.bat
 ---------------------------------------------------------------------------------------------------------------
 Running the program:
-Upon startup of the program the user is present with the five options
+Upon startup of the program the user is presented with the five options
 	Enter '1' if you're a provider.
 	Enter '2' if you're a manager.
 	Enter '3' if you're a operator.
@@ -160,7 +160,7 @@ Upon selecting option '5':
 	The user exits the program.
 ----------------------------------------------------------------------------------
 Citations
-	Librariers from Xtreme.thotworks.com:
+	Libraries from Xtreme.thoughtworks.com:
 				kxml2.jar
 				xpp3_min-1.1.4c.jar
 				xstream-1.4.10.jar 

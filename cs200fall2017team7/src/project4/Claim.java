@@ -73,7 +73,7 @@ public class Claim {
 	 * @return A string formatted in accordance with requirements
 	 */
 	public String toStringProvider() {
-		return "Date of Service: " + dateProvided + "\nDate and time data were recived by the computer: " + currentDate
+		return "Date of Service: " + dateProvided + "\nDate and time data were received by the computer: " + currentDate
 				+ "\nMember name: " + memberName + "\nMember number: " + memberId + "\nService code: " + serviceCode
 				+ "\nFee to be paid: $" + fee;
 	}
