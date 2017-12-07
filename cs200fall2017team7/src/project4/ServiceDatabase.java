@@ -26,7 +26,7 @@ public class ServiceDatabase {
 		Scanner s;
 		
 		try {
-			bufferedReader = new BufferedReader(new FileReader("ProviderDirectory.txt"));
+			bufferedReader = new BufferedReader(new FileReader("Data/SavedData/ProviderDirectory.txt"));
 			services = new ArrayList<Service>();
 			while((line = bufferedReader.readLine()) != null)
 			{
