@@ -61,26 +61,4 @@
             <classpath refid="cs200fall2017team7.classpath"/>
         </java>
     </target>
-    <target name="ProviderManagementTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="project4.test.ProviderManagementTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="cs200fall2017team7.classpath"/>
-        </junit>
-    </target>
-    <target name="Setup">
-        <java classname="project4.Setup" failonerror="true" fork="yes">
-            <classpath refid="cs200fall2017team7.classpath"/>
-        </java>
-    </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
-    </target>
 </project>
