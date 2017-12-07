@@ -15,15 +15,15 @@
         <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
     <path id="cs200fall2017team7.classpath">
-        <pathelement location="release"/>
+        <pathelement location="cs200fall2017team7/release"/>
         <pathelement location="cs200fall2017team7/xpp3_min-1.1.4c.jar"/>
         <pathelement location="cs200fall2017team7/xstream-1.4.10.jar"/>
         <pathelement location="cs200fall2017team7/kxml2-2.1.8.jar"/>
         <path refid="JUnit 4.libraryclasspath"/>
     </path>
     <target name="init">
-        <mkdir dir="release"/>
-        <copy includeemptydirs="false" todir="release">
+        <mkdir dir="cs200fall2017team7/release"/>
+        <copy includeemptydirs="false" todir="cs200fall2017team7/release">
             <fileset dir="cs200fall2017team7/src">
                 <exclude name="**/*.java"/>
             </fileset>
@@ -37,7 +37,7 @@
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="release" includeantruntime="false" source="${source}" target="${target}">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="cs200fall2017team7/release" includeantruntime="false" source="${source}" target="${target}">
             <src path="cs200fall2017team7/src"/>
             <classpath refid="cs200fall2017team7.classpath"/>
         </javac>
