@@ -26,7 +26,7 @@ public class Terminal {
 		MembersDatabase members = new MembersDatabase();
 		ProvidersDatabase providers = new ProvidersDatabase();
 		
-		//refreshFiles(false);
+		
 		if(fromXML("Members") != null)
 			members = (MembersDatabase) fromXML("Members");
 		if(fromXML("Providers") != null)

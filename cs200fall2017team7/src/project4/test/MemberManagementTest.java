@@ -3,16 +3,11 @@ package project4.test;
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayInputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.util.ArrayList;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import project4.Member;
 import project4.MembersDatabase;
-import project4.Record;
 
 /**
  * 

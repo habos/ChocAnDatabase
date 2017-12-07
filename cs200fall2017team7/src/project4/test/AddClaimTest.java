@@ -7,13 +7,13 @@ import java.io.ByteArrayInputStream;
 import org.junit.Before;
 import org.junit.Test;
 
-import project4.Database;
+
 import project4.ProvidersDatabase;
 import project4.MembersDatabase;
 import project4.ServiceDatabase;
 import project4.Provider;
 import project4.Member;
-import project4.Record;
+
 
 /**
  * Testing AddClaim and other database methods
