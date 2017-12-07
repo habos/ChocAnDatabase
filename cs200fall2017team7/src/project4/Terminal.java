@@ -279,14 +279,14 @@ public class Terminal {
 								providers.add();
 								break;
 							case(2):
-								System.out.println("Enter the Member ID for the member you would like to delete:");
+								System.out.println("Enter the Provider ID for the provider you would like to delete:");
 								int providerID = scan.nextInt();
 								providers.delete(providerID);
 								break;
 							case(3):
-								System.out.println("Enter the Member ID for the member you would like to edit:");
+								System.out.println("Enter the Provider ID for the provider you would like to edit:");
 								int providerId = scan.nextInt();
-								members.edit(providerId);
+								providers.edit(providerId);
 								break;
 							case(4):
 								continueProviderManagement = false;
