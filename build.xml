@@ -31,7 +31,7 @@
         </copy>
     </target>
     <target name="clean">
-        <delete dir="cs200fall2017team7/release"/>
+        <delete dir="cs200fall2017team7/release/project4"/>
     </target>
     <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
