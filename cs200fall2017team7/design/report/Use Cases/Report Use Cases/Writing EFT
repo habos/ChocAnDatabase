@@ -1,0 +1,7 @@
+Use Case: Writing EFT
+Context: Electronic Funds Transfer data is written to the disk.
+Actors: Time
+Main Success Scenario
+	1. After the reports are sent the Electronic Funds Transfer data is written to the disk. 
+Extensions
+	None
