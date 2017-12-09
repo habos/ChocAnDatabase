@@ -1,0 +1,254 @@
+<style>
+body{
+  background-color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+
+.title{
+ background-color:#ccc;
+ background-image:url("saban.jpg");
+ height: 950px;
+ padding: 0px;
+ border: 5px;
+ border-style: solid;
+ margin: 0px;
+ background-image
+}
+
+h1{
+  -webkit-text-stroke: 1.0px #000000;
+  -webkit-text-fill-color: #FFFFFF;
+	font-family: 'Times', serif;
+	font-size: 78px;
+	text-align: center;
+	font-style: bold;
+  height: 200px;
+}
+
+ul{
+  text-align:center;
+  list-style-position: inside;
+}
+
+li{
+  list-style-type: hiragana;
+}
+
+.names{
+	-webkit-text-stroke: 1.0px #000000;
+    -webkit-text-fill-color: #FFFFFF;
+	font-family: 'Courier New', serif;
+	font-size: 56px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+h2{
+	color: #000000;
+	font-family: 'Times New Roman', serif;
+	font-size: 56px;
+	text-align: center;
+}
+
+.description{
+	font-size: 16px;
+ 	text-align: center;
+ 	border: 3px;
+ 	border-style: solid;
+ 	width: 50%;
+ 	margin: auto;
+    vertical-align: center;
+}
+
+ .images{
+ 	display: block;
+ 	margin: auto;
+ 	text-align: center;
+ }
+
+h3{
+	color: #8B0000;
+	font-family: 'Times New Roman', serif;
+	font-size: 26px;
+	text-align: center;
+}
+ 
+  .descriptions{
+ 	font-size: 16px;
+ 	text-align: center;
+ 	border: 3px;
+ 	border-style: solid;
+ 	width: 50%;
+ 	margin: auto;
+    vertical-align: center;
+ }
+ 
+ div.container {
+    width:100%;
+    text-align:center;
+}
+div.awesome {
+    display:inline-block;
+    margin: 10;
+    margin-bottom: 20;
+    border: 3px;
+    border-style: solid;
+}
+ 
+ .tasks{
+ 	text-align: center;
+ 	border: 3px;
+ 	border-style: solid;
+ 	font-size: 18px;
+ 	font-style: 'Courier New', serif;
+ 	width: 100%;
+ 	margin: auto;
+    vertical-align: center;
+ }
+
+</style>
+<html lang="en">
+<head>
+
+  <title>CS200 Team 7</title>
+  <meta name="description" content="CS200">
+  <meta name="author" content="Team 7">
+  
+</head>
+
+<body>
+  <div class="title">
+  	<h1>CS200 Term Project</h1>
+  	<ul class="names">
+  		<li>Caleb Werth - cwerth@crimson.ua.edu - 11663777</li>
+  		<li>Chris Wilkins - cawilkins@crimson.ua.edu -11706477</li>
+  		<li>Colin Macwilliam - comacwilliam@crimson.ua.edu - 11663573</li>
+  		<li>Harry Bos - habos@crimson.ua.edu - 11720649</li>
+  		<li>Logan Mimms - Lgmimms@crimson.ua.edu - 11601685</li>
+  	</ul>
+  </div>
+  <h2>System Description</h2>
+  <div class="description">
+  <p>Chocoholics Anonymous (ChocAn) is an organization 
+dedicated to helping people addicted to chocolate. 
+Our organization has been awarded the contract to 
+write the ChocAn data processing software. This software 
+will need to be able to validate that a person with a 
+ChocAn card is indeed a current member in good standing of 
+ChocAn by having a provider swipe the member card on a 
+provider terminal. Additionally, the system provides support 
+for billing, updates members, and automatically sends 
+customized reports to members, providers, and managers on 
+ChocAn information relevant to them.</p>
+	</div>
+   <div class="glossary">
+  	<h2>Glossary</h2>
+  	<ul>
+      <li><b>Electronic Funds Transfer (EFT) data:</b> data that is contained in the weekly report that providers receive when they've billed ChocAn.</li>
+      <li><b>Service Code:</b> a code that corresponds to a specific service provided by ChocAn.</li>
+      <li><b>Monthly fee:</b>  a monthly subscription fee paid by members to ChocAn. </li>
+      <li><b>Member:</b> those who pay a monthly fee to ChocAn to receive health care in return.</li>
+      <li><b>Provider:</b> a health care professional who provides services to ChocAn members.</li>
+      <li><b>Terminal:</b> a computer similar to a credit card device in a shop.</li>
+      <li><b>Comments:</b> if necessary, a provider can write comments in their records to describe a service they provided.</li>
+      <li><b>Provider Directory:</b> providers use this directory to look up the appropriate six-digit service code corresponding to the service they provided. Providers can request this directory as an email attachment via the provider terminal.</li>
+      <li><b>Summary Report:</b> contains information needed to update financial records.</li>
+      <li><b>Chocoholics Anonymous (ChocAn):</b> an organization dedicated to helping people addicted to chocolate in all its glorious forms.</li>
+      <li><b>Acme Accounting Services:</b> a third-party organization responsible for financial procedures. The Acme computer acts on our data center each evening.</li>
+    </ul>
+  </div>
+  	<h2>Use Case Diagram</h2>
+  <div class="diagram">
+  	<div class="images"><img src="use case diagram 2.PNG" alt="Use Case Diagram" style="width:800px;height:650px;"></div>
+  </div>
+  	<h2>Use Case Description</h2>
+  <div class="descriptions">
+  	  <ul>
+  		<a href="Use Cases/Bill ChocAn"><li>Bill ChocAn</li></a>
+  		<a href="Use Cases/Validate Member"><li>Validate Member</li></a>
+  		<a href="Use Cases/Request Directory"><li>Request Directory</li></a>
+  		<a href="Use Cases/Member Management Use Cases/Member Management"><li>Member Management</li></a>
+  		<a href="Use Cases/Member Management Use Cases/Update Member"><li>Update Member</li></a>
+  		<a href="Use Cases/Member Management Use Cases/Delete Member"><li>Delete Member</li></a>
+  		<a href="Use Cases/Member Management Use Cases/Add Member"><li>Add Member</li></a>
+  		<a href="Use Cases/Provider Management Use Cases/Provider Management"><li>Provider Management</li></a>
+  		<a href="Use Cases/Provider Management Use Cases/Update Provider"><li>Update Provider</li></a>
+  		<a href="Use Cases/Provider Management Use Cases/Delete Provider"><li>Delete Provider</li></a>
+  		<a href="Use Cases/Provider Management Use Cases/Add Provider"><li>Add Provider</li></a>
+  		<a href="Use Cases/Report Use Cases/Request Individual Report"><li>Request Individual Report</li></a>
+  		<a href="Use Cases/Report Use Cases/Generate Member Report"><li>Generate Member Report</li></a>
+  		<a href="Use Cases/Report Use Cases/Generate Provider Reports"><li>Generate Provider Reports</li></a>
+  		<a href="Use Cases/Report Use Cases/Generate Summary Report"><li>Generate Summary Report</li></a>
+  		<a href="Use Cases/Report Use Cases/Send Reports"><li>Send Reports</li></a>
+  		<a href="Use Cases/Report Use Cases/Writing EFT"><li>Writing EFT</li></a>
+  	</ul>
+  </div>
+  <h2>System Operations Paragraph</h2>
+  <div class="description">
+  <p>The system will generate reports based on data stored in the system and time and will send the reports via email.
+   EFT’s will be stored onto a disk, and other data will be stored in our system. We will need a server for the records and the provider’s terminals.
+   Our system will interact with the provider’s terminal system for member validation and billing, with Acme’s system when processing ChocAn membership fees, and with banking computers to credit providers’ bank accounts.
+   Providers validate and bill members by swiping their cards on a provider terminal.
+   For all other use cases, the system may be interacted with remotely or through local computers.</p>
+   </div>
+  <h2>Stereotyped Class Diagram</h2>
+  	<div class="images"><figure><img src="stereotypedClassDiagram.PNG" alt="Stereotyped Class Diagram" style="width:800px;height:650px;"><figcaption>Stereotyped Class Diagram</figcaption></figure></div>
+  <h2>Activity Diagrams</h2>
+  <div class = "container">
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/EFT report.PNG" alt="Writing EFT" style="width:450;height:450;"><figcaption>Writing EFT</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Generate Member Report.PNG" alt="Generate Member Report" style="width:450;height:450;"><figcaption>Generate Member Report</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Generate Summary Report.PNG" alt="Generate Summary Report" style="width:450;height:450;"><figcaption>Generate Summary Report</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/generateProviderReport.PNG" alt="Generated Provider Report" style="width:450;heigth:450;"><figcaption>Generated Provider Report</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Send Reports.PNG" alt="Send Reports" style="width:500;height:450;"><figcaption>Send Reports</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Validate Member.PNG" alt="Validate Member" style="width:650;height:450;"><figcaption>Validate Member</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Individual report.PNG" alt="Request Individual Reports" style="width:750;height:450;"><figcaption>Request Individual Reports</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Member Management/Add Member.PNG" alt="Add Member" style="width:450;height:450;"><figcaption>Add Member</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Member Management/Delete member.PNG" alt="Delete Member" style="width:550;height:450;"><figcaption>Delete Member</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Member Management/Update member.PNG" alt="Update Member" style="width:550;height:450;"><figcaption>Update Member</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Member Management/Member Management.PNG" alt="Member Management" style="width:650;height:450;"><figcaption>Member Management</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Provider Management/Provider Management.PNG" alt="Provider Management" style="width:550;height:450;"><figcaption>Provider Management</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Provider Management/Delete Provider.PNG" alt="Delete Provider" style="width:450;height:450;"><figcaption>Delete Provider</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Provider Management/Add Provider.PNG" alt="Add Provider" style="width:450;height:450;"><figcaption>Add Provider</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Provider Management/Update Provider.PNG" alt="Update Provider" style="width:450;height:450;"><figcaption>Update Provider</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Bill ChocAn.PNG" alt="Bill ChocAn" style="width:450;height:450;"><figcaption>Bill ChocAn</figcaption></figure></div>
+  	<div class="awesome"><figure><img src="Project 2 Screenshots/Overall.PNG" alt="Overall Activity Diagram" style="width:600;height:450;"><figcaption>Overall Activity Diagram</figcaption></figure></div>
+  </div>
+  <h2>Class Diagram</h2>
+  <div class="images"><figure><img src="class diagram.PNG" alt="Class Diagram" style="width:800px;height:650px;"><figcaption>Class Diagram</figcaption></figure></div>
+ <h2>Sequence Diagrams</h2>
+ <div class="container">
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/bill chocan2.PNG" alt="Bill ChocAn" style="width:450;height:450;"><figcaption>Bill ChocAn Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/validatemember.PNG" alt="Validate Member" style="width:450;height:450;"><figcaption>Validate Member Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/requestdirectory.PNG" alt="Request Directory" style="width:450;height:450;"><figcaption>Request Directory Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/membermanagement.PNG" alt="Member Management" style="width:450;height:450;"><figcaption>Member Management Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/addmember.PNG" alt="Add Member" style="width:450;height:450;"><figcaption>Add Member Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/deletemember.PNG" alt="Delete Member" style="width:450;height:450;"><figcaption>Delete Member Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/updatemember.PNG" alt="Update Member" style="width:450;height:450;"><figcaption>Update Member Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/providermanagement.PNG" alt="Provider Management" style="width:450;height:450;"><figcaption>Provider Management Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/addprovider.PNG" alt="Add Provider" style="width:450;height:450;"><figcaption>Add Provider Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/deleteprovider.PNG" alt="Delete Provider" style="width:450;height:450;"><figcaption>Delete Provider Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/updateprovider.PNG" alt="Update Provider" style="width:450;height:450;"><figcaption>Update Provider Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/requestindividualreport.PNG" alt="Request Individual Report" style="width:450;height:450;"><figcaption>Request Individual Report Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/generatememberreport.PNG" alt="Generate Member Report" style="width:600;height:750;"><figcaption>Generate Member Report Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/generateproviderreport.PNG" alt="Generate Provider Report" style="width:600;height:750;"><figcaption>Generate Provider Report Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/generatesummaryreport.PNG" alt="Generate Summary Report" style="width:450;height:450;"><figcaption>Generate Summary Report Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/sendreports.PNG" alt="Send Reports" style="width:450;height:450;"><figcaption>Send Reports Sequence Diagram</figcaption></figure></div>
+ <div class="awesome"><figure><img src="Sequence Diagram Pics/writingeft.PNG" alt="Writing EFT" style="width:450;height:450;"><figcaption>Writing EFT Sequence Diagram</figcaption></figure></div>
+ </div>
+ <h2>Discussion of Design</h2>
+  <div class="description">
+  <p>The design for our software system has high cohesion in a few ways. Each class was
+made to support one main operation. We used a high degree of generalization to separate
+these specific classes by each user that would be affected by or need that class's
+functionality. The classes would work together to perform their separate functions for
+their user. Our design strived for little coupling between classes. With each class designed
+for a specific function, each class needs only a limited amount of interaction with
+other classes and their data. The classes will use each other for a singular purpose, and
+a class won’t use the other functions or methods of another class until absolutely necessary.
+This makes for a well-designed system since classes can be easily altered using
+inheritance, allowing support for a new class.</p>
+ </div>
+  	<a href="https://bitbucket.org/syue2/cs200fall2017team7/commits/all"><h3>BitBucket Commits</h3></a>
+</body>
+</html>
