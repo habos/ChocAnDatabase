@@ -166,7 +166,7 @@ Citations
 				xstream-1.4.10.jar 
 ----------------------------------------------------------------------------------
 Task Distribution:
-Harry Bos: Wrote entire report.html file, wrote majority of user interface, wrote several classes, and added persistence. (20%)
+Harry Bos: Wrote entire report.html file, wrote majority of user interface, wrote several classes, and added persistence, created working release folder. (20%)
 Chris Wilkins: Wrote Database, Record, Provider, Member, Report, and parts of other classes. Wrote test for ServiceDatabase. (20%)
 Logan Mimms: Updated documentation to match implementation, wrote several classes and a junit test module. (20%)
 Colin MacWilliam: Wrote Javadoc comments and generated Javadoc, worked on ant script, helped with construction of assorted parts of classes. (20%) 
