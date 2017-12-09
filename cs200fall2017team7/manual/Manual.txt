@@ -164,14 +164,10 @@ Citations
 				kxml2.jar
 				xpp3_min-1.1.4c.jar
 				xstream-1.4.10.jar 
-<<<<<<< HEAD
-------------------------------------------------------------------
-=======
 ----------------------------------------------------------------------------------
 Task Distribution:
-Harry Bos:
+Harry Bos: Wrote entire report.html file, wrote majority of user interface, wrote several classes, and added persistence. (20%)
 Chris Wilkins: Wrote Database, Record, Provider, Member, Report, and parts of other classes. Wrote test for ServiceDatabase. (20%)
-Logan Mimms:
+Logan Mimms: Updated documentation to match implementation, wrote several classes and a junit test module. (20%)
 Colin MacWilliam: Wrote Javadoc comments and generated Javadoc, worked on ant script, helped with construction of assorted parts of classes. (20%) 
 Caleb Werth: Wrote ServiceDatabase, Service, Member, and other assorted parts of classes. Wrote most javadoc comments and generated javadoc, did most testing, took screenshots for report. Wrote AddClaimTest junit module. (20%)
->>>>>>> branch 'master' of https://comacwilliam@bitbucket.org/syue2/cs200fall2017team7.git
