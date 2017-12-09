@@ -167,7 +167,7 @@ Citations
 ----------------------------------------------------------------------------------
 Task Distribution:
 Harry Bos:
-Chris Wilkins:
+Chris Wilkins: Wrote Database, Record, Provider, Member, Report, and parts of other classes. Wrote test for ServiceDatabase. (20%)
 Logan Mimms:
 Colin MacWilliam:
 Caleb Werth: Wrote ServiceDatabase, Service, Member, and other assorted parts of classes. Wrote most javadoc comments and generated javadoc, did most testing, took screenshots for report. (20%)
