@@ -164,3 +164,10 @@ Citations
 				kxml2.jar
 				xpp3_min-1.1.4c.jar
 				xstream-1.4.10.jar 
+----------------------------------------------------------------------------------
+Task Distribution:
+Harry Bos:
+Chris Wilkins:
+Logan Mimms:
+Colin MacWilliam:
+Caleb Werth: Wrote ServiceDatabase, Service, Member, and other assorted parts of classes. Wrote most javadoc comments and generated javadoc, did most testing, took screenshots for report. (20%)
